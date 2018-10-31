@@ -1,0 +1,66 @@
+{
+  "$id": "manifest_response_body",
+  "title": "manifest_response_body",
+  "type": "object",
+  "properties": {
+    "manifest_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "form_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ship_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "shipments": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "warehouse_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "submission_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "carrier_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "manifest_download": {
+      "title": "link",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

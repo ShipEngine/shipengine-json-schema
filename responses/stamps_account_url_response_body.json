@@ -1,0 +1,20 @@
+{
+  "$id": "stamps_account_url_response_body",
+  "title": "stamps_account_url_response_body",
+  "type": "object",
+  "properties": {
+    "url_type": {
+      "title": "url_type",
+      "type": "string",
+      "enum": [
+        "account_settings",
+        "report_balances",
+        "manifest_form",
+        "payment_methods"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$id": "connect_account_response_body",
+  "title": "connect_account_response_body",
+  "type": "object",
+  "properties": {
+    "carrier_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    }
+  }
+}

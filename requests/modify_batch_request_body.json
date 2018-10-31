@@ -1,0 +1,19 @@
+{
+  "$id": "modify_batch_request_body",
+  "title": "modify_batch_request_body",
+  "type": "object",
+  "properties": {
+    "shipment_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$id": "tag_response_body",
+  "title": "tag_response_body",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

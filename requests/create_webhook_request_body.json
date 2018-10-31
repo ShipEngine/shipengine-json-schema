@@ -1,0 +1,22 @@
+{
+  "$id": "create_webhook_request_body",
+  "title": "create_webhook_request_body",
+  "type": "object",
+  "properties": {
+    "event": {
+      "title": "event",
+      "type": "string",
+      "enum": [
+        "rate",
+        "track",
+        "batch",
+        "store_refresh_complete",
+        "sales_orders_imported",
+        "carrier_connected"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

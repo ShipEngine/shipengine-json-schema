@@ -1,0 +1,108 @@
+{
+  "$id": "rate_estimate_request_body",
+  "title": "rate_estimate_request_body",
+  "type": "object",
+  "properties": {
+    "carrier_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "carrier_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "from_country_code": {
+      "type": "string"
+    },
+    "from_postal_code": {
+      "type": "string"
+    },
+    "to_country_code": {
+      "type": "string"
+    },
+    "to_postal_code": {
+      "type": "string"
+    },
+    "to_city_locality": {
+      "type": "string"
+    },
+    "to_state_province": {
+      "type": "string"
+    },
+    "weight": {
+      "title": "weight",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "double"
+        },
+        "unit": {
+          "title": "weight_unit",
+          "type": "string",
+          "enum": [
+            "pound",
+            "ounce",
+            "gram",
+            "kilogram"
+          ]
+        }
+      }
+    },
+    "dimensions": {
+      "title": "dimensions",
+      "type": "object",
+      "properties": {
+        "unit": {
+          "title": "dimension_unit",
+          "type": "string",
+          "enum": [
+            "inch",
+            "centimeter"
+          ]
+        },
+        "length": {
+          "type": "number",
+          "format": "double"
+        },
+        "width": {
+          "type": "number",
+          "format": "double"
+        },
+        "height": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "confirmation": {
+      "title": "confirmation",
+      "type": "string",
+      "enum": [
+        "none",
+        "delivery",
+        "signature",
+        "adult_signature",
+        "direct_signature"
+      ]
+    },
+    "address_residential_indicator": {
+      "title": "address_residential_indicator",
+      "type": "string",
+      "enum": [
+        "unknown",
+        "yes",
+        "no"
+      ]
+    },
+    "ship_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

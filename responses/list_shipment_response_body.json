@@ -1,0 +1,530 @@
+{
+  "$id": "list_shipment_response_body",
+  "title": "list_shipment_response_body",
+  "type": "object",
+  "properties": {
+    "shipments": {
+      "type": "array",
+      "items": {
+        "title": "shipment",
+        "type": "object",
+        "properties": {
+          "shipment_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "carrier_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "service_code": {
+            "type": "string"
+          },
+          "external_shipment_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "ship_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modified_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "shipment_status": {
+            "title": "shipment_status",
+            "type": "string",
+            "enum": [
+              "pending",
+              "processing",
+              "label_purchased",
+              "cancelled"
+            ]
+          },
+          "ship_to": {
+            "title": "address",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "company_name": {
+                "type": "string"
+              },
+              "address_line1": {
+                "type": "string"
+              },
+              "address_line2": {
+                "type": "string"
+              },
+              "address_line3": {
+                "type": "string"
+              },
+              "city_locality": {
+                "type": "string"
+              },
+              "state_province": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": "string"
+              },
+              "country_code": {
+                "type": "string"
+              },
+              "address_residential_indicator": {
+                "title": "address_residential_indicator",
+                "type": "string",
+                "enum": [
+                  "unknown",
+                  "yes",
+                  "no"
+                ]
+              }
+            }
+          },
+          "ship_from": {
+            "title": "address",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "company_name": {
+                "type": "string"
+              },
+              "address_line1": {
+                "type": "string"
+              },
+              "address_line2": {
+                "type": "string"
+              },
+              "address_line3": {
+                "type": "string"
+              },
+              "city_locality": {
+                "type": "string"
+              },
+              "state_province": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": "string"
+              },
+              "country_code": {
+                "type": "string"
+              },
+              "address_residential_indicator": {
+                "title": "address_residential_indicator",
+                "type": "string",
+                "enum": [
+                  "unknown",
+                  "yes",
+                  "no"
+                ]
+              }
+            }
+          },
+          "warehouse_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "return_to": {
+            "title": "address",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "company_name": {
+                "type": "string"
+              },
+              "address_line1": {
+                "type": "string"
+              },
+              "address_line2": {
+                "type": "string"
+              },
+              "address_line3": {
+                "type": "string"
+              },
+              "city_locality": {
+                "type": "string"
+              },
+              "state_province": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": "string"
+              },
+              "country_code": {
+                "type": "string"
+              },
+              "address_residential_indicator": {
+                "title": "address_residential_indicator",
+                "type": "string",
+                "enum": [
+                  "unknown",
+                  "yes",
+                  "no"
+                ]
+              }
+            }
+          },
+          "confirmation": {
+            "title": "confirmation",
+            "type": "string",
+            "enum": [
+              "none",
+              "delivery",
+              "signature",
+              "adult_signature",
+              "direct_signature"
+            ]
+          },
+          "customs": {
+            "title": "international_options",
+            "type": "object",
+            "properties": {
+              "contents": {
+                "title": "contents",
+                "type": "string",
+                "enum": [
+                  "merchandise",
+                  "documents",
+                  "gift",
+                  "returned_goods",
+                  "sample"
+                ]
+              },
+              "customs_items": {
+                "type": "array",
+                "items": {
+                  "title": "customs_item",
+                  "type": "object",
+                  "properties": {
+                    "customs_item_id": {
+                      "title": "se_id",
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 25,
+                      "pattern": "^se(-[a-z0-9]+)+$"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "value": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "harmonized_tariff_code": {
+                      "type": "string"
+                    },
+                    "country_of_origin": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "non_delivery": {
+                "title": "non_delivery",
+                "type": "string",
+                "enum": [
+                  "return_to_sender",
+                  "treat_as_abandoned"
+                ]
+              }
+            }
+          },
+          "advanced_options": {
+            "title": "advanced_options",
+            "type": "object",
+            "properties": {
+              "bill_to_account": {
+                "type": "string"
+              },
+              "bill_to_country_code": {
+                "type": "string"
+              },
+              "bill_to_party": {
+                "title": "bill_to_party",
+                "type": "string",
+                "enum": [
+                  "recipient",
+                  "third_party"
+                ]
+              },
+              "bill_to_postal_code": {
+                "type": "string"
+              },
+              "contains_alcohol": {
+                "type": "boolean"
+              },
+              "delivered_duty_paid": {
+                "type": "boolean"
+              },
+              "non_machinable": {
+                "type": "boolean"
+              },
+              "saturday_delivery": {
+                "type": "boolean"
+              },
+              "use_ups_ground_freight_pricing": {
+                "type": "boolean"
+              },
+              "freight_class": {
+                "type": "string"
+              },
+              "custom_field1": {
+                "type": "string"
+              },
+              "custom_field2": {
+                "type": "string"
+              },
+              "custom_field3": {
+                "type": "string"
+              }
+            }
+          },
+          "insurance_provider": {
+            "title": "insurance_provider",
+            "type": "string",
+            "enum": [
+              "none",
+              "shipsurance",
+              "carrier"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "title": "tag_response_body",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "title": "shipment_package",
+              "type": "object",
+              "properties": {
+                "package_code": {
+                  "type": "string"
+                },
+                "weight": {
+                  "title": "weight",
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "unit": {
+                      "title": "weight_unit",
+                      "type": "string",
+                      "enum": [
+                        "pound",
+                        "ounce",
+                        "gram",
+                        "kilogram"
+                      ]
+                    }
+                  }
+                },
+                "dimensions": {
+                  "title": "dimensions",
+                  "type": "object",
+                  "properties": {
+                    "unit": {
+                      "title": "dimension_unit",
+                      "type": "string",
+                      "enum": [
+                        "inch",
+                        "centimeter"
+                      ]
+                    },
+                    "length": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "width": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "height": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                },
+                "insured_value": {
+                  "title": "money",
+                  "type": "object",
+                  "properties": {
+                    "currency": {
+                      "title": "currency",
+                      "type": "string",
+                      "enum": [
+                        "usd",
+                        "cad",
+                        "aud",
+                        "gbp",
+                        "eur"
+                      ]
+                    },
+                    "amount": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                },
+                "label_messages": {
+                  "title": "label_messages",
+                  "type": "object",
+                  "properties": {
+                    "reference1": {
+                      "type": "string"
+                    },
+                    "reference2": {
+                      "type": "string"
+                    },
+                    "reference3": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "total_weight": {
+            "title": "weight",
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number",
+                "format": "double"
+              },
+              "unit": {
+                "title": "weight_unit",
+                "type": "string",
+                "enum": [
+                  "pound",
+                  "ounce",
+                  "gram",
+                  "kilogram"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "page": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "pages": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "links": {
+      "title": "pagination_link",
+      "type": "object",
+      "properties": {
+        "first": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "last": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "prev": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "next": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$id": "balance_response_body",
+  "title": "balance_response_body",
+  "type": "object",
+  "properties": {
+    "balance": {
+      "title": "money",
+      "type": "object",
+      "properties": {
+        "currency": {
+          "title": "currency",
+          "type": "string",
+          "enum": [
+            "usd",
+            "cad",
+            "aud",
+            "gbp",
+            "eur"
+          ]
+        },
+        "amount": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  }
+}

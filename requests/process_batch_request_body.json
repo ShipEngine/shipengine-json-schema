@@ -1,0 +1,23 @@
+{
+  "$id": "process_batch_request_body",
+  "title": "process_batch_request_body",
+  "type": "object",
+  "properties": {
+    "ship_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "label_layout": {
+      "type": "string"
+    },
+    "label_format": {
+      "title": "label_format",
+      "type": "string",
+      "enum": [
+        "pdf",
+        "png",
+        "zpl"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$id": "purchase_label_without_shipment_request_body",
+  "title": "purchase_label_without_shipment_request_body",
+  "type": "object",
+  "properties": {
+    "test_label": {
+      "type": "boolean"
+    },
+    "validate_address": {
+      "title": "validate_address",
+      "type": "string",
+      "enum": [
+        "no_validation",
+        "validate_only",
+        "validate_and_clean"
+      ]
+    },
+    "label_layout": {
+      "type": "string"
+    },
+    "label_format": {
+      "title": "label_format",
+      "type": "string",
+      "enum": [
+        "pdf",
+        "png",
+        "zpl"
+      ]
+    }
+  }
+}

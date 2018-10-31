@@ -1,0 +1,22 @@
+{
+  "$id": "channel_advisor_account_information_request_body",
+  "title": "channel_advisor_account_information_request_body",
+  "type": "object",
+  "properties": {
+    "store_name": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "product_identifier": {
+      "title": "channel_advisor_product_identifier",
+      "type": "string",
+      "enum": [
+        "client_order_number",
+        "channel_advisor_order_number"
+      ]
+    }
+  }
+}

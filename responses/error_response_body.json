@@ -1,0 +1,30 @@
+{
+  "$id": "error_response_body",
+  "title": "error_response_body",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "title": "uuid",
+      "type": "string",
+      "format": "uuid",
+      "minLength": 36,
+      "maxLength": 36,
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "title": "api_error",
+        "type": "object",
+        "properties": {
+          "error_code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

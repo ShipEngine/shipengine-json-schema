@@ -1,0 +1,93 @@
+{
+  "$id": "shipment_errors_response_body",
+  "title": "shipment_errors_response_body",
+  "type": "object",
+  "properties": {
+    "errors": {
+      "type": "array",
+      "items": {
+        "title": "shipment_response_error",
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "shipment_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "external_shipment_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          }
+        }
+      }
+    },
+    "links": {
+      "title": "pagination_link",
+      "type": "object",
+      "properties": {
+        "first": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "last": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "prev": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "next": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

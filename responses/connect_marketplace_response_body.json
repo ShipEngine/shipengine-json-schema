@@ -1,0 +1,15 @@
+{
+  "$id": "connect_marketplace_response_body",
+  "title": "connect_marketplace_response_body",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "title": "uuid",
+      "type": "string",
+      "format": "uuid",
+      "minLength": 36,
+      "maxLength": 36,
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    }
+  }
+}

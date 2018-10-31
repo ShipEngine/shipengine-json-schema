@@ -1,0 +1,107 @@
+{
+  "$id": "warehouse_request_body",
+  "title": "warehouse_request_body",
+  "type": "object",
+  "properties": {
+    "warehouse_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "origin_address": {
+      "title": "address",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "company_name": {
+          "type": "string"
+        },
+        "address_line1": {
+          "type": "string"
+        },
+        "address_line2": {
+          "type": "string"
+        },
+        "address_line3": {
+          "type": "string"
+        },
+        "city_locality": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string"
+        },
+        "address_residential_indicator": {
+          "title": "address_residential_indicator",
+          "type": "string",
+          "enum": [
+            "unknown",
+            "yes",
+            "no"
+          ]
+        }
+      }
+    },
+    "return_address": {
+      "title": "address",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "company_name": {
+          "type": "string"
+        },
+        "address_line1": {
+          "type": "string"
+        },
+        "address_line2": {
+          "type": "string"
+        },
+        "address_line3": {
+          "type": "string"
+        },
+        "city_locality": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string"
+        },
+        "address_residential_indicator": {
+          "title": "address_residential_indicator",
+          "type": "string",
+          "enum": [
+            "unknown",
+            "yes",
+            "no"
+          ]
+        }
+      }
+    }
+  }
+}

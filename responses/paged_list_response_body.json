@@ -1,0 +1,86 @@
+{
+  "$id": "paged_list_response_body",
+  "title": "paged_list_response_body",
+  "type": "object",
+  "required": [
+    "total",
+    "page",
+    "pages",
+    "links"
+  ],
+  "properties": {
+    "total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "pages": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "links": {
+      "type": "object",
+      "required": [
+        "first",
+        "last",
+        "prev",
+        "next"
+      ],
+      "properties": {
+        "first": {
+          "type": "object",
+          "required": [
+            "href"
+          ],
+          "properties": {
+            "href": {
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
+            }
+          }
+        },
+        "last": {
+          "type": "object",
+          "required": [
+            "href"
+          ],
+          "properties": {
+            "href": {
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
+            }
+          }
+        },
+        "prev": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
+            }
+          }
+        },
+        "next": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

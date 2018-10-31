@@ -1,0 +1,13 @@
+{
+  "$id": "void_label_response_body",
+  "title": "void_label_response_body",
+  "type": "object",
+  "properties": {
+    "approved": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

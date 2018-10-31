@@ -1,0 +1,147 @@
+{
+  "$id": "list_manifests_response_body",
+  "title": "list_manifests_response_body",
+  "type": "object",
+  "properties": {
+    "manifests": {
+      "type": "array",
+      "items": {
+        "title": "manifest_response_body",
+        "type": "object",
+        "properties": {
+          "manifest_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "form_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ship_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "shipments": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "warehouse_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "submission_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "carrier_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "manifest_download": {
+            "title": "link",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "page": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "pages": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "links": {
+      "title": "pagination_link",
+      "type": "object",
+      "properties": {
+        "first": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "last": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "prev": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "next": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

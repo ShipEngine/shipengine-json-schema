@@ -1,0 +1,20 @@
+{
+  "$id": "webhook_response_body",
+  "title": "webhook_response_body",
+  "type": "object",
+  "properties": {
+    "webhook_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "url": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string"
+    }
+  }
+}

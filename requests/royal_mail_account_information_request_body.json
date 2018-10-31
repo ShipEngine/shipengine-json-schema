@@ -1,0 +1,49 @@
+{
+  "$id": "royal_mail_account_information_request_body",
+  "title": "royal_mail_account_information_request_body",
+  "type": "object",
+  "properties": {
+    "account_number": {
+      "type": "string"
+    },
+    "oba_email": {
+      "title": "email",
+      "type": "string",
+      "format": "email",
+      "minLength": 1
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "email": {
+      "title": "email",
+      "type": "string",
+      "format": "email",
+      "minLength": 1
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "street_line1": {
+      "type": "string"
+    },
+    "street_line2": {
+      "type": "string"
+    },
+    "street_line3": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    }
+  }
+}

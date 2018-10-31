@@ -1,0 +1,10 @@
+{
+  "$id": "update_webhook_request_body",
+  "title": "update_webhook_request_body",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    }
+  }
+}

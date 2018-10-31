@@ -1,0 +1,31 @@
+{
+  "$id": "create_manifest_request_body",
+  "title": "create_manifest_request_body",
+  "type": "object",
+  "properties": {
+    "carrier_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "excluded_label_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warehouse_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "ship_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

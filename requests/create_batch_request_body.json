@@ -1,0 +1,29 @@
+{
+  "$id": "create_batch_request_body",
+  "title": "create_batch_request_body",
+  "type": "object",
+  "properties": {
+    "external_batch_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "batch_notes": {
+      "type": "string"
+    },
+    "shipment_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

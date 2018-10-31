@@ -1,0 +1,219 @@
+{
+  "$id": "list_batch_response_body",
+  "title": "list_batch_response_body",
+  "type": "object",
+  "properties": {
+    "batches": {
+      "type": "array",
+      "items": {
+        "title": "batch",
+        "type": "object",
+        "properties": {
+          "label_layout": {
+            "type": "string"
+          },
+          "label_format": {
+            "title": "label_format",
+            "type": "string",
+            "enum": [
+              "pdf",
+              "png",
+              "zpl"
+            ]
+          },
+          "batch_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "external_batch_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "batch_notes": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "processed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "errors": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "warnings": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "completed": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "forms": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "batch_shipments_url": {
+            "title": "link",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "batch_labels_url": {
+            "title": "link",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "batch_errors_url": {
+            "title": "link",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "label_download": {
+            "title": "link",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "form_download": {
+            "title": "link",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "title": "batch_status",
+            "type": "string",
+            "enum": [
+              "open",
+              "queued",
+              "processing",
+              "completed",
+              "completed_with_errors",
+              "archived",
+              "notifying",
+              "invalid"
+            ]
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "page": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "pages": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "links": {
+      "title": "pagination_link",
+      "type": "object",
+      "properties": {
+        "first": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "last": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "prev": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "next": {
+          "title": "link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

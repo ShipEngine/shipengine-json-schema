@@ -1,0 +1,23 @@
+{
+  "$id": "first_mile_account_information_request_body",
+  "title": "first_mile_account_information_request_body",
+  "type": "object",
+  "properties": {
+    "nickname": {
+      "type": "string"
+    },
+    "mailer_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "profile_name": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    }
+  }
+}

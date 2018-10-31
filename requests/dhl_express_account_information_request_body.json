@@ -1,0 +1,13 @@
+{
+  "$id": "dhl_express_account_information_request_body",
+  "title": "dhl_express_account_information_request_body",
+  "type": "object",
+  "properties": {
+    "nickname": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$id": "default_account_settings_request_body",
+  "title": "default_account_settings_request_body",
+  "type": "object",
+  "properties": {
+    "automatically_import_sales_orders": {
+      "type": "boolean"
+    }
+  }
+}

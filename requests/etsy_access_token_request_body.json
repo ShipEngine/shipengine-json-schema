@@ -1,0 +1,27 @@
+{
+  "$id": "etsy_access_token_request_body",
+  "title": "etsy_access_token_request_body",
+  "type": "object",
+  "properties": {
+    "store_name": {
+      "type": "string"
+    },
+    "access_token": {
+      "type": "string"
+    },
+    "access_token_secret": {
+      "type": "string"
+    },
+    "shop_id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "private_application_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    }
+  }
+}
