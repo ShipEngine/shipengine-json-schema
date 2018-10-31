@@ -17,7 +17,7 @@ Other API Definition Formats
 -----------------------------------
 
 ### ![OpenAPI Logo](img/openapi-logo.png) OpenAPI
-[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification) is an API specification format that's supported by many [API tools and libraries](https://openapi.tools/).
+The official ShipEngine [OpenAPI 3.0 definitions](https://github.com/shipengine/OpenAPI).  The OpenAPI format is supported by many [tools and libraries](https://openapi.tools/) for every major technology stack.
 
 ### ![Postman Logo](img/postman-logo.png) Postman
 An official ShipEngine [Postman](https://getpostman.com) collection is **coming soon!**
