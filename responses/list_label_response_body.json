@@ -116,29 +116,21 @@
           },
           "label_format": {
             "default": "pdf",
-            "allOf": [
-              {
-                "title": "label_format",
-                "type": "string",
-                "enum": [
-                  "pdf",
-                  "png",
-                  "zpl"
-                ]
-              }
+            "title": "label_format",
+            "type": "string",
+            "enum": [
+              "pdf",
+              "png",
+              "zpl"
             ]
           },
           "label_layout": {
             "default": "4x6",
-            "allOf": [
-              {
-                "title": "label_layout",
-                "type": "string",
-                "enum": [
-                  "4x6",
-                  "letter"
-                ]
-              }
+            "title": "label_layout",
+            "type": "string",
+            "enum": [
+              "4x6",
+              "letter"
             ]
           },
           "trackable": {
