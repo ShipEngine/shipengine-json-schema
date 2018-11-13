@@ -2,6 +2,7 @@
   "$id": "create_webhook_request_body",
   "title": "create_webhook_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "event": {
       "title": "event",

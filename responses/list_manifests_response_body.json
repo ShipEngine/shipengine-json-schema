@@ -2,12 +2,14 @@
   "$id": "list_manifests_response_body",
   "title": "list_manifests_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "manifests": {
       "type": "array",
       "items": {
         "title": "manifest_response_body",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "manifest_id": {
             "title": "se_id",
@@ -59,12 +61,17 @@
           "manifest_download": {
             "title": "link",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "href": {
-                "type": "string"
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             }
           }
@@ -86,60 +93,87 @@
     "links": {
       "title": "pagination_link",
       "type": "object",
+      "required": [
+        "first",
+        "last",
+        "prev",
+        "next"
+      ],
+      "additionalProperties": false,
       "properties": {
         "first": {
+          "required": [
+            "href"
+          ],
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "last": {
+          "required": [
+            "href"
+          ],
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "prev": {
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "next": {
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
-        },
-        "href": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
         }
       }
     }

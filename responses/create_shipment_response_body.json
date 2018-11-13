@@ -2,6 +2,7 @@
   "$id": "create_shipment_response_body",
   "title": "create_shipment_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "errors": {
       "type": "array",
@@ -12,6 +13,7 @@
     "address_validation": {
       "title": "address_validation_result",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "status": {
           "title": "address_validation_status",
@@ -26,6 +28,7 @@
         "original_address": {
           "title": "address",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "name": {
               "type": "string"
@@ -71,6 +74,7 @@
         "matched_address": {
           "title": "address",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "name": {
               "type": "string"
@@ -118,6 +122,7 @@
           "items": {
             "title": "response_message",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "code": {
                 "title": "code",
@@ -254,6 +259,7 @@
     "ship_to": {
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
@@ -299,6 +305,7 @@
     "ship_from": {
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
@@ -351,6 +358,7 @@
     "return_to": {
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
@@ -407,6 +415,7 @@
     "customs": {
       "title": "international_options",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "contents": {
           "title": "contents",
@@ -424,6 +433,7 @@
           "items": {
             "title": "customs_item",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "customs_item_id": {
                 "title": "se_id",
@@ -465,6 +475,7 @@
     "advanced_options": {
       "title": "advanced_options",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "bill_to_account": {
           "type": "string"
@@ -526,6 +537,7 @@
       "items": {
         "title": "tag_response_body",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string"
@@ -538,6 +550,7 @@
       "items": {
         "title": "shipment_package",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "package_code": {
             "type": "string"
@@ -545,6 +558,7 @@
           "weight": {
             "title": "weight",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "value": {
                 "type": "number",
@@ -565,6 +579,7 @@
           "dimensions": {
             "title": "dimensions",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "unit": {
                 "title": "dimension_unit",
@@ -591,6 +606,7 @@
           "insured_value": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -612,6 +628,7 @@
           "label_messages": {
             "title": "label_messages",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "reference1": {
                 "type": "string"
@@ -630,6 +647,7 @@
     "total_weight": {
       "title": "weight",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "value": {
           "type": "number",

@@ -2,10 +2,12 @@
   "$id": "balance_response_body",
   "title": "balance_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "balance": {
       "title": "money",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "currency": {
           "title": "currency",

@@ -2,6 +2,7 @@
   "$id": "connect_account_response_body",
   "title": "connect_account_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "carrier_id": {
       "title": "se_id",

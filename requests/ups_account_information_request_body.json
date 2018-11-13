@@ -2,6 +2,7 @@
   "$id": "ups_account_information_request_body",
   "title": "ups_account_information_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "nickname": {
       "type": "string"
@@ -57,6 +58,7 @@
     "invoice": {
       "title": "ups_invoice",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "invoice_date": {
           "type": "string",

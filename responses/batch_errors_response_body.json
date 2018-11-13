@@ -2,12 +2,14 @@
   "$id": "batch_errors_response_body",
   "title": "batch_errors_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "errors": {
       "type": "array",
       "items": {
         "title": "batch_response_error",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "error": {
             "type": "string"
@@ -25,60 +27,87 @@
     "links": {
       "title": "pagination_link",
       "type": "object",
+      "required": [
+        "first",
+        "last",
+        "prev",
+        "next"
+      ],
+      "additionalProperties": false,
       "properties": {
         "first": {
+          "required": [
+            "href"
+          ],
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "last": {
+          "required": [
+            "href"
+          ],
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "prev": {
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "next": {
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
-        },
-        "href": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
         }
       }
     }

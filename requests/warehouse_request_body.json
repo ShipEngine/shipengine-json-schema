@@ -2,6 +2,7 @@
   "$id": "warehouse_request_body",
   "title": "warehouse_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "warehouse_id": {
       "title": "se_id",
@@ -16,6 +17,7 @@
     "origin_address": {
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
@@ -61,6 +63,7 @@
     "return_address": {
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"

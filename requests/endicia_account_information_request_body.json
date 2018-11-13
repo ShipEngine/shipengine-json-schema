@@ -2,6 +2,7 @@
   "$id": "endicia_account_information_request_body",
   "title": "endicia_account_information_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "nickname": {
       "type": "string"

@@ -2,6 +2,7 @@
   "$id": "rate_estimate_request_body",
   "title": "rate_estimate_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "carrier_id": {
       "title": "se_id",
@@ -37,6 +38,7 @@
     "weight": {
       "title": "weight",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "value": {
           "type": "number",
@@ -57,6 +59,7 @@
     "dimensions": {
       "title": "dimensions",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "unit": {
           "title": "dimension_unit",

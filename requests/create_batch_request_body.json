@@ -2,6 +2,7 @@
   "$id": "create_batch_request_body",
   "title": "create_batch_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "external_batch_id": {
       "title": "se_id",

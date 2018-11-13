@@ -2,6 +2,7 @@
   "$id": "fedex_uk_account_information_request_body",
   "title": "fedex_uk_account_information_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "account_number": {
       "type": "string"

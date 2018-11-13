@@ -2,6 +2,7 @@
   "$id": "list_manifests_request_body",
   "title": "list_manifests_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "warehouse_id": {
       "title": "se_id",

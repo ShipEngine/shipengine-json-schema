@@ -2,6 +2,7 @@
   "$id": "update_webhook_request_body",
   "title": "update_webhook_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "url": {
       "type": "string"

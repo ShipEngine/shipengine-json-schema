@@ -2,12 +2,14 @@
   "$id": "rate_response_body",
   "title": "rate_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "rates": {
       "type": "array",
       "items": {
         "title": "rate",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "rate_id": {
             "title": "se_id",
@@ -34,6 +36,7 @@
           "shipping_amount": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -55,6 +58,7 @@
           "insurance_amount": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -76,6 +80,7 @@
           "confirmation_amount": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -97,6 +102,7 @@
           "other_amount": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -191,6 +197,7 @@
       "items": {
         "title": "rate",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "rate_id": {
             "title": "se_id",
@@ -217,6 +224,7 @@
           "shipping_amount": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -238,6 +246,7 @@
           "insurance_amount": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -259,6 +268,7 @@
           "confirmation_amount": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -280,6 +290,7 @@
           "other_amount": {
             "title": "money",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -402,6 +413,7 @@
       "items": {
         "title": "provider_error",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "carrier_id": {
             "title": "se_id",

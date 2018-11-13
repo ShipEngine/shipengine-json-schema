@@ -2,6 +2,7 @@
   "$id": "package_list_response_body",
   "title": "package_list_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "packages": {
       "type": "array",
@@ -11,6 +12,7 @@
         "required": [
           "name"
         ],
+        "additionalProperties": false,
         "properties": {
           "package_id": {
             "title": "se_id",
@@ -28,6 +30,7 @@
           "dimensions": {
             "title": "dimensions",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "unit": {
                 "title": "dimension_unit",

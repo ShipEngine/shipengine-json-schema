@@ -2,6 +2,7 @@
   "$id": "dpd_account_information_request_body",
   "title": "dpd_account_information_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "account_number": {
       "type": "string"

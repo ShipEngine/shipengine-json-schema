@@ -2,12 +2,14 @@
   "$id": "carrier_list_response_body",
   "title": "carrier_list_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "carriers": {
       "type": "array",
       "items": {
         "title": "carrier",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "carrier_id": {
             "title": "se_id",
@@ -49,6 +51,7 @@
             "items": {
               "title": "service",
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "carrier_id": {
                   "title": "se_id",
@@ -86,6 +89,7 @@
               "required": [
                 "name"
               ],
+              "additionalProperties": false,
               "properties": {
                 "package_id": {
                   "title": "se_id",
@@ -103,6 +107,7 @@
                 "dimensions": {
                   "title": "dimensions",
                   "type": "object",
+                  "additionalProperties": false,
                   "properties": {
                     "unit": {
                       "title": "dimension_unit",
@@ -137,6 +142,7 @@
             "items": {
               "title": "carrier_advanced_option",
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "name": {
                   "type": "string"

@@ -2,6 +2,7 @@
   "$id": "bulk_rate_response_body",
   "title": "bulk_rate_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "rate_request_id": {
       "title": "se_id",
@@ -36,6 +37,7 @@
       "items": {
         "title": "provider_error",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "carrier_id": {
             "title": "se_id",

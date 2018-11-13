@@ -2,6 +2,7 @@
   "$id": "shipment_add_tag_response_body",
   "title": "shipment_add_tag_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "shipment_id": {
       "title": "se_id",
@@ -13,6 +14,7 @@
     "tag": {
       "title": "tag_response_body",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"

@@ -2,12 +2,14 @@
   "$id": "carrier_list_services_response_body",
   "title": "carrier_list_services_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "services": {
       "type": "array",
       "items": {
         "title": "service",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "carrier_id": {
             "title": "se_id",

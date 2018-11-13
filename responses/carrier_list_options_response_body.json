@@ -2,12 +2,14 @@
   "$id": "carrier_list_options_response_body",
   "title": "carrier_list_options_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "options": {
       "type": "array",
       "items": {
         "title": "carrier_advanced_option",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string"

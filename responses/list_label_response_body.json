@@ -2,9 +2,18 @@
   "$id": "list_label_response_body",
   "title": "list_label_response_body",
   "type": "object",
+  "required": [
+    "labels",
+    "total",
+    "page",
+    "pages",
+    "links"
+  ],
+  "additionalProperties": false,
   "properties": {
     "labels": {
       "type": "array",
+      "minItems": 0,
       "items": {
         "title": "label",
         "type": "object",
@@ -156,73 +165,100 @@
     },
     "total": {
       "type": "integer",
-      "format": "int64"
+      "minimum": 0
     },
     "page": {
       "type": "integer",
-      "format": "int32"
+      "minimum": 1
     },
     "pages": {
       "type": "integer",
-      "format": "int32"
+      "minimum": 0
     },
     "links": {
       "title": "pagination_link",
       "type": "object",
+      "required": [
+        "first",
+        "last",
+        "prev",
+        "next"
+      ],
+      "additionalProperties": false,
       "properties": {
         "first": {
+          "required": [
+            "href"
+          ],
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "last": {
+          "required": [
+            "href"
+          ],
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "prev": {
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "next": {
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
-        },
-        "href": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
         }
       }
     }

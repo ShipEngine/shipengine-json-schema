@@ -2,12 +2,14 @@
   "$id": "list_tag_response_body",
   "title": "list_tag_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "tags": {
       "type": "array",
       "items": {
         "title": "tag_response_body",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string"

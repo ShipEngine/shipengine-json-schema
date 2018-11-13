@@ -22,6 +22,7 @@
       "minimum": 0
     },
     "links": {
+      "title": "pagination_link",
       "type": "object",
       "required": [
         "first",
@@ -29,53 +30,78 @@
         "prev",
         "next"
       ],
+      "additionalProperties": false,
       "properties": {
         "first": {
-          "type": "object",
           "required": [
             "href"
           ],
+          "title": "link",
+          "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
               "title": "url",
               "type": "string",
               "format": "url",
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
               "minLength": 1
             }
           }
         },
         "last": {
-          "type": "object",
           "required": [
             "href"
           ],
+          "title": "link",
+          "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
               "title": "url",
               "type": "string",
               "format": "url",
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
               "minLength": 1
             }
           }
         },
         "prev": {
+          "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
               "title": "url",
               "type": "string",
               "format": "url",
               "minLength": 1
+            },
+            "type": {
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "next": {
+          "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
               "title": "url",
               "type": "string",
               "format": "url",
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
               "minLength": 1
             }
           }

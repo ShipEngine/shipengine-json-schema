@@ -2,6 +2,7 @@
   "$id": "fedex_account_settings_request_body",
   "title": "fedex_account_settings_request_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "nickname": {
       "type": "string"

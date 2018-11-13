@@ -2,12 +2,14 @@
   "$id": "warehouse_list_response_body",
   "title": "warehouse_list_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "warehouses": {
       "type": "array",
       "items": {
         "title": "warehouse",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "warehouse_id": {
             "title": "se_id",
@@ -26,6 +28,7 @@
           "origin_address": {
             "title": "address",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "name": {
                 "type": "string"
@@ -71,6 +74,7 @@
           "return_address": {
             "title": "address",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "name": {
                 "type": "string"

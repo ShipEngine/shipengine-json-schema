@@ -2,12 +2,14 @@
   "$id": "list_batch_response_body",
   "title": "list_batch_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "batches": {
       "type": "array",
       "items": {
         "title": "batch",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "label_layout": {
             "type": "string"
@@ -69,60 +71,85 @@
           "batch_shipments_url": {
             "title": "link",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "href": {
-                "type": "string"
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             }
           },
           "batch_labels_url": {
             "title": "link",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "href": {
-                "type": "string"
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             }
           },
           "batch_errors_url": {
             "title": "link",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "href": {
-                "type": "string"
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             }
           },
           "label_download": {
             "title": "link",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "href": {
-                "type": "string"
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             }
           },
           "form_download": {
             "title": "link",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "href": {
-                "type": "string"
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             }
           },
@@ -158,60 +185,87 @@
     "links": {
       "title": "pagination_link",
       "type": "object",
+      "required": [
+        "first",
+        "last",
+        "prev",
+        "next"
+      ],
+      "additionalProperties": false,
       "properties": {
         "first": {
+          "required": [
+            "href"
+          ],
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "last": {
+          "required": [
+            "href"
+          ],
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "prev": {
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
         },
         "next": {
           "title": "link",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "href": {
-              "type": "string"
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
             },
             "type": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           }
-        },
-        "href": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
         }
       }
     }

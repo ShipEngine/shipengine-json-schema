@@ -2,6 +2,7 @@
   "$id": "webhook_response_body",
   "title": "webhook_response_body",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "webhook_id": {
       "title": "se_id",
