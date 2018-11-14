@@ -7,9 +7,9 @@
     "carriers": {
       "type": "array",
       "items": {
+        "additionalProperties": false,
         "title": "carrier",
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "carrier_id": {
             "title": "se_id",
@@ -49,9 +49,9 @@
           "services": {
             "type": "array",
             "items": {
+              "additionalProperties": false,
               "title": "service",
               "type": "object",
-              "additionalProperties": false,
               "properties": {
                 "carrier_id": {
                   "title": "se_id",
@@ -84,12 +84,12 @@
           "packages": {
             "type": "array",
             "items": {
+              "additionalProperties": false,
               "title": "package",
               "type": "object",
               "required": [
                 "name"
               ],
-              "additionalProperties": false,
               "properties": {
                 "package_id": {
                   "title": "se_id",
@@ -105,9 +105,9 @@
                   "type": "string"
                 },
                 "dimensions": {
+                  "additionalProperties": false,
                   "title": "dimensions",
                   "type": "object",
-                  "additionalProperties": false,
                   "properties": {
                     "unit": {
                       "title": "dimension_unit",
@@ -140,9 +140,9 @@
           "options": {
             "type": "array",
             "items": {
+              "additionalProperties": false,
               "title": "carrier_advanced_option",
               "type": "object",
-              "additionalProperties": false,
               "properties": {
                 "name": {
                   "type": "string"

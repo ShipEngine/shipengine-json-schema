@@ -1,0 +1,81 @@
+{
+  "$id": "ups_settings_response_body",
+  "title": "ups_settings_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "nickname": {
+      "type": "string"
+    },
+    "is_primary_account": {
+      "type": "boolean"
+    },
+    "pickup_type": {
+      "title": "ups_pickup_type",
+      "type": "string",
+      "enum": [
+        "daily_pickup",
+        "occasional_pickup",
+        "customer_counter"
+      ]
+    },
+    "use_carbon_neutral_shipping_program": {
+      "type": "boolean"
+    },
+    "use_ground_freight_pricing": {
+      "type": "boolean"
+    },
+    "use_consolidation_services": {
+      "type": "boolean"
+    },
+    "use_order_number_on_mail_innovations_labels": {
+      "type": "boolean"
+    },
+    "mail_innovations_endorsement": {
+      "title": "mail_innovations_endorsement",
+      "type": "string",
+      "enum": [
+        "none",
+        "return_service_requested",
+        "forwarding_service_requested",
+        "address_service_requested",
+        "change_service_requested",
+        "leave_if_no_response"
+      ]
+    },
+    "mail_innovations_cost_center": {
+      "type": "string"
+    },
+    "use_negotiated_rates": {
+      "type": "boolean"
+    },
+    "account_postal_code": {
+      "type": "string"
+    },
+    "invoice": {
+      "additionalProperties": false,
+      "title": "ups_invoice",
+      "type": "object",
+      "properties": {
+        "invoice_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "invoice_number": {
+          "type": "string"
+        },
+        "control_id": {
+          "title": "se_id",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 25,
+          "pattern": "^se(-[a-z0-9]+)+$"
+        },
+        "invoice_amount": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  }
+}

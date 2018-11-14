@@ -1,0 +1,23 @@
+{
+  "$id": "insurance_balance_response_body",
+  "title": "insurance_balance_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "currency": {
+      "title": "currency",
+      "type": "string",
+      "enum": [
+        "usd",
+        "cad",
+        "aud",
+        "gbp",
+        "eur"
+      ]
+    },
+    "amount": {
+      "type": "number",
+      "format": "double"
+    }
+  }
+}

@@ -12,9 +12,9 @@
       "pattern": "^se(-[a-z0-9]+)+$"
     },
     "tag": {
+      "additionalProperties": false,
       "title": "tag_response_body",
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"

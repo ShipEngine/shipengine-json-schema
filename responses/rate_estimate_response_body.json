@@ -3,9 +3,9 @@
   "title": "rate_estimate_response_body",
   "type": "array",
   "items": {
+    "additionalProperties": false,
     "title": "rate",
     "type": "object",
-    "additionalProperties": false,
     "properties": {
       "rate_id": {
         "title": "se_id",
@@ -30,9 +30,9 @@
         "pattern": "^se(-[a-z0-9]+)+$"
       },
       "shipping_amount": {
+        "additionalProperties": false,
         "title": "money",
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "currency": {
             "title": "currency",
@@ -52,9 +52,9 @@
         }
       },
       "insurance_amount": {
+        "additionalProperties": false,
         "title": "money",
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "currency": {
             "title": "currency",
@@ -74,9 +74,9 @@
         }
       },
       "confirmation_amount": {
+        "additionalProperties": false,
         "title": "money",
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "currency": {
             "title": "currency",
@@ -96,9 +96,9 @@
         }
       },
       "other_amount": {
+        "additionalProperties": false,
         "title": "money",
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "currency": {
             "title": "currency",

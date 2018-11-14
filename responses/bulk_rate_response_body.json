@@ -38,9 +38,9 @@
       "errors": {
         "type": "array",
         "items": {
+          "additionalProperties": false,
           "title": "provider_error",
           "type": "object",
-          "additionalProperties": false,
           "properties": {
             "carrier_id": {
               "title": "se_id",

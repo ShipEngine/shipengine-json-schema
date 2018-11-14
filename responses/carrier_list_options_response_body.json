@@ -7,9 +7,9 @@
     "options": {
       "type": "array",
       "items": {
+        "additionalProperties": false,
         "title": "carrier_advanced_option",
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string"

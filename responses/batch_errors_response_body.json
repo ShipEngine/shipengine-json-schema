@@ -25,6 +25,7 @@
       }
     },
     "links": {
+      "additionalProperties": false,
       "title": "pagination_link",
       "type": "object",
       "required": [
@@ -33,7 +34,6 @@
         "prev",
         "next"
       ],
-      "additionalProperties": false,
       "properties": {
         "first": {
           "required": [

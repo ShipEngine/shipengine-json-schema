@@ -1,0 +1,17 @@
+{
+  "$id": "dhl_express_settings_response_body",
+  "title": "dhl_express_settings_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "nickname": {
+      "type": "string"
+    },
+    "should_hide_account_number_on_archive_doc": {
+      "type": "boolean"
+    },
+    "is_primary_account": {
+      "type": "boolean"
+    }
+  }
+}

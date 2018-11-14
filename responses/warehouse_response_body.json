@@ -1,6 +1,6 @@
 {
-  "$id": "warehouse_request_body",
-  "title": "warehouse_request_body",
+  "$id": "warehouse_response_body",
+  "title": "warehouse_response_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -13,6 +13,10 @@
     },
     "name": {
       "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
     },
     "origin_address": {
       "additionalProperties": false,

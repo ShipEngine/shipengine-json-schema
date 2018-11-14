@@ -36,9 +36,9 @@
       "type": "string"
     },
     "weight": {
+      "additionalProperties": false,
       "title": "weight",
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "value": {
           "type": "number",
@@ -57,9 +57,9 @@
       }
     },
     "dimensions": {
+      "additionalProperties": false,
       "title": "dimensions",
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "unit": {
           "title": "dimension_unit",

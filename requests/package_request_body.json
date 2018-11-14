@@ -1,0 +1,54 @@
+{
+  "$id": "package_request_body",
+  "title": "package_request_body",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "package_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "package_code": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "dimensions": {
+      "additionalProperties": false,
+      "title": "dimensions",
+      "type": "object",
+      "properties": {
+        "unit": {
+          "title": "dimension_unit",
+          "type": "string",
+          "enum": [
+            "inch",
+            "centimeter"
+          ]
+        },
+        "length": {
+          "type": "number",
+          "format": "double"
+        },
+        "width": {
+          "type": "number",
+          "format": "double"
+        },
+        "height": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "$id": "create_batch_response_body",
+  "title": "create_batch_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "label_layout": {
+      "type": "string"
+    },
+    "label_format": {
+      "title": "label_format",
+      "type": "string",
+      "enum": [
+        "pdf",
+        "png",
+        "zpl"
+      ]
+    },
+    "batch_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "external_batch_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "batch_notes": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "processed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "errors": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "warnings": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "completed": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "forms": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "count": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "batch_shipments_url": {
+      "additionalProperties": false,
+      "title": "link",
+      "type": "object",
+      "properties": {
+        "href": {
+          "title": "url",
+          "type": "string",
+          "format": "url",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "batch_labels_url": {
+      "additionalProperties": false,
+      "title": "link",
+      "type": "object",
+      "properties": {
+        "href": {
+          "title": "url",
+          "type": "string",
+          "format": "url",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "batch_errors_url": {
+      "additionalProperties": false,
+      "title": "link",
+      "type": "object",
+      "properties": {
+        "href": {
+          "title": "url",
+          "type": "string",
+          "format": "url",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "label_download": {
+      "additionalProperties": false,
+      "title": "link",
+      "type": "object",
+      "properties": {
+        "href": {
+          "title": "url",
+          "type": "string",
+          "format": "url",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "form_download": {
+      "additionalProperties": false,
+      "title": "link",
+      "type": "object",
+      "properties": {
+        "href": {
+          "title": "url",
+          "type": "string",
+          "format": "url",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "status": {
+      "title": "batch_status",
+      "type": "string",
+      "enum": [
+        "open",
+        "queued",
+        "processing",
+        "completed",
+        "completed_with_errors",
+        "archived",
+        "notifying",
+        "invalid"
+      ]
+    }
+  }
+}

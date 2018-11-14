@@ -1,0 +1,23 @@
+{
+  "$id": "money_request_body",
+  "title": "money_request_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "currency": {
+      "title": "currency",
+      "type": "string",
+      "enum": [
+        "usd",
+        "cad",
+        "aud",
+        "gbp",
+        "eur"
+      ]
+    },
+    "amount": {
+      "type": "number",
+      "format": "double"
+    }
+  }
+}

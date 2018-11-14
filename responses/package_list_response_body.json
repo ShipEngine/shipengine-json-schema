@@ -7,12 +7,12 @@
     "packages": {
       "type": "array",
       "items": {
+        "additionalProperties": false,
         "title": "package",
         "type": "object",
         "required": [
           "name"
         ],
-        "additionalProperties": false,
         "properties": {
           "package_id": {
             "title": "se_id",
@@ -28,9 +28,9 @@
             "type": "string"
           },
           "dimensions": {
+            "additionalProperties": false,
             "title": "dimensions",
             "type": "object",
-            "additionalProperties": false,
             "properties": {
               "unit": {
                 "title": "dimension_unit",

@@ -1,0 +1,153 @@
+{
+  "$id": "carrier_response_body",
+  "title": "carrier_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "carrier_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "carrier_code": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "string"
+    },
+    "requires_funded_amount": {
+      "type": "boolean"
+    },
+    "balance": {
+      "type": "number",
+      "format": "double"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "friendly_name": {
+      "type": "string"
+    },
+    "primary": {
+      "type": "boolean"
+    },
+    "has_multi_package_supporting_services": {
+      "type": "boolean"
+    },
+    "supports_label_messages": {
+      "type": "boolean"
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "title": "service",
+        "type": "object",
+        "properties": {
+          "carrier_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "carrier_code": {
+            "type": "string"
+          },
+          "service_code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "domestic": {
+            "type": "boolean"
+          },
+          "international": {
+            "type": "boolean"
+          },
+          "is_multi_package_supported": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "title": "package",
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "package_id": {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          },
+          "package_code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "dimensions": {
+            "additionalProperties": false,
+            "title": "dimensions",
+            "type": "object",
+            "properties": {
+              "unit": {
+                "title": "dimension_unit",
+                "type": "string",
+                "enum": [
+                  "inch",
+                  "centimeter"
+                ]
+              },
+              "length": {
+                "type": "number",
+                "format": "double"
+              },
+              "width": {
+                "type": "number",
+                "format": "double"
+              },
+              "height": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "title": "carrier_advanced_option",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "default_value": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

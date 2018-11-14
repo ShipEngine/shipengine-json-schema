@@ -3,9 +3,9 @@
   "title": "address_validation_response_body",
   "type": "array",
   "items": {
+    "additionalProperties": false,
     "title": "address_validation_result",
     "type": "object",
-    "additionalProperties": false,
     "properties": {
       "status": {
         "title": "address_validation_status",
@@ -18,9 +18,9 @@
         ]
       },
       "original_address": {
+        "additionalProperties": false,
         "title": "address",
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string"
@@ -64,9 +64,9 @@
         }
       },
       "matched_address": {
+        "additionalProperties": false,
         "title": "address",
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string"

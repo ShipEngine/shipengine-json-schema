@@ -1,0 +1,150 @@
+{
+  "$id": "label_response_body",
+  "title": "label_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "label_id",
+    "status",
+    "shipment_id",
+    "ship_date",
+    "created_at",
+    "tracking_number",
+    "is_return_label",
+    "rma_number",
+    "is_international",
+    "batch_id",
+    "carrier_id",
+    "service_code",
+    "package_code",
+    "voided",
+    "voided_at",
+    "label_format",
+    "label_layout",
+    "trackable",
+    "carrier_code",
+    "tracking_status",
+    "shipment_cost",
+    "insurance_cost",
+    "label_download",
+    "form_download",
+    "insurance_claim",
+    "packages"
+  ],
+  "properties": {
+    "label_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "status": {
+      "title": "label_status",
+      "type": "string",
+      "enum": [
+        "processing",
+        "completed",
+        "error",
+        "voided"
+      ]
+    },
+    "shipment_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "ship_date": {
+      "title": "date",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}(T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2}))?$"
+    },
+    "created_at": {
+      "title": "date_time",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+    },
+    "tracking_number": {
+      "type": "string",
+      "minLength": 1
+    },
+    "is_return_label": {
+      "type": "boolean"
+    },
+    "rma_number": {
+      "type": "string"
+    },
+    "is_international": {
+      "type": "boolean"
+    },
+    "batch_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "carrier_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "service_code": {
+      "title": "service_code",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(_[a-z0-9-]+)* ?$"
+    },
+    "voided": {
+      "type": "boolean"
+    },
+    "voided_at": {
+      "title": "date_time",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+    },
+    "label_format": {
+      "default": "pdf",
+      "title": "label_format",
+      "type": "string",
+      "enum": [
+        "pdf",
+        "png",
+        "zpl"
+      ]
+    },
+    "label_layout": {
+      "default": "4x6",
+      "title": "label_layout",
+      "type": "string",
+      "enum": [
+        "4x6",
+        "letter"
+      ]
+    },
+    "trackable": {
+      "type": "boolean"
+    },
+    "carrier_code": {
+      "title": "carrier_code",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+    },
+    "tracking_status": {
+      "title": "tracking_status",
+      "type": "string",
+      "enum": [
+        "unknown",
+        "in_transit",
+        "error",
+        "delivered"
+      ]
+    }
+  }
+}
