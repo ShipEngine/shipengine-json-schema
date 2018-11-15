@@ -1,0 +1,1135 @@
+{
+  "/v1/labels": {
+    "get": {
+      "name": "labels.list",
+      "responseSchemas": {
+        "200": "responses/list_label_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/addresses/validate": {
+    "post": {
+      "name": "addresses.validate_addresses",
+      "responseSchemas": {
+        "200": "responses/address_validation_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/address_validation_request_body.json"
+    }
+  },
+  "/v1/batches": {
+    "get": {
+      "name": "batches.list",
+      "responseSchemas": {
+        "200": "responses/list_batch_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "post": {
+      "name": "batches.create",
+      "responseSchemas": {
+        "200": "responses/create_batch_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/create_batch_request_body.json"
+    }
+  },
+  "/v1/batches/external_batch_id/{external_batch_id}": {
+    "get": {
+      "name": "batches.get_by_external_id",
+      "responseSchemas": {
+        "200": "responses/batches_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/batches/{batch_id}": {
+    "get": {
+      "name": "batches.get_by_id",
+      "responseSchemas": {
+        "200": "responses/batches_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/batches/{batch_id}/add": {
+    "post": {
+      "name": "batches.add_to_batch",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/modify_batch_request_body.json"
+    }
+  },
+  "/v1/batches/{batch_id}/errors": {
+    "get": {
+      "name": "batches.list_errors",
+      "responseSchemas": {
+        "200": "responses/batch_errors_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/batches/{batch_id}/process/labels": {
+    "post": {
+      "name": "batches.process",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/process_batch_request_body.json"
+    }
+  },
+  "/v1/batches/{batch_id}/remove": {
+    "post": {
+      "name": "batches.remove_from_batch",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/modify_batch_request_body.json"
+    }
+  },
+  "/v1/carriers": {
+    "get": {
+      "name": "carriers.list",
+      "responseSchemas": {
+        "200": "responses/carrier_list_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/carriers/{carrier_id}": {
+    "get": {
+      "name": "carriers.get_by_id",
+      "responseSchemas": {
+        "200": "responses/carrier_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/carriers/{carrier_id}/add_funds": {
+    "put": {
+      "name": "carriers.add_funds",
+      "responseSchemas": {
+        "200": "responses/carrier_balance_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/money_request_body.json"
+    }
+  },
+  "/v1/carriers/{carrier_id}/options": {
+    "get": {
+      "name": "carriers.get_options",
+      "responseSchemas": {
+        "200": "responses/carrier_list_options_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/carriers/{carrier_id}/packages": {
+    "get": {
+      "name": "carriers.list_packages",
+      "responseSchemas": {
+        "200": "responses/package_list_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/carriers/{carrier_id}/services": {
+    "get": {
+      "name": "carriers.list_services",
+      "responseSchemas": {
+        "200": "responses/carrier_list_services_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/access_worldwide": {
+    "post": {
+      "name": "access_worldwide_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/access_worldwide_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/access_worldwide/{carrier_id}": {
+    "delete": {
+      "name": "access_worldwide_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/apc": {
+    "post": {
+      "name": "apc_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/apc_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/apc/{carrier_id}": {
+    "delete": {
+      "name": "apc_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/asendia": {
+    "post": {
+      "name": "asendia_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/asendia_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/asendia/{carrier_id}": {
+    "delete": {
+      "name": "asendia_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/dhl_ecommerce": {
+    "post": {
+      "name": "dhl_ecommerce_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/dhl_ecommerce_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/dhl_ecommerce/{carrier_id}": {
+    "delete": {
+      "name": "dhl_ecommerce_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/dhl_express": {
+    "post": {
+      "name": "dhl_express_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/dhl_express_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/dhl_express/{carrier_id}": {
+    "delete": {
+      "name": "dhl_express_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/dhl_express/{carrier_id}/settings": {
+    "get": {
+      "name": "dhl_express_account_carrier.get_settings",
+      "responseSchemas": {
+        "200": "responses/dhl_express_settings_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "put": {
+      "name": "dhl_express_account_carrier.update_settings",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/update_dhl_express_settings_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/dhl_express_uk": {
+    "post": {
+      "name": "dhl_express_uk_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/dhl_express_uk_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/dhl_express_uk/{carrier_id}": {
+    "delete": {
+      "name": "dhl_express_uk_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/dpd": {
+    "post": {
+      "name": "dpd_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/dpd_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/dpd/{carrier_id}": {
+    "delete": {
+      "name": "dpd_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/endicia": {
+    "post": {
+      "name": "endicia_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/endicia_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/endicia/{carrier_id}": {
+    "delete": {
+      "name": "endicia_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/fedex": {
+    "post": {
+      "name": "fedex_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/fedex_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/fedex/{carrier_id}": {
+    "delete": {
+      "name": "fedex_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/fedex/{carrier_id}/settings": {
+    "get": {
+      "name": "fedex_account_carrier.get_settings",
+      "responseSchemas": {
+        "200": "responses/fedex_settings_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "put": {
+      "name": "fedex_account_carrier.update_settings",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/update_fedex_settings_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/fedex_uk": {
+    "post": {
+      "name": "fedex_uk_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/fedex_uk_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/fedex_uk/{carrier_id}": {
+    "delete": {
+      "name": "fedex_uk_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/firstmile": {
+    "post": {
+      "name": "first_mile_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/first_mile_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/firstmile/{carrier_id}": {
+    "delete": {
+      "name": "first_mile_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/globegistics": {
+    "post": {
+      "name": "globegistics_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/globegistics_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/globegistics/{carrier_id}": {
+    "delete": {
+      "name": "globegistics_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/imex": {
+    "post": {
+      "name": "imex_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/imex_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/imex/{carrier_id}": {
+    "delete": {
+      "name": "imex_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/newgistics": {
+    "post": {
+      "name": "newgistics_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/newgistics_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/newgistics/{carrier_id}": {
+    "delete": {
+      "name": "newgistics_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/newgistics/{carrier_id}/settings": {
+    "put": {
+      "name": "newgistics_account_carrier.update_settings",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/newgistics_account_settings_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/ontrac": {
+    "post": {
+      "name": "ontrac_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/ontrac_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/ontrac/{carrier_id}": {
+    "delete": {
+      "name": "ontrac_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/royal_mail": {
+    "post": {
+      "name": "royal_mail_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/royal_mail_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/royal_mail/{carrier_id}": {
+    "delete": {
+      "name": "royal_mail_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/rr_donnelley": {
+    "post": {
+      "name": "rr_donnelley_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/rr_donnelley_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/rr_donnelley/{carrier_id}": {
+    "delete": {
+      "name": "rr_donnelley_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/stamps_com": {
+    "post": {
+      "name": "stamps_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/stamps_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/stamps_com/{carrier_id}": {
+    "delete": {
+      "name": "stamps_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/stamps_com/{carrier_id}/request_account_url": {
+    "put": {
+      "name": "stamps_account_carrier.get_account_url",
+      "responseSchemas": {
+        "200": "responses/stamps_account_url_list_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/stamps_account_urls_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/ups": {
+    "post": {
+      "name": "ups_account_carrier.connect_account",
+      "responseSchemas": {
+        "200": "responses/connect_account_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/ups_account_information_request_body.json"
+    }
+  },
+  "/v1/connections/carriers/ups/{carrier_id}": {
+    "delete": {
+      "name": "ups_account_carrier.disconnect_account",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/connections/carriers/ups/{carrier_id}/settings": {
+    "get": {
+      "name": "ups_account_carrier.get_settings",
+      "responseSchemas": {
+        "200": "responses/ups_settings_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "put": {
+      "name": "ups_account_carrier.update_settings",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/update_ups_settings_request_body.json"
+    }
+  },
+  "/v1/environment/webhooks": {
+    "get": {
+      "name": "environment.webhooks",
+      "responseSchemas": {
+        "200": "responses/webhook_list_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "post": {
+      "name": "environment.create_webhook",
+      "responseSchemas": {
+        "200": "responses/webhook_response_body.json",
+        "400": "responses/error_response_body.json",
+        "409": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/create_webhook_request_body.json"
+    }
+  },
+  "/v1/environment/webhooks/{webhook_id}": {
+    "get": {
+      "name": "environment.get_webhook_by_id",
+      "responseSchemas": {
+        "200": "responses/webhook_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "put": {
+      "name": "environment.update_webhook",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/update_webhook_request_body.json"
+    },
+    "delete": {
+      "name": "environment.delete_webhook",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/insurance/shipsurance/add_funds": {
+    "patch": {
+      "name": "insurance.add_funds",
+      "responseSchemas": {
+        "200": "responses/insurance_balance_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/money_request_body.json"
+    }
+  },
+  "/v1/insurance/shipsurance/balance": {
+    "get": {
+      "name": "insurance.get_balance",
+      "responseSchemas": {
+        "200": "responses/insurance_balance_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/labels/rates/{rate_id}": {
+    "post": {
+      "name": "labels.purchase_label_with_rate",
+      "responseSchemas": {
+        "200": "responses/label_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/purchase_label_without_shipment_request_body.json"
+    }
+  },
+  "/v1/labels/shipment/{shipment_id}": {
+    "post": {
+      "name": "labels.purchase_label_with_shipment",
+      "responseSchemas": {
+        "200": "responses/label_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/purchase_label_without_shipment_request_body.json"
+    }
+  },
+  "/v1/labels/{label_id}": {
+    "get": {
+      "name": "labels.get_by_id",
+      "responseSchemas": {
+        "200": "responses/label_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/labels/{label_id}/track": {
+    "get": {
+      "name": "labels.track",
+      "responseSchemas": {
+        "200": "responses/tracking_information_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/labels/{label_id}/void": {
+    "put": {
+      "name": "labels.void_label",
+      "responseSchemas": {
+        "200": "responses/void_label_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/manifests": {
+    "get": {
+      "name": "manifests.list",
+      "responseSchemas": {
+        "200": "responses/list_manifests_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "post": {
+      "name": "manifests.create",
+      "responseSchemas": {
+        "200": "responses/manifest_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/create_manifest_request_body.json"
+    }
+  },
+  "/v1/manifests/{manifest_id}": {
+    "get": {
+      "name": "manifests.get_by_id",
+      "responseSchemas": {
+        "200": "responses/manifest_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/packages": {
+    "get": {
+      "name": "packages.list",
+      "responseSchemas": {
+        "200": "responses/package_list_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "post": {
+      "name": "packages.create",
+      "responseSchemas": {
+        "200": "responses/package_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/package_request_body.json"
+    }
+  },
+  "/v1/packages/{package_id}": {
+    "get": {
+      "name": "packages.get_by_id",
+      "responseSchemas": {
+        "200": "responses/package_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "put": {
+      "name": "packages.update",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/package_request_body.json"
+    },
+    "delete": {
+      "name": "packages.delete",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/rates": {
+    "post": {
+      "name": "rates.rate_shipment",
+      "responseSchemas": {
+        "200": "responses/rate_shipment_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/rate_shipment_request_body.json"
+    }
+  },
+  "/v1/rates/bulk": {
+    "post": {
+      "name": "rates.bulk_rate_shipments",
+      "responseSchemas": {
+        "200": "responses/bulk_rate_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/rate_shipments_request_body.json"
+    }
+  },
+  "/v1/rates/estimate": {
+    "post": {
+      "name": "rates.estimate",
+      "responseSchemas": {
+        "200": "responses/rate_estimate_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/rate_estimate_request_body.json"
+    }
+  },
+  "/v1/rates/{rate_id}": {
+    "get": {
+      "name": "rates.get_by_id",
+      "responseSchemas": {
+        "200": "responses/rate_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/shipments": {
+    "get": {
+      "name": "shipments.list",
+      "responseSchemas": {
+        "200": "responses/list_shipment_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "post": {
+      "name": "shipments.create_shipments",
+      "responseSchemas": {
+        "201": "responses/create_shipments_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/create_shipments_request_body.json"
+    }
+  },
+  "/v1/shipments/external_shipment_id/{external_shipment_id}": {
+    "get": {
+      "name": "shipments.get_by_external_id",
+      "responseSchemas": {
+        "200": "responses/shipment_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/shipments/{shipment_id}": {
+    "get": {
+      "name": "shipments.get_by_id",
+      "responseSchemas": {
+        "200": "responses/shipment_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "put": {
+      "name": "shipments.update_shipment",
+      "responseSchemas": {
+        "200": "responses/create_shipment_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/update_shipment_request_body.json"
+    }
+  },
+  "/v1/shipments/{shipment_id}/cancel": {
+    "put": {
+      "name": "shipments.cancel",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/shipments/{shipment_id}/errors": {
+    "get": {
+      "name": "shipments.list_errors",
+      "responseSchemas": {
+        "200": "responses/shipment_errors_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/shipments/{shipment_id}/rates": {
+    "get": {
+      "name": "shipments.get_rates_for_shipment",
+      "responseSchemas": {
+        "200": "responses/rate_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/shipments/{shipment_id}/tags/{tag}": {
+    "post": {
+      "name": "shipments.add_tag",
+      "responseSchemas": {
+        "201": "responses/shipment_add_tag_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "delete": {
+      "name": "shipments.remove_tag",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/tags": {
+    "get": {
+      "name": "tags.list_tags",
+      "responseSchemas": {
+        "200": "responses/list_tag_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/tags/{tag_name}": {
+    "post": {
+      "name": "tags.add_tag",
+      "responseSchemas": {
+        "200": "responses/tag_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "delete": {
+      "name": "tags.delete",
+      "responseSchemas": {
+        "200": "responses/list_tag_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/tags/{tag_name}/{new_name}": {
+    "put": {
+      "name": "tags.update_tag",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/tracking": {
+    "get": {
+      "name": "tracking.track",
+      "responseSchemas": {
+        "200": "responses/tracking_information_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/tracking/start": {
+    "post": {
+      "name": "tracking.start_tracking",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/tracking/stop": {
+    "post": {
+      "name": "tracking.stop_tracking",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
+  "/v1/warehouses": {
+    "get": {
+      "name": "warehouses.list",
+      "responseSchemas": {
+        "200": "responses/warehouse_list_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "post": {
+      "name": "warehouses.create",
+      "responseSchemas": {
+        "200": "responses/warehouse_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/warehouse_request_body.json"
+    }
+  },
+  "/v1/warehouses/{warehouse_id}": {
+    "get": {
+      "name": "warehouses.get_by_id",
+      "responseSchemas": {
+        "200": "responses/warehouse_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "put": {
+      "name": "warehouses.update",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      },
+      "requestSchema": "requests/warehouse_request_body.json"
+    },
+    "delete": {
+      "name": "warehouses.delete",
+      "responseSchemas": {
+        "204": "responses/empty_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  }
+}
