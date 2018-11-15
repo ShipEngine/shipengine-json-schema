@@ -7,10 +7,11 @@ This repo contains [JSON Schemas](https://json-schema.org/) for the [ShipEngine 
 File Structure
 -----------------------------------
 
-|Path                     |Description
-|:------------------------|:--------------------------------
-|[`requests`](requests)   |This directory contains separate JSON Schema files for every ShipEngine API request body.  Each file is fully-dereferenced (doesn't contain any [`$ref` pointers](https://json-schema.org/latest/json-schema-core.html#rfc.section.8.3)), so it should work with any tool or library.
-|[`responses`](responses) |This directory contains separate JSON Schema files for every ShipEngine API response body.  Each file is fully-dereferenced (doesn't contain any [`$ref` pointers](https://json-schema.org/latest/json-schema-core.html#rfc.section.8.3)), so it should work with any tool or library.
+|Path                       |Description
+|:--------------------------|:--------------------------------
+|[`index.json`](index.json) |This file is a JSON map of the request and response schemas for each API endpoint.
+|[`requests`](requests)     |This directory contains separate JSON Schema files for every ShipEngine API request body.  Each file is fully-dereferenced (doesn't contain any [`$ref` pointers](https://json-schema.org/latest/json-schema-core.html#rfc.section.8.3)), so it should work with any tool or library.
+|[`responses`](responses)   |This directory contains separate JSON Schema files for every ShipEngine API response body.  Each file is fully-dereferenced (doesn't contain any [`$ref` pointers](https://json-schema.org/latest/json-schema-core.html#rfc.section.8.3)), so it should work with any tool or library.
 
 
 Other API Definition Formats
