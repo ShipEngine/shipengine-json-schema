@@ -1,4 +1,4 @@
-![JSON Schema Logo](img/json-schema-logo.png) ShipEngine™ JSON Schemas
+![JSON Schema Logo](https://shipengine.github.io/img/json-schema-logo.png) ShipEngine™ JSON Schemas
 ==============================================
 
 This repo contains [JSON Schemas](https://json-schema.org/) for the [ShipEngine API](https://shipengine.com).  You can use these schemas with any of countless [JSON Schema tools](https://json-schema.org/implementations.html) to perform validation, generate models, etc.
@@ -17,8 +17,8 @@ File Structure
 Other API Definition Formats
 -----------------------------------
 
-### ![OpenAPI Logo](img/openapi-logo.png) OpenAPI
+### ![OpenAPI Logo](https://shipengine.github.io/img/openapi-logo-small.png) OpenAPI
 The official ShipEngine [OpenAPI 3.0 definitions](https://github.com/shipengine/OpenAPI).  The OpenAPI format is supported by many [tools and libraries](https://openapi.tools/) for every major technology stack.
 
-### ![Postman Logo](img/postman-logo.png) Postman
+### ![Postman Logo](https://shipengine.github.io/img/postman-logo-small.png) Postman
 An official ShipEngine [Postman](https://getpostman.com) collection is **coming soon!**
