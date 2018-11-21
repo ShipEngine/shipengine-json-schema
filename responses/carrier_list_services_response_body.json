@@ -7,9 +7,9 @@
     "services": {
       "type": "array",
       "items": {
-        "additionalProperties": false,
         "title": "service",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "carrier_id": {
             "title": "se_id",

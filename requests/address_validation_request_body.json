@@ -3,9 +3,9 @@
   "title": "address_validation_request_body",
   "type": "array",
   "items": {
-    "additionalProperties": false,
     "title": "address",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
       "name": {
         "type": "string"

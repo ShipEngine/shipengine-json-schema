@@ -7,9 +7,9 @@
     "warehouses": {
       "type": "array",
       "items": {
-        "additionalProperties": false,
         "title": "warehouse",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "warehouse_id": {
             "title": "se_id",
@@ -26,9 +26,9 @@
             "format": "date-time"
           },
           "origin_address": {
-            "additionalProperties": false,
             "title": "address",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "name": {
                 "type": "string"
@@ -72,9 +72,9 @@
             }
           },
           "return_address": {
-            "additionalProperties": false,
             "title": "address",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "name": {
                 "type": "string"

@@ -748,11 +748,21 @@
   },
   "/v1/labels": {
     "get": {
-      "name": "labels.list",
+      "name": "list_labels",
       "requestSchema": null,
       "responseSchemas": {
         "200": "responses/list_label_response_body.json",
         "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    },
+    "post": {
+      "name": "labels.purchase_label",
+      "requestSchema": "requests/purchase_label_request_body.json",
+      "responseSchemas": {
+        "200": "responses/label_response_body.json",
+        "400": "responses/error_response_body.json",
+        "404": "responses/error_response_body.json",
         "500": "responses/error_response_body.json"
       }
     }

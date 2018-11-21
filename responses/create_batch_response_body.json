@@ -62,9 +62,9 @@
       "format": "int32"
     },
     "batch_shipments_url": {
-      "additionalProperties": false,
-      "title": "link",
+      "title": "optional_link",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "href": {
           "title": "url",
@@ -79,9 +79,9 @@
       }
     },
     "batch_labels_url": {
-      "additionalProperties": false,
-      "title": "link",
+      "title": "optional_link",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "href": {
           "title": "url",
@@ -96,9 +96,9 @@
       }
     },
     "batch_errors_url": {
-      "additionalProperties": false,
-      "title": "link",
+      "title": "optional_link",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "href": {
           "title": "url",
@@ -113,9 +113,9 @@
       }
     },
     "label_download": {
-      "additionalProperties": false,
-      "title": "link",
+      "title": "optional_link",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "href": {
           "title": "url",
@@ -130,9 +130,9 @@
       }
     },
     "form_download": {
-      "additionalProperties": false,
-      "title": "link",
+      "title": "optional_link",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "href": {
           "title": "url",

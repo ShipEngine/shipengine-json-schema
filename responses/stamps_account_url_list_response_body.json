@@ -7,9 +7,9 @@
     "urls": {
       "type": "array",
       "items": {
-        "additionalProperties": false,
         "title": "stamps_account_url_response_body",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "url_type": {
             "title": "url_type",

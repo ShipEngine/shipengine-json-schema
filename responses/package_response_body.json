@@ -21,9 +21,9 @@
       "type": "string"
     },
     "dimensions": {
-      "additionalProperties": false,
       "title": "dimensions",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "unit": {
           "title": "dimension_unit",

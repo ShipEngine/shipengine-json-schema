@@ -7,9 +7,9 @@
     "manifests": {
       "type": "array",
       "items": {
-        "additionalProperties": false,
         "title": "manifest_response_body",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "manifest_id": {
             "title": "se_id",
@@ -59,9 +59,9 @@
             "pattern": "^se(-[a-z0-9]+)+$"
           },
           "manifest_download": {
-            "additionalProperties": false,
-            "title": "link",
+            "title": "optional_link",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "href": {
                 "title": "url",
@@ -91,7 +91,6 @@
       "format": "int32"
     },
     "links": {
-      "additionalProperties": false,
       "title": "pagination_link",
       "type": "object",
       "required": [
@@ -100,14 +99,15 @@
         "prev",
         "next"
       ],
+      "additionalProperties": false,
       "properties": {
         "first": {
-          "required": [
-            "href"
-          ],
           "title": "link",
           "type": "object",
           "additionalProperties": false,
+          "required": [
+            "href"
+          ],
           "properties": {
             "href": {
               "title": "url",
@@ -122,58 +122,28 @@
           }
         },
         "last": {
-          "required": [
-            "href"
-          ],
           "title": "link",
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+          "required": [
+            "href"
+          ]
         },
         "prev": {
           "title": "link",
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+          "required": [
+            "href"
+          ]
         },
         "next": {
           "title": "link",
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+          "required": [
+            "href"
+          ]
         }
       }
     }

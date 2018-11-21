@@ -1,30 +1,14 @@
 {
-  "$id": "rate_shipment_request_body",
-  "title": "rate_shipment_request_body",
+  "$id": "purchase_label_request_body",
+  "title": "purchase_label_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "shipment_id": {
-      "title": "se_id",
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 25,
-      "pattern": "^se(-[a-z0-9]+)+$"
-    },
     "shipment": {
-      "title": "address_validating_shipment",
+      "title": "shipment",
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "validate_address": {
-          "title": "validate_address",
-          "type": "string",
-          "enum": [
-            "no_validation",
-            "validate_only",
-            "validate_and_clean"
-          ]
-        },
         "shipment_id": {
           "title": "se_id",
           "type": "string",
@@ -487,18 +471,35 @@
         }
       }
     },
-    "rate_options": {
-      "title": "rate_request_body",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "carrier_ids": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
+    "is_return_label": {
+      "type": "boolean"
+    },
+    "rma_number": {
+      "type": "string"
+    },
+    "test_label": {
+      "type": "boolean"
+    },
+    "validate_address": {
+      "title": "validate_address",
+      "type": "string",
+      "enum": [
+        "no_validation",
+        "validate_only",
+        "validate_and_clean"
+      ]
+    },
+    "label_layout": {
+      "type": "string"
+    },
+    "label_format": {
+      "title": "label_format",
+      "type": "string",
+      "enum": [
+        "pdf",
+        "png",
+        "zpl"
+      ]
     }
   }
 }

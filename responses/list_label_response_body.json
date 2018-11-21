@@ -23,6 +23,8 @@
           "shipment_id",
           "ship_date",
           "created_at",
+          "shipment_cost",
+          "insurance_cost",
           "tracking_number",
           "is_return_label",
           "rma_number",
@@ -38,8 +40,6 @@
           "trackable",
           "carrier_code",
           "tracking_status",
-          "shipment_cost",
-          "insurance_cost",
           "label_download",
           "form_download",
           "insurance_claim",
@@ -82,6 +82,60 @@
             "format": "date-time",
             "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
           },
+          "shipment_cost": {
+            "title": "monetary_value",
+            "type": "object",
+            "required": [
+              "currency",
+              "amount"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "currency": {
+                "title": "currency",
+                "type": "string",
+                "enum": [
+                  "usd",
+                  "cad",
+                  "aud",
+                  "gbp",
+                  "eur"
+                ]
+              },
+              "amount": {
+                "type": "number",
+                "format": "double",
+                "minimum": 0
+              }
+            }
+          },
+          "insurance_cost": {
+            "title": "monetary_value",
+            "type": "object",
+            "required": [
+              "currency",
+              "amount"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "currency": {
+                "title": "currency",
+                "type": "string",
+                "enum": [
+                  "usd",
+                  "cad",
+                  "aud",
+                  "gbp",
+                  "eur"
+                ]
+              },
+              "amount": {
+                "type": "number",
+                "format": "double",
+                "minimum": 0
+              }
+            }
+          },
           "tracking_number": {
             "type": "string",
             "minLength": 1
@@ -113,6 +167,11 @@
             "title": "service_code",
             "type": "string",
             "pattern": "^[a-z0-9]+(_[a-z0-9-]+)* ?$"
+          },
+          "package_code": {
+            "title": "package_code",
+            "type": "string",
+            "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
           },
           "voided": {
             "type": "boolean"
@@ -159,6 +218,140 @@
               "error",
               "delivered"
             ]
+          },
+          "label_download": {
+            "title": "link",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "href"
+            ]
+          },
+          "form_download": {
+            "title": "link",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "href"
+            ]
+          },
+          "insurance_claim": {
+            "title": "link",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "href"
+            ]
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "title": "label_package",
+              "type": "object",
+              "required": [
+                "weight"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "package_code": {
+                  "type": "string"
+                },
+                "weight": {
+                  "additionalProperties": false,
+                  "title": "weight",
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "unit": {
+                      "title": "weight_unit",
+                      "type": "string",
+                      "enum": [
+                        "pound",
+                        "ounce",
+                        "gram",
+                        "kilogram"
+                      ]
+                    }
+                  }
+                },
+                "dimensions": {
+                  "additionalProperties": false,
+                  "title": "dimensions",
+                  "type": "object",
+                  "properties": {
+                    "unit": {
+                      "title": "dimension_unit",
+                      "type": "string",
+                      "enum": [
+                        "inch",
+                        "centimeter"
+                      ]
+                    },
+                    "length": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "width": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "height": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                },
+                "insured_value": {
+                  "additionalProperties": false,
+                  "title": "monetary_value",
+                  "type": "object",
+                  "required": [
+                    "currency",
+                    "amount"
+                  ],
+                  "properties": {
+                    "currency": {
+                      "title": "currency",
+                      "type": "string",
+                      "enum": [
+                        "usd",
+                        "cad",
+                        "aud",
+                        "gbp",
+                        "eur"
+                      ]
+                    },
+                    "amount": {
+                      "type": "number",
+                      "format": "double",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "tracking_number": {
+                  "type": "string"
+                },
+                "label_messages": {
+                  "additionalProperties": false,
+                  "title": "label_messages",
+                  "type": "object",
+                  "properties": {
+                    "reference1": {
+                      "type": "string"
+                    },
+                    "reference2": {
+                      "type": "string"
+                    },
+                    "reference3": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -187,12 +380,12 @@
       "additionalProperties": false,
       "properties": {
         "first": {
-          "required": [
-            "href"
-          ],
           "title": "link",
           "type": "object",
           "additionalProperties": false,
+          "required": [
+            "href"
+          ],
           "properties": {
             "href": {
               "title": "url",
@@ -207,58 +400,28 @@
           }
         },
         "last": {
-          "required": [
-            "href"
-          ],
           "title": "link",
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+          "required": [
+            "href"
+          ]
         },
         "prev": {
           "title": "link",
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+          "required": [
+            "href"
+          ]
         },
         "next": {
           "title": "link",
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+          "required": [
+            "href"
+          ]
         }
       }
     }

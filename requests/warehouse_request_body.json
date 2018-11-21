@@ -15,9 +15,9 @@
       "type": "string"
     },
     "origin_address": {
-      "additionalProperties": false,
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
@@ -61,9 +61,9 @@
       }
     },
     "return_address": {
-      "additionalProperties": false,
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"

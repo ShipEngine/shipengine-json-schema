@@ -3,9 +3,9 @@
   "title": "webhook_list_response_body",
   "type": "array",
   "items": {
-    "additionalProperties": false,
     "title": "webhook_response_body",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
       "webhook_id": {
         "title": "se_id",

@@ -53,9 +53,9 @@
       "type": "string"
     },
     "invoice": {
-      "additionalProperties": false,
       "title": "ups_invoice",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "invoice_date": {
           "type": "string",

@@ -3,9 +3,9 @@
   "title": "rate_estimate_response_body",
   "type": "array",
   "items": {
-    "additionalProperties": false,
     "title": "rate",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
       "rate_id": {
         "title": "se_id",
@@ -30,9 +30,13 @@
         "pattern": "^se(-[a-z0-9]+)+$"
       },
       "shipping_amount": {
-        "additionalProperties": false,
-        "title": "money",
+        "title": "monetary_value",
         "type": "object",
+        "required": [
+          "currency",
+          "amount"
+        ],
+        "additionalProperties": false,
         "properties": {
           "currency": {
             "title": "currency",
@@ -47,14 +51,19 @@
           },
           "amount": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0
           }
         }
       },
       "insurance_amount": {
-        "additionalProperties": false,
-        "title": "money",
+        "title": "monetary_value",
         "type": "object",
+        "required": [
+          "currency",
+          "amount"
+        ],
+        "additionalProperties": false,
         "properties": {
           "currency": {
             "title": "currency",
@@ -69,14 +78,19 @@
           },
           "amount": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0
           }
         }
       },
       "confirmation_amount": {
-        "additionalProperties": false,
-        "title": "money",
+        "title": "monetary_value",
         "type": "object",
+        "required": [
+          "currency",
+          "amount"
+        ],
+        "additionalProperties": false,
         "properties": {
           "currency": {
             "title": "currency",
@@ -91,14 +105,19 @@
           },
           "amount": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0
           }
         }
       },
       "other_amount": {
-        "additionalProperties": false,
-        "title": "money",
+        "title": "monetary_value",
         "type": "object",
+        "required": [
+          "currency",
+          "amount"
+        ],
+        "additionalProperties": false,
         "properties": {
           "currency": {
             "title": "currency",
@@ -113,7 +132,8 @@
           },
           "amount": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0
           }
         }
       },

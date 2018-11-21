@@ -5,16 +5,16 @@
   "additionalProperties": false,
   "properties": {
     "rate_response": {
-      "additionalProperties": false,
       "title": "rate_response_body",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "rates": {
           "type": "array",
           "items": {
-            "additionalProperties": false,
             "title": "rate",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "rate_id": {
                 "title": "se_id",
@@ -39,9 +39,13 @@
                 "pattern": "^se(-[a-z0-9]+)+$"
               },
               "shipping_amount": {
-                "additionalProperties": false,
-                "title": "money",
+                "title": "monetary_value",
                 "type": "object",
+                "required": [
+                  "currency",
+                  "amount"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "currency": {
                     "title": "currency",
@@ -56,14 +60,19 @@
                   },
                   "amount": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0
                   }
                 }
               },
               "insurance_amount": {
-                "additionalProperties": false,
-                "title": "money",
+                "title": "monetary_value",
                 "type": "object",
+                "required": [
+                  "currency",
+                  "amount"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "currency": {
                     "title": "currency",
@@ -78,14 +87,19 @@
                   },
                   "amount": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0
                   }
                 }
               },
               "confirmation_amount": {
-                "additionalProperties": false,
-                "title": "money",
+                "title": "monetary_value",
                 "type": "object",
+                "required": [
+                  "currency",
+                  "amount"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "currency": {
                     "title": "currency",
@@ -100,14 +114,19 @@
                   },
                   "amount": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0
                   }
                 }
               },
               "other_amount": {
-                "additionalProperties": false,
-                "title": "money",
+                "title": "monetary_value",
                 "type": "object",
+                "required": [
+                  "currency",
+                  "amount"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "currency": {
                     "title": "currency",
@@ -122,7 +141,8 @@
                   },
                   "amount": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0
                   }
                 }
               },
@@ -200,9 +220,9 @@
         "invalid_rates": {
           "type": "array",
           "items": {
-            "additionalProperties": false,
             "title": "rate",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "rate_id": {
                 "title": "se_id",
@@ -227,9 +247,13 @@
                 "pattern": "^se(-[a-z0-9]+)+$"
               },
               "shipping_amount": {
-                "additionalProperties": false,
-                "title": "money",
+                "title": "monetary_value",
                 "type": "object",
+                "required": [
+                  "currency",
+                  "amount"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "currency": {
                     "title": "currency",
@@ -244,14 +268,19 @@
                   },
                   "amount": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0
                   }
                 }
               },
               "insurance_amount": {
-                "additionalProperties": false,
-                "title": "money",
+                "title": "monetary_value",
                 "type": "object",
+                "required": [
+                  "currency",
+                  "amount"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "currency": {
                     "title": "currency",
@@ -266,14 +295,19 @@
                   },
                   "amount": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0
                   }
                 }
               },
               "confirmation_amount": {
-                "additionalProperties": false,
-                "title": "money",
+                "title": "monetary_value",
                 "type": "object",
+                "required": [
+                  "currency",
+                  "amount"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "currency": {
                     "title": "currency",
@@ -288,14 +322,19 @@
                   },
                   "amount": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0
                   }
                 }
               },
               "other_amount": {
-                "additionalProperties": false,
-                "title": "money",
+                "title": "monetary_value",
                 "type": "object",
+                "required": [
+                  "currency",
+                  "amount"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "currency": {
                     "title": "currency",
@@ -310,7 +349,8 @@
                   },
                   "amount": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0
                   }
                 }
               },
@@ -416,9 +456,9 @@
         "errors": {
           "type": "array",
           "items": {
-            "additionalProperties": false,
             "title": "provider_error",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "carrier_id": {
                 "title": "se_id",
@@ -482,9 +522,9 @@
       ]
     },
     "ship_to": {
-      "additionalProperties": false,
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
@@ -528,9 +568,9 @@
       }
     },
     "ship_from": {
-      "additionalProperties": false,
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
@@ -581,9 +621,9 @@
       "pattern": "^se(-[a-z0-9]+)+$"
     },
     "return_to": {
-      "additionalProperties": false,
       "title": "address",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
@@ -638,9 +678,9 @@
       ]
     },
     "customs": {
-      "additionalProperties": false,
       "title": "international_options",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "contents": {
           "title": "contents",
@@ -698,9 +738,9 @@
       }
     },
     "advanced_options": {
-      "additionalProperties": false,
       "title": "advanced_options",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "bill_to_account": {
           "type": "string"
@@ -760,9 +800,9 @@
     "tags": {
       "type": "array",
       "items": {
-        "additionalProperties": false,
         "title": "tag_response_body",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string"
@@ -773,17 +813,17 @@
     "packages": {
       "type": "array",
       "items": {
-        "additionalProperties": false,
         "title": "shipment_package",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "package_code": {
             "type": "string"
           },
           "weight": {
-            "additionalProperties": false,
             "title": "weight",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "value": {
                 "type": "number",
@@ -802,9 +842,9 @@
             }
           },
           "dimensions": {
-            "additionalProperties": false,
             "title": "dimensions",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "unit": {
                 "title": "dimension_unit",
@@ -829,9 +869,13 @@
             }
           },
           "insured_value": {
-            "additionalProperties": false,
-            "title": "money",
+            "title": "monetary_value",
             "type": "object",
+            "required": [
+              "currency",
+              "amount"
+            ],
+            "additionalProperties": false,
             "properties": {
               "currency": {
                 "title": "currency",
@@ -846,14 +890,15 @@
               },
               "amount": {
                 "type": "number",
-                "format": "double"
+                "format": "double",
+                "minimum": 0
               }
             }
           },
           "label_messages": {
-            "additionalProperties": false,
             "title": "label_messages",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "reference1": {
                 "type": "string"
@@ -870,9 +915,9 @@
       }
     },
     "total_weight": {
-      "additionalProperties": false,
       "title": "weight",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "value": {
           "type": "number",

@@ -3,6 +3,10 @@
   "title": "insurance_balance_response_body",
   "type": "object",
   "additionalProperties": false,
+  "required": [
+    "currency",
+    "amount"
+  ],
   "properties": {
     "currency": {
       "title": "currency",
@@ -17,7 +21,8 @@
     },
     "amount": {
       "type": "number",
-      "format": "double"
+      "format": "double",
+      "minimum": 0
     }
   }
 }

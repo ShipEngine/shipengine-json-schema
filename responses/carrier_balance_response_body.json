@@ -5,9 +5,13 @@
   "additionalProperties": false,
   "properties": {
     "balance": {
-      "additionalProperties": false,
-      "title": "money",
+      "title": "monetary_value",
       "type": "object",
+      "required": [
+        "currency",
+        "amount"
+      ],
+      "additionalProperties": false,
       "properties": {
         "currency": {
           "title": "currency",
@@ -22,7 +26,8 @@
         },
         "amount": {
           "type": "number",
-          "format": "double"
+          "format": "double",
+          "minimum": 0
         }
       }
     }
