@@ -225,7 +225,19 @@
             "additionalProperties": false,
             "required": [
               "href"
-            ]
+            ],
+            "properties": {
+              "href": {
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
           },
           "form_download": {
             "title": "link",
@@ -233,7 +245,19 @@
             "additionalProperties": false,
             "required": [
               "href"
-            ]
+            ],
+            "properties": {
+              "href": {
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
           },
           "insurance_claim": {
             "title": "link",
@@ -241,7 +265,19 @@
             "additionalProperties": false,
             "required": [
               "href"
-            ]
+            ],
+            "properties": {
+              "href": {
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
           },
           "packages": {
             "type": "array",
@@ -405,23 +441,53 @@
           "additionalProperties": false,
           "required": [
             "href"
-          ]
+          ],
+          "properties": {
+            "href": {
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
         },
         "prev": {
-          "title": "link",
+          "title": "optional_link",
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "href"
-          ]
+          "properties": {
+            "href": {
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
         },
         "next": {
-          "title": "link",
+          "title": "optional_link",
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "href"
-          ]
+          "properties": {
+            "href": {
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
         }
       }
     }
