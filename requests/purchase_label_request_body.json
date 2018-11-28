@@ -357,11 +357,17 @@
               "weight": {
                 "title": "weight",
                 "type": "object",
+                "required": [
+                  "value",
+                  "unit"
+                ],
                 "additionalProperties": false,
                 "properties": {
                   "value": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0,
+                    "exclusiveMinimum": true
                   },
                   "unit": {
                     "title": "weight_unit",
@@ -378,9 +384,16 @@
               "dimensions": {
                 "title": "dimensions",
                 "type": "object",
+                "required": [
+                  "unit",
+                  "length",
+                  "width",
+                  "height"
+                ],
                 "additionalProperties": false,
                 "properties": {
                   "unit": {
+                    "default": "inch",
                     "title": "dimension_unit",
                     "type": "string",
                     "enum": [
@@ -390,15 +403,21 @@
                   },
                   "length": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0,
+                    "default": 0
                   },
                   "width": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0,
+                    "default": 0
                   },
                   "height": {
                     "type": "number",
-                    "format": "double"
+                    "format": "double",
+                    "minimum": 0,
+                    "default": 0
                   }
                 }
               },
@@ -451,11 +470,17 @@
         "total_weight": {
           "title": "weight",
           "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
           "additionalProperties": false,
           "properties": {
             "value": {
               "type": "number",
-              "format": "double"
+              "format": "double",
+              "minimum": 0,
+              "exclusiveMinimum": true
             },
             "unit": {
               "title": "weight_unit",

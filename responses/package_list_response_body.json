@@ -7,7 +7,7 @@
     "packages": {
       "type": "array",
       "items": {
-        "title": "package",
+        "title": "package_type",
         "type": "object",
         "required": [
           "name"
@@ -30,9 +30,16 @@
           "dimensions": {
             "title": "dimensions",
             "type": "object",
+            "required": [
+              "unit",
+              "length",
+              "width",
+              "height"
+            ],
             "additionalProperties": false,
             "properties": {
               "unit": {
+                "default": "inch",
                 "title": "dimension_unit",
                 "type": "string",
                 "enum": [
@@ -42,15 +49,21 @@
               },
               "length": {
                 "type": "number",
-                "format": "double"
+                "format": "double",
+                "minimum": 0,
+                "default": 0
               },
               "width": {
                 "type": "number",
-                "format": "double"
+                "format": "double",
+                "minimum": 0,
+                "default": 0
               },
               "height": {
                 "type": "number",
-                "format": "double"
+                "format": "double",
+                "minimum": 0,
+                "default": 0
               }
             }
           },
