@@ -45,6 +45,7 @@
           "insurance_claim",
           "packages"
         ],
+        "additionalProperties": false,
         "properties": {
           "label_id": {
             "title": "se_id",

@@ -1,0 +1,110 @@
+{
+  "$id": "recognize_address_response_body",
+  "title": "recognize_address_response_body",
+  "type": "object",
+  "required": [
+    "score",
+    "address",
+    "entities"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "score": {
+      "type": "number",
+      "format": "double",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "address": {
+      "title": "address",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "company_name": {
+          "type": "string"
+        },
+        "address_line1": {
+          "type": "string"
+        },
+        "address_line2": {
+          "type": "string"
+        },
+        "address_line3": {
+          "type": "string"
+        },
+        "city_locality": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string"
+        },
+        "address_residential_indicator": {
+          "title": "address_residential_indicator",
+          "type": "string",
+          "enum": [
+            "unknown",
+            "yes",
+            "no"
+          ]
+        }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "title": "recognized_entity",
+        "type": "object",
+        "required": [
+          "type",
+          "score",
+          "text",
+          "start_index",
+          "end_index"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "score": {
+            "format": "double",
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_index": {
+            "type": "number",
+            "format": "integer",
+            "minimum": 0
+          },
+          "end_index": {
+            "type": "number",
+            "format": "integer",
+            "minimum": 0
+          },
+          "result": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}
