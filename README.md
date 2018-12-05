@@ -18,7 +18,7 @@ Other API Definition Formats
 -----------------------------------
 
 ### ![OpenAPI Logo](https://shipengine.github.io/img/openapi-logo-small.png) OpenAPI
-The official ShipEngine [OpenAPI 3.0 definitions](https://github.com/shipengine/OpenAPI).  The OpenAPI format is supported by many [tools and libraries](https://openapi.tools/) for every major technology stack.
+The official ShipEngine [OpenAPI 3.0 definitions](https://github.com/ShipEngine/shipengine-openapi).  The OpenAPI format is supported by many [tools and libraries](https://openapi.tools/) for every major technology stack.
 
 ### ![Postman Logo](https://shipengine.github.io/img/postman-logo-small.png) Postman
 An official ShipEngine [Postman](https://getpostman.com) collection is **coming soon!**
