@@ -17,36 +17,48 @@
       "additionalProperties": false,
       "properties": {
         "name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "phone": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "company_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "address_line1": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "address_line2": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "address_line3": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "city_locality": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "state_province": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "postal_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "country_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
         },
         "address_residential_indicator": {
+          "default": "unknown",
           "title": "address_residential_indicator",
           "type": "string",
           "enum": [
