@@ -16,7 +16,7 @@
       "maximum": 1
     },
     "address": {
-      "title": "address",
+      "title": "partial_address",
       "type": "object",
       "additionalProperties": false,
       "properties": {
