@@ -1001,6 +1001,17 @@
       }
     }
   },
+  "/v1/shipments/recognize": {
+    "put": {
+      "name": "shipment.parse",
+      "requestSchema": "requests/recognize_shipment_request_body.json",
+      "responseSchemas": {
+        "200": "responses/recognize_shipment_response_body.json",
+        "400": "responses/error_response_body.json",
+        "500": "responses/error_response_body.json"
+      }
+    }
+  },
   "/v1/shipments/{shipment_id}": {
     "get": {
       "name": "shipments.get_by_id",

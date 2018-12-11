@@ -1,30 +1,21 @@
 {
-  "$id": "rate_shipment_request_body",
-  "title": "rate_shipment_request_body",
+  "$id": "recognize_shipment_request_body",
+  "title": "recognize_shipment_request_body",
   "type": "object",
+  "required": [
+    "text"
+  ],
   "additionalProperties": false,
   "properties": {
-    "shipment_id": {
-      "title": "se_id",
+    "text": {
       "type": "string",
-      "minLength": 1,
-      "maxLength": 25,
-      "pattern": "^se(-[a-z0-9]+)+$"
+      "minLength": 1
     },
     "shipment": {
-      "title": "address_validating_shipment",
+      "title": "partial_shipment",
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "validate_address": {
-          "title": "validate_address",
-          "type": "string",
-          "enum": [
-            "no_validation",
-            "validate_only",
-            "validate_and_clean"
-          ]
-        },
         "shipment_id": {
           "title": "se_id",
           "type": "string",
@@ -40,28 +31,34 @@
           "pattern": "^se(-[a-z0-9]+)+$"
         },
         "service_code": {
-          "type": "string"
+          "title": "service_code",
+          "type": "string",
+          "pattern": "^[a-z0-9]+(_[a-z0-9-]+)* ?$"
         },
         "external_shipment_id": {
-          "title": "se_id",
           "type": "string",
-          "minLength": 1,
-          "maxLength": 25,
-          "pattern": "^se(-[a-z0-9]+)+$"
+          "maxLength": 50
         },
         "ship_date": {
+          "title": "date",
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}(T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2}))?$"
         },
         "created_at": {
+          "title": "date_time",
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
         },
         "modified_at": {
+          "title": "date_time",
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
         },
         "shipment_status": {
+          "default": "pending",
           "title": "shipment_status",
           "type": "string",
           "enum": [
@@ -206,6 +203,7 @@
           }
         },
         "warehouse_id": {
+          "default": null,
           "title": "se_id",
           "type": "string",
           "minLength": 1,
@@ -280,6 +278,7 @@
           }
         },
         "confirmation": {
+          "default": "none",
           "title": "confirmation",
           "type": "string",
           "enum": [
@@ -291,6 +290,7 @@
           ]
         },
         "customs": {
+          "default": null,
           "title": "international_shipment_options",
           "type": "object",
           "required": [
@@ -441,6 +441,7 @@
           }
         },
         "insurance_provider": {
+          "default": "none",
           "title": "insurance_provider",
           "type": "string",
           "enum": [
@@ -451,19 +452,26 @@
         },
         "tags": {
           "type": "array",
+          "default": [],
+          "minItems": 0,
           "items": {
-            "title": "tag_response_body",
+            "title": "tag",
             "type": "object",
+            "required": [
+              "name"
+            ],
             "additionalProperties": false,
             "properties": {
               "name": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               }
             }
           }
         },
         "packages": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "title": "package",
             "type": "object",
@@ -633,19 +641,6 @@
                 "kilogram"
               ]
             }
-          }
-        }
-      }
-    },
-    "rate_options": {
-      "title": "rate_request_body",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "carrier_ids": {
-          "type": "array",
-          "items": {
-            "type": "string"
           }
         }
       }

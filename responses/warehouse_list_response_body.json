@@ -75,6 +75,7 @@
                 "minLength": 1
               },
               "country_code": {
+                "title": "country_code",
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 2
@@ -141,6 +142,7 @@
                 "minLength": 1
               },
               "country_code": {
+                "title": "country_code",
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 2
