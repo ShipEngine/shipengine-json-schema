@@ -11,7 +11,7 @@
         "rate",
         "track",
         "batch",
-        "store_refresh_complete",
+        "order_source_refresh_complete",
         "sales_orders_imported",
         "carrier_connected"
       ]

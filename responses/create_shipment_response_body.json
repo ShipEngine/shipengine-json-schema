@@ -201,6 +201,7 @@
                 "title": "detail_code",
                 "type": "string",
                 "enum": [
+                  "unsupported_country",
                   "non_supported_country",
                   "minimum_postal_code_verification_failed",
                   "street_does_not_match_unique_street_name",
@@ -244,7 +245,17 @@
                   "coded_to_community_level",
                   "coded_to_state_level",
                   "coded_to_rooftop_level",
-                  "coded_to_rooftop_interpolation_level"
+                  "coded_to_rooftop_interpolation_level",
+                  "name_max_length_exceeded",
+                  "phone_max_length_exceeded",
+                  "company_name_max_length_exceeded",
+                  "line1_min_max_length",
+                  "line2_max_length_exceeded",
+                  "line3_max_length_exceeded",
+                  "city_locality_max_length_exceeded",
+                  "state_province_max_length_exceeded",
+                  "invalid_postal_code",
+                  "country_invalid_length"
                 ]
               }
             }

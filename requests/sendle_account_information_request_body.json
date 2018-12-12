@@ -1,0 +1,21 @@
+{
+  "$id": "sendle_account_information_request_body",
+  "title": "sendle_account_information_request_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "nickname": {
+      "type": "string"
+    },
+    "sendle_id": {
+      "title": "se_id",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25,
+      "pattern": "^se(-[a-z0-9]+)+$"
+    },
+    "api_key": {
+      "type": "string"
+    }
+  }
+}
