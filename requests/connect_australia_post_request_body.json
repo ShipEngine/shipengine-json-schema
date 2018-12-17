@@ -1,13 +1,16 @@
 {
-  "$id": "purolator_account_information_request_body",
-  "title": "purolator_account_information_request_body",
+  "$id": "connect_australia_post_request_body",
+  "title": "connect_australia_post_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "account_number": {
       "type": "string"
     },
-    "activation_key": {
+    "api_key": {
+      "type": "string"
+    },
+    "api_secret": {
       "type": "string"
     },
     "nickname": {

@@ -1,6 +1,6 @@
 {
-  "$id": "fedex_uk_account_information_request_body",
-  "title": "fedex_uk_account_information_request_body",
+  "$id": "connect_fedex_uk_request_body",
+  "title": "connect_fedex_uk_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {

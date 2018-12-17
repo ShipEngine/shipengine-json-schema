@@ -1,16 +1,16 @@
 {
-  "$id": "stamps_account_information_request_body",
-  "title": "stamps_account_information_request_body",
+  "$id": "connect_endicia_request_body",
+  "title": "connect_endicia_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "nickname": {
       "type": "string"
     },
-    "username": {
+    "account": {
       "type": "string"
     },
-    "password": {
+    "passphrase": {
       "type": "string"
     }
   }

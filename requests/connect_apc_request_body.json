@@ -1,6 +1,6 @@
 {
-  "$id": "globegistics_account_information_request_body",
-  "title": "globegistics_account_information_request_body",
+  "$id": "connect_apc_request_body",
+  "title": "connect_apc_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {

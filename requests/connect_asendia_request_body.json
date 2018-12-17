@@ -1,6 +1,6 @@
 {
-  "$id": "dhl_ecommerce_account_information_request_body",
-  "title": "dhl_ecommerce_account_information_request_body",
+  "$id": "connect_asendia_request_body",
+  "title": "connect_asendia_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -8,9 +8,6 @@
       "type": "string"
     },
     "account_number": {
-      "type": "string"
-    },
-    "pickup_number": {
       "type": "string"
     },
     "ftp_username": {

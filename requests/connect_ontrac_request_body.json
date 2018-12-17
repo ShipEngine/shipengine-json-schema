@@ -1,16 +1,16 @@
 {
-  "$id": "dpd_account_information_request_body",
-  "title": "dpd_account_information_request_body",
+  "$id": "connect_ontrac_request_body",
+  "title": "connect_ontrac_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "nickname": {
+      "type": "string"
+    },
     "account_number": {
       "type": "string"
     },
     "password": {
-      "type": "string"
-    },
-    "nickname": {
       "type": "string"
     }
   }

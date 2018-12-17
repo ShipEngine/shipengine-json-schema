@@ -187,7 +187,7 @@
   "/v1/connections/carriers/access_worldwide": {
     "post": {
       "name": "access_worldwide_account_carrier.connect_account",
-      "requestSchema": "requests/access_worldwide_account_information_request_body.json",
+      "requestSchema": "requests/connect_access_worldwide_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -209,7 +209,7 @@
   "/v1/connections/carriers/apc": {
     "post": {
       "name": "apc_account_carrier.connect_account",
-      "requestSchema": "requests/apc_account_information_request_body.json",
+      "requestSchema": "requests/connect_apc_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -231,7 +231,7 @@
   "/v1/connections/carriers/asendia": {
     "post": {
       "name": "asendia_account_carrier.connect_account",
-      "requestSchema": "requests/asendia_account_information_request_body.json",
+      "requestSchema": "requests/connect_asendia_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -253,7 +253,7 @@
   "/v1/connections/carriers/australia_post": {
     "post": {
       "name": "australia_post_account_carrier.connect_account",
-      "requestSchema": "requests/australia_post_account_information_request_body.json",
+      "requestSchema": "requests/connect_australia_post_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -275,7 +275,7 @@
   "/v1/connections/carriers/dhl_ecommerce": {
     "post": {
       "name": "dhl_ecommerce_account_carrier.connect_account",
-      "requestSchema": "requests/dhl_ecommerce_account_information_request_body.json",
+      "requestSchema": "requests/connect_dhl_ecommerce_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -297,7 +297,7 @@
   "/v1/connections/carriers/dhl_express": {
     "post": {
       "name": "dhl_express_account_carrier.connect_account",
-      "requestSchema": "requests/dhl_express_account_information_request_body.json",
+      "requestSchema": "requests/connect_dhl_express_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -339,7 +339,7 @@
   "/v1/connections/carriers/dhl_express_au": {
     "post": {
       "name": "dhl_express_au_account_carrier.connect_account",
-      "requestSchema": "requests/dhl_express_au_account_information_request_body.json",
+      "requestSchema": "requests/connect_dhl_express_au_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -361,7 +361,7 @@
   "/v1/connections/carriers/dhl_express_ca": {
     "post": {
       "name": "dhl_express_ca_account_carrier.connect_account",
-      "requestSchema": "requests/dhl_express_ca_account_information_request_body.json",
+      "requestSchema": "requests/connect_dhl_express_ca_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -383,7 +383,7 @@
   "/v1/connections/carriers/dhl_express_uk": {
     "post": {
       "name": "dhl_express_uk_account_carrier.connect_account",
-      "requestSchema": "requests/dhl_express_uk_account_information_request_body.json",
+      "requestSchema": "requests/connect_dhl_express_uk_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -405,7 +405,7 @@
   "/v1/connections/carriers/dpd": {
     "post": {
       "name": "dpd_account_carrier.connect_account",
-      "requestSchema": "requests/dpd_account_information_request_body.json",
+      "requestSchema": "requests/connect_dpd_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -427,7 +427,7 @@
   "/v1/connections/carriers/endicia": {
     "post": {
       "name": "endicia_account_carrier.connect_account",
-      "requestSchema": "requests/endicia_account_information_request_body.json",
+      "requestSchema": "requests/connect_endicia_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -449,7 +449,7 @@
   "/v1/connections/carriers/fedex": {
     "post": {
       "name": "fedex_account_carrier.connect_account",
-      "requestSchema": "requests/fedex_account_information_request_body.json",
+      "requestSchema": "requests/connect_fedex_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -491,7 +491,7 @@
   "/v1/connections/carriers/fedex_uk": {
     "post": {
       "name": "fedex_uk_account_carrier.connect_account",
-      "requestSchema": "requests/fedex_uk_account_information_request_body.json",
+      "requestSchema": "requests/connect_fedex_uk_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -513,7 +513,7 @@
   "/v1/connections/carriers/firstmile": {
     "post": {
       "name": "first_mile_account_carrier.connect_account",
-      "requestSchema": "requests/first_mile_account_information_request_body.json",
+      "requestSchema": "requests/connect_first_mile_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -535,7 +535,7 @@
   "/v1/connections/carriers/globegistics": {
     "post": {
       "name": "globegistics_account_carrier.connect_account",
-      "requestSchema": "requests/globegistics_account_information_request_body.json",
+      "requestSchema": "requests/connect_globegistics_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -557,7 +557,7 @@
   "/v1/connections/carriers/imex": {
     "post": {
       "name": "imex_account_carrier.connect_account",
-      "requestSchema": "requests/imex_account_information_request_body.json",
+      "requestSchema": "requests/connect_imex_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -579,7 +579,7 @@
   "/v1/connections/carriers/newgistics": {
     "post": {
       "name": "newgistics_account_carrier.connect_account",
-      "requestSchema": "requests/newgistics_account_information_request_body.json",
+      "requestSchema": "requests/connect_newgistics_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -612,7 +612,7 @@
   "/v1/connections/carriers/ontrac": {
     "post": {
       "name": "ontrac_account_carrier.connect_account",
-      "requestSchema": "requests/ontrac_account_information_request_body.json",
+      "requestSchema": "requests/connect_ontrac_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -634,7 +634,7 @@
   "/v1/connections/carriers/purolator_canada": {
     "post": {
       "name": "purolator_account_carrier.connect_account",
-      "requestSchema": "requests/purolator_account_information_request_body.json",
+      "requestSchema": "requests/connect_purolator_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -656,7 +656,7 @@
   "/v1/connections/carriers/royal_mail": {
     "post": {
       "name": "royal_mail_account_carrier.connect_account",
-      "requestSchema": "requests/royal_mail_account_information_request_body.json",
+      "requestSchema": "requests/connect_royal_mail_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -678,7 +678,7 @@
   "/v1/connections/carriers/rr_donnelley": {
     "post": {
       "name": "rr_donnelley_account_carrier.connect_account",
-      "requestSchema": "requests/rr_donnelley_account_information_request_body.json",
+      "requestSchema": "requests/connect_rr_donnelley_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -700,7 +700,7 @@
   "/v1/connections/carriers/sendle": {
     "post": {
       "name": "sendle_account_carrier.connect_account",
-      "requestSchema": "requests/sendle_account_information_request_body.json",
+      "requestSchema": "requests/connect_sendle_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -722,7 +722,7 @@
   "/v1/connections/carriers/stamps_com": {
     "post": {
       "name": "stamps_account_carrier.connect_account",
-      "requestSchema": "requests/stamps_account_information_request_body.json",
+      "requestSchema": "requests/connect_stamps_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -755,7 +755,7 @@
   "/v1/connections/carriers/ups": {
     "post": {
       "name": "ups_account_carrier.connect_account",
-      "requestSchema": "requests/ups_account_information_request_body.json",
+      "requestSchema": "requests/connect_ups_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",

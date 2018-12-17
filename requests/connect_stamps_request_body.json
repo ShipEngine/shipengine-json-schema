@@ -1,6 +1,6 @@
 {
-  "$id": "rr_donnelley_account_information_request_body",
-  "title": "rr_donnelley_account_information_request_body",
+  "$id": "connect_stamps_request_body",
+  "title": "connect_stamps_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {

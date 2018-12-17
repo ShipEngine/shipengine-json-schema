@@ -1,6 +1,6 @@
 {
-  "$id": "ups_account_information_request_body",
-  "title": "ups_account_information_request_body",
+  "$id": "connect_ups_request_body",
+  "title": "connect_ups_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {

@@ -1,19 +1,25 @@
 {
-  "$id": "royal_mail_account_information_request_body",
-  "title": "royal_mail_account_information_request_body",
+  "$id": "connect_fedex_request_body",
+  "title": "connect_fedex_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "account_number": {
       "type": "string"
     },
-    "oba_email": {
-      "title": "email",
-      "type": "string",
-      "format": "email",
-      "minLength": 1
+    "address1": {
+      "type": "string"
     },
-    "contact_name": {
+    "address2": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "country_code": {
       "type": "string"
     },
     "email": {
@@ -22,28 +28,28 @@
       "format": "email",
       "minLength": 1
     },
-    "company_name": {
+    "first_name": {
       "type": "string"
     },
-    "street_line1": {
-      "type": "string"
-    },
-    "street_line2": {
-      "type": "string"
-    },
-    "street_line3": {
-      "type": "string"
-    },
-    "city": {
-      "type": "string"
-    },
-    "postal_code": {
+    "last_name": {
       "type": "string"
     },
     "phone": {
       "type": "string"
     },
+    "postal_code": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
     "nickname": {
+      "type": "string"
+    },
+    "agree_to_eula": {
+      "type": "boolean"
+    },
+    "meter_number": {
       "type": "string"
     }
   }

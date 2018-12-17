@@ -1,23 +1,20 @@
 {
-  "$id": "first_mile_account_information_request_body",
-  "title": "first_mile_account_information_request_body",
+  "$id": "connect_sendle_request_body",
+  "title": "connect_sendle_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "nickname": {
       "type": "string"
     },
-    "mailer_id": {
+    "sendle_id": {
       "title": "se_id",
       "type": "string",
       "minLength": 1,
       "maxLength": 25,
       "pattern": "^se(-[a-z0-9]+)+$"
     },
-    "profile_name": {
-      "type": "string"
-    },
-    "password": {
+    "api_key": {
       "type": "string"
     }
   }

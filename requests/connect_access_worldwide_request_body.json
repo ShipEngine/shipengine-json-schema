@@ -1,16 +1,16 @@
 {
-  "$id": "endicia_account_information_request_body",
-  "title": "endicia_account_information_request_body",
+  "$id": "connect_access_worldwide_request_body",
+  "title": "connect_access_worldwide_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "nickname": {
       "type": "string"
     },
-    "account": {
+    "username": {
       "type": "string"
     },
-    "passphrase": {
+    "password": {
       "type": "string"
     }
   }

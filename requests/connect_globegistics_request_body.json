@@ -1,6 +1,6 @@
 {
-  "$id": "access_worldwide_account_information_request_body",
-  "title": "access_worldwide_account_information_request_body",
+  "$id": "connect_globegistics_request_body",
+  "title": "connect_globegistics_request_body",
   "type": "object",
   "additionalProperties": false,
   "properties": {
