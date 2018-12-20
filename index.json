@@ -512,8 +512,8 @@
   },
   "/v1/connections/carriers/firstmile": {
     "post": {
-      "name": "first_mile_account_carrier.connect_account",
-      "requestSchema": "requests/connect_first_mile_request_body.json",
+      "name": "firstmile_account_carrier.connect_account",
+      "requestSchema": "requests/connect_firstmile_request_body.json",
       "responseSchemas": {
         "200": "responses/connect_account_response_body.json",
         "400": "responses/error_response_body.json",
@@ -523,7 +523,7 @@
   },
   "/v1/connections/carriers/firstmile/{carrier_id}": {
     "delete": {
-      "name": "first_mile_account_carrier.disconnect_account",
+      "name": "firstmile_account_carrier.disconnect_account",
       "requestSchema": null,
       "responseSchemas": {
         "204": "responses/empty_response_body.json",
