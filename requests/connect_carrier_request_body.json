@@ -1,0 +1,597 @@
+{
+  "$id": "connect_carrier_request_body",
+  "title": "connect_carrier_request_body",
+  "oneOf": [
+    {
+      "title": "connect_access_worldwide_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_apc_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_asendia_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "account_number": {
+          "type": "string"
+        },
+        "ftp_username": {
+          "type": "string"
+        },
+        "ftp_password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_australia_post_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "api_key": {
+          "type": "string"
+        },
+        "api_secret": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_ecommerce_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "account_number": {
+          "type": "string"
+        },
+        "pickup_number": {
+          "type": "string"
+        },
+        "ftp_username": {
+          "type": "string"
+        },
+        "ftp_password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_express_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "account_number": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_express_au_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_express_ca_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_express_uk_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "site_id": {
+          "title": "se_id",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 25,
+          "pattern": "^se(-[a-z0-9]+)+$"
+        },
+        "password": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_dpd_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_endicia_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "account": {
+          "type": "string"
+        },
+        "passphrase": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_fedex_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string"
+        },
+        "email": {
+          "title": "email",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "agree_to_eula": {
+          "type": "boolean"
+        },
+        "meter_number": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_fedex_uk_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string"
+        },
+        "email": {
+          "title": "email",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "agree_to_eula": {
+          "type": "boolean"
+        },
+        "meter_number": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_firstmile_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "mailer_id": {
+          "title": "se_id",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 25,
+          "pattern": "^se(-[a-z0-9]+)+$"
+        },
+        "profile_name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_globegistics_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_imex_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_newgistics_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "merchant_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mailer_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "induction_site": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_ontrac_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "account_number": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_purolator_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "activation_key": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_royal_mail_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "oba_email": {
+          "title": "email",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        },
+        "contact_name": {
+          "type": "string"
+        },
+        "email": {
+          "title": "email",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        },
+        "company_name": {
+          "type": "string"
+        },
+        "street_line1": {
+          "type": "string"
+        },
+        "street_line2": {
+          "type": "string"
+        },
+        "street_line3": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_rr_donnelley_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_sendle_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "sendle_id": {
+          "title": "se_id",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 25,
+          "pattern": "^se(-[a-z0-9]+)+$"
+        },
+        "api_key": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_stamps_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "connect_ups_request_body",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "account_number": {
+          "type": "string"
+        },
+        "account_country_code": {
+          "type": "string"
+        },
+        "account_postal_code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string"
+        },
+        "email": {
+          "title": "email",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        },
+        "phone": {
+          "type": "string"
+        },
+        "invoice": {
+          "title": "ups_invoice",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "invoice_date": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "invoice_number": {
+              "type": "string"
+            },
+            "control_id": {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            },
+            "invoice_amount": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        },
+        "agree_to_technology_agreement": {
+          "type": "boolean"
+        }
+      }
+    }
+  ]
+}
