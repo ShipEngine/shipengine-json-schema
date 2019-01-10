@@ -680,12 +680,22 @@
       "type": "string"
     },
     "label_format": {
+      "default": "pdf",
       "title": "label_format",
       "type": "string",
       "enum": [
         "pdf",
         "png",
         "zpl"
+      ]
+    },
+    "label_download_type": {
+      "default": "url",
+      "title": "label_download_type",
+      "type": "string",
+      "enum": [
+        "url",
+        "inline"
       ]
     }
   }
