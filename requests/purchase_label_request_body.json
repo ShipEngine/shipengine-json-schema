@@ -460,7 +460,8 @@
           "enum": [
             "none",
             "shipsurance",
-            "carrier"
+            "carrier",
+            "third_party"
           ]
         },
         "tags": {
@@ -668,6 +669,7 @@
       "type": "boolean"
     },
     "validate_address": {
+      "default": "validate_and_clean",
       "title": "validate_address",
       "type": "string",
       "enum": [

@@ -159,7 +159,7 @@
           "additionalProperties": false,
           "properties": {
             "code": {
-              "title": "code",
+              "title": "address_validation_code",
               "type": "string",
               "enum": [
                 "a1000",
@@ -181,7 +181,7 @@
               "type": "string"
             },
             "type": {
-              "title": "type",
+              "title": "address_validation_message_type",
               "type": "string",
               "enum": [
                 "error",
@@ -190,7 +190,7 @@
               ]
             },
             "detail_code": {
-              "title": "detail_code",
+              "title": "address_validation_detail_code",
               "type": "string",
               "enum": [
                 "unsupported_country",

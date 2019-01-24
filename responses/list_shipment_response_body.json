@@ -462,7 +462,8 @@
             "enum": [
               "none",
               "shipsurance",
-              "carrier"
+              "carrier",
+              "third_party"
             ]
           },
           "tags": {
