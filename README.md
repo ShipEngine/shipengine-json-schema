@@ -22,3 +22,6 @@ The official ShipEngine [OpenAPI 3.0 definitions](https://github.com/ShipEngine/
 
 ### ![Postman Logo](https://shipengine.github.io/img/postman-logo-small.png) Postman
 The official [Postman collection](https://github.com/shipengine/shipengine-postman) for ShipEngine.  Just import it into [Postman](https://getpostman.com) and immediately begin interacting with the ShipEngine API.
+
+### ![Redoc Logo](https://shipengine.github.io/img/redoc-logo-small.png)
+View the ShipEngine API definition [online in your browser](https://shipengine.github.io/shipengine-openapi/). This web page is generated from the [OpenAPI definition](https://github.com/ShipEngine/shipengine-openapi) using [ReDoc](https://github.com/Redocly/redoc).
