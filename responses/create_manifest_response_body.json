@@ -1,0 +1,245 @@
+{
+  "$id": "create_manifest_response_body",
+  "title": "create_manifest_response_body",
+  "type": "object",
+  "description": "A create manifest response body",
+  "required": [
+    "manifest_id",
+    "form_id",
+    "created_at",
+    "ship_date",
+    "shipments",
+    "warehouse_id",
+    "submission_id",
+    "carrier_id",
+    "manifest_download"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "title": "manifests",
+      "type": "object",
+      "description": "An array of manifest resources",
+      "additionalProperties": false,
+      "properties": {
+        "manifests": {
+          "type": "array",
+          "items": {
+            "title": "manifest",
+            "type": "object",
+            "description": "Used for combining packages into one scannable form that a carrier can use when picking up a large \nnumber of shipments\n",
+            "additionalProperties": false,
+            "properties": {
+              "manifest_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the manifest"
+              },
+              "form_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the form"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "minLength": 1,
+                "description": "The date-time that the manifest was created"
+              },
+              "ship_date": {
+                "type": "string",
+                "format": "date-time",
+                "minLength": 1,
+                "description": "The date-time that the manifests shipments will be picked up"
+              },
+              "shipments": {
+                "type": "integer",
+                "format": "int32",
+                "minimum": 1,
+                "description": "The number of shipments that are included in this manifest"
+              },
+              "warehouse_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the warehouse"
+              },
+              "submission_id": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A string that uniquely identifies the submission"
+              },
+              "carrier_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the carrier"
+              },
+              "manifest_download": {
+                "allOf": [
+                  {
+                    "title": "manifest_download",
+                    "type": "object",
+                    "description": "Object containing the href link to download the manifest file",
+                    "additionalProperties": false,
+                    "properties": {
+                      "href": {
+                        "allOf": [
+                          {
+                            "title": "url",
+                            "type": "string",
+                            "format": "url",
+                            "minLength": 1,
+                            "description": "A URL"
+                          }
+                        ],
+                        "description": "The URL of the linked resource, if any"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "deprecated_manifest",
+      "type": "object",
+      "description": "Deprecated manifest resource",
+      "additionalProperties": false,
+      "properties": {
+        "manifest_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the manifest"
+        },
+        "form_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the form"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "minLength": 1,
+          "description": "The date-time that the manifest was created"
+        },
+        "ship_date": {
+          "type": "string",
+          "format": "date-time",
+          "minLength": 1,
+          "description": "The date-time that the manifests shipments will be picked up"
+        },
+        "shipments": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 1,
+          "description": "The number of shipments that are included in this manifest"
+        },
+        "warehouse_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the warehouse"
+        },
+        "submission_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A string that uniquely identifies the submission"
+        },
+        "carrier_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the carrier"
+        },
+        "manifest_download": {
+          "allOf": [
+            {
+              "title": "manifest_download",
+              "type": "object",
+              "description": "Object containing the href link to download the manifest file",
+              "additionalProperties": false,
+              "properties": {
+                "href": {
+                  "allOf": [
+                    {
+                      "title": "url",
+                      "type": "string",
+                      "format": "url",
+                      "minLength": 1,
+                      "description": "A URL"
+                    }
+                  ],
+                  "description": "The URL of the linked resource, if any"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

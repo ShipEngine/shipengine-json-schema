@@ -1,0 +1,80 @@
+{
+  "$id": "create_return_label_request_body",
+  "title": "create_return_label_request_body",
+  "type": "object",
+  "description": "A create return label request body",
+  "additionalProperties": false,
+  "properties": {
+    "charge_event": {
+      "allOf": [
+        {
+          "title": "label_charge_event",
+          "type": "string",
+          "enum": [
+            "carrier_default",
+            "on_creation",
+            "on_carrier_acceptance"
+          ],
+          "description": "Determines when the user's account will be charged for the label."
+        }
+      ],
+      "description": "The label charge event.\n"
+    },
+    "label_layout": {
+      "default": "4x6",
+      "allOf": [
+        {
+          "title": "label_layout",
+          "type": "string",
+          "enum": [
+            "4x6",
+            "letter"
+          ],
+          "description": "The available layouts (sizes) in which shipping labels can be downloaded.  The label format determines which sizes are supported.  `4x6` is supported for all label formats, whereas `letter` (8.5\" x 11\") is only supported for `pdf` format.\n"
+        }
+      ],
+      "description": "The layout (size) that you want the label to be in.  The `label_format` determines which sizes are allowed.  `4x6` is supported for all label formats, whereas `letter` (8.5\" x 11\") is only supported for `pdf` format.\n"
+    },
+    "label_format": {
+      "default": "pdf",
+      "allOf": [
+        {
+          "title": "label_format",
+          "type": "string",
+          "enum": [
+            "pdf",
+            "png",
+            "zpl"
+          ],
+          "description": "The possible file formats in which shipping labels can be downloaded.  We recommend `pdf` format because it is supported by all carriers, whereas some carriers do not support the `png` or `zpl` formats.\n\n|Label Format  | Supported Carriers\n|--------------|-----------------------------------\n|`pdf`         | All carriers\n|`png`         | `fedex` <br> `stamps_com` <br> `ups` <br> `usps`\n|`zpl`         | `access_worldwide` <br> `apc` <br> `asendia` <br> `dhl_global_mail` <br> `dhl_express` <br> `dhl_express_australia` <br> `dhl_express_canada` <br> `dhl_express_worldwide` <br> `dhl_express_uk` <br> `dpd` <br> `endicia` <br> `fedex` <br> `fedex_uk` <br> `firstmile` <br> `globegistics` <br> `imex` <br> `newgistics` <br> `ontrac` <br> `rr_donnelley` <br> `stamps_com` <br> `ups` <br> `usps`\n"
+        }
+      ],
+      "description": "The file format that you want the label to be in.  We recommend `pdf` format because it is supported by all carriers, whereas some carriers do not support the `png` or `zpl` formats.\n"
+    },
+    "label_download_type": {
+      "default": "url",
+      "allOf": [
+        {
+          "title": "label_download_type",
+          "type": "string",
+          "enum": [
+            "url",
+            "inline"
+          ],
+          "description": "There are two different ways to [download a label](https://www.shipengine.com/docs/labels/downloading/):\n\n|Label Download Type | Description\n|--------------------|------------------------------\n|`url`               |You will receive a URL, which you can use to download the label in a separate request. The URL will remain valid for 90 days.<br><br>This is the default if `label_download_type` is unspecified.\n|`inline`            |You will receive the Base64-encoded label as part of the response. No need for a second request to download the label.\n"
+        }
+      ]
+    },
+    "label_image_id": {
+      "allOf": [
+        {
+          "title": "image_id",
+          "type": "string",
+          "minLength": 4,
+          "description": "Used to identify an image resource."
+        }
+      ],
+      "description": "The label image resource that was used to create a custom label image."
+    }
+  }
+}

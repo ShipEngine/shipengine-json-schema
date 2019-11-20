@@ -1,0 +1,6 @@
+{
+  "$id": "delete_package_type_response_body",
+  "title": "empty_response_body",
+  "type": "string",
+  "maxLength": 0
+}

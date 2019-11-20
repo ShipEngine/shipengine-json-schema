@@ -2,22 +2,49 @@
   "$id": "process_batch_request_body",
   "title": "process_batch_request_body",
   "type": "object",
+  "description": "A process batch request body",
   "additionalProperties": false,
   "properties": {
     "ship_date": {
-      "type": "string",
-      "format": "date-time"
+      "allOf": [
+        {
+          "title": "date_time",
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$",
+          "description": "An [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) string that represents a date and time.\n"
+        }
+      ],
+      "description": "The Ship date the batch is being processed for"
     },
     "label_layout": {
-      "type": "string"
+      "type": "string",
+      "default": "4x6",
+      "allOf": [
+        {
+          "title": "label_layout",
+          "type": "string",
+          "enum": [
+            "4x6",
+            "letter"
+          ],
+          "description": "The available layouts (sizes) in which shipping labels can be downloaded.  The label format determines which sizes are supported.  `4x6` is supported for all label formats, whereas `letter` (8.5\" x 11\") is only supported for `pdf` format.\n"
+        }
+      ]
     },
     "label_format": {
-      "title": "label_format",
-      "type": "string",
-      "enum": [
-        "pdf",
-        "png",
-        "zpl"
+      "default": "pdf",
+      "allOf": [
+        {
+          "title": "label_format",
+          "type": "string",
+          "enum": [
+            "pdf",
+            "png",
+            "zpl"
+          ],
+          "description": "The possible file formats in which shipping labels can be downloaded.  We recommend `pdf` format because it is supported by all carriers, whereas some carriers do not support the `png` or `zpl` formats.\n\n|Label Format  | Supported Carriers\n|--------------|-----------------------------------\n|`pdf`         | All carriers\n|`png`         | `fedex` <br> `stamps_com` <br> `ups` <br> `usps`\n|`zpl`         | `access_worldwide` <br> `apc` <br> `asendia` <br> `dhl_global_mail` <br> `dhl_express` <br> `dhl_express_australia` <br> `dhl_express_canada` <br> `dhl_express_worldwide` <br> `dhl_express_uk` <br> `dpd` <br> `endicia` <br> `fedex` <br> `fedex_uk` <br> `firstmile` <br> `globegistics` <br> `imex` <br> `newgistics` <br> `ontrac` <br> `rr_donnelley` <br> `stamps_com` <br> `ups` <br> `usps`\n"
+        }
       ]
     }
   }

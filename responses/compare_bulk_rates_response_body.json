@@ -1,0 +1,110 @@
+{
+  "$id": "compare_bulk_rates_response_body",
+  "title": "compare_bulk_rates_response_body",
+  "type": "array",
+  "description": "A bulk rate response body",
+  "items": {
+    "title": "bulk_rate",
+    "type": "object",
+    "description": "A bulk rate",
+    "required": [
+      "rate_request_id",
+      "shipment_id",
+      "created_at",
+      "status",
+      "errors"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "rate_request_id": {
+        "allOf": [
+          {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$",
+            "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+          }
+        ],
+        "description": "A string that uniquely identifies the rate request"
+      },
+      "shipment_id": {
+        "allOf": [
+          {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$",
+            "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+          }
+        ],
+        "description": "A string that uniquely identifies the shipment"
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "allOf": [
+          {
+            "title": "date_time",
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$",
+            "description": "An [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) string that represents a date and time.\n"
+          }
+        ]
+      },
+      "status": {
+        "allOf": [
+          {
+            "title": "rate_response_status",
+            "type": "string",
+            "enum": [
+              "working",
+              "completed",
+              "partial",
+              "error"
+            ],
+            "description": "The possible rate response status values"
+          }
+        ]
+      },
+      "errors": {
+        "type": "array",
+        "items": {
+          "allOf": [
+            {
+              "title": "provider_error",
+              "type": "object",
+              "description": "A provider error",
+              "additionalProperties": false,
+              "properties": {
+                "carrier_id": {
+                  "allOf": [
+                    {
+                      "title": "se_id",
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 25,
+                      "pattern": "^se(-[a-z0-9]+)+$",
+                      "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                    }
+                  ],
+                  "description": "A string that uniquely identifies the carrier"
+                },
+                "message": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Provider error message"
+                }
+              }
+            }
+          ],
+          "description": "An error that occurred while retrieving the bulk rate"
+        },
+        "description": "An array of errors that were returned while retrieving the bulk rate"
+      }
+    }
+  }
+}

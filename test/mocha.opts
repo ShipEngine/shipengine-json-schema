@@ -1,0 +1,4 @@
+--bail
+--recursive
+test/helpers/**/*.js
+test/specs/**/*.spec.js

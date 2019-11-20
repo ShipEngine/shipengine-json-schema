@@ -2,180 +2,311 @@
   "$id": "list_manifests_response_body",
   "title": "list_manifests_response_body",
   "type": "object",
+  "description": "A list manifests response body",
+  "required": [
+    "manifests",
+    "total",
+    "page",
+    "pages",
+    "links"
+  ],
   "additionalProperties": false,
   "properties": {
     "manifests": {
       "type": "array",
+      "default": [],
       "items": {
-        "title": "manifest_response_body",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "manifest_id": {
-            "title": "se_id",
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 25,
-            "pattern": "^se(-[a-z0-9]+)+$"
-          },
-          "form_id": {
-            "title": "se_id",
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 25,
-            "pattern": "^se(-[a-z0-9]+)+$"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "ship_date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "shipments": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "warehouse_id": {
-            "title": "se_id",
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 25,
-            "pattern": "^se(-[a-z0-9]+)+$"
-          },
-          "submission_id": {
-            "title": "se_id",
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 25,
-            "pattern": "^se(-[a-z0-9]+)+$"
-          },
-          "carrier_id": {
-            "title": "se_id",
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 25,
-            "pattern": "^se(-[a-z0-9]+)+$"
-          },
-          "manifest_download": {
-            "title": "optional_link",
+        "allOf": [
+          {
+            "title": "manifest",
             "type": "object",
+            "description": "Used for combining packages into one scannable form that a carrier can use when picking up a large \nnumber of shipments\n",
             "additionalProperties": false,
             "properties": {
-              "href": {
-                "title": "url",
-                "type": "string",
-                "format": "url",
-                "minLength": 1
+              "manifest_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the manifest"
               },
-              "type": {
+              "form_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the form"
+              },
+              "created_at": {
                 "type": "string",
-                "minLength": 1
+                "format": "date-time",
+                "minLength": 1,
+                "description": "The date-time that the manifest was created"
+              },
+              "ship_date": {
+                "type": "string",
+                "format": "date-time",
+                "minLength": 1,
+                "description": "The date-time that the manifests shipments will be picked up"
+              },
+              "shipments": {
+                "type": "integer",
+                "format": "int32",
+                "minimum": 1,
+                "description": "The number of shipments that are included in this manifest"
+              },
+              "warehouse_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the warehouse"
+              },
+              "submission_id": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A string that uniquely identifies the submission"
+              },
+              "carrier_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the carrier"
+              },
+              "manifest_download": {
+                "allOf": [
+                  {
+                    "title": "manifest_download",
+                    "type": "object",
+                    "description": "Object containing the href link to download the manifest file",
+                    "additionalProperties": false,
+                    "properties": {
+                      "href": {
+                        "allOf": [
+                          {
+                            "title": "url",
+                            "type": "string",
+                            "format": "url",
+                            "minLength": 1,
+                            "description": "A URL"
+                          }
+                        ],
+                        "description": "The URL of the linked resource, if any"
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
-        }
-      }
+        ],
+        "description": "A single manifest"
+      },
+      "description": "The list of available manifests"
     },
     "total": {
       "type": "integer",
-      "format": "int64"
+      "format": "int64",
+      "minimum": 0,
+      "description": "The total number of manifests returned"
     },
     "page": {
       "type": "integer",
-      "format": "int32"
+      "format": "int32",
+      "minimum": 1,
+      "description": "Current page of the list manifests results"
     },
     "pages": {
       "type": "integer",
-      "format": "int32"
+      "format": "int32",
+      "minimum": 1,
+      "description": "Total number of pages for list manifests results"
     },
     "links": {
-      "title": "pagination_link",
-      "type": "object",
-      "required": [
-        "first",
-        "last",
-        "prev",
-        "next"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "first": {
-          "title": "link",
+      "allOf": [
+        {
+          "title": "pagination_link",
           "type": "object",
-          "additionalProperties": false,
+          "description": "Helpful links to other pages of results",
           "required": [
-            "href"
+            "first",
+            "last",
+            "prev",
+            "next"
           ],
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
-        },
-        "last": {
-          "title": "link",
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "href"
-          ],
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
-        },
-        "prev": {
-          "title": "optional_link",
-          "type": "object",
           "additionalProperties": false,
           "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
+            "first": {
+              "allOf": [
+                {
+                  "title": "link",
+                  "type": "object",
+                  "description": "A link to a related resource",
+                  "additionalProperties": false,
+                  "required": [
+                    "href"
+                  ],
+                  "allOf": [
+                    {
+                      "title": "optional_link",
+                      "type": "object",
+                      "description": "A link to a related resource, or an empty object if there is no resource to link to",
+                      "additionalProperties": false,
+                      "properties": {
+                        "href": {
+                          "allOf": [
+                            {
+                              "title": "url",
+                              "type": "string",
+                              "format": "url",
+                              "minLength": 1,
+                              "description": "A URL"
+                            }
+                          ],
+                          "description": "The URL of the linked resource, if any"
+                        },
+                        "type": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "The type of resource, or the type of relationship to the parent resource"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ],
+              "description": "The link to the first page of results.  This object will _always_ have an `href` field. If there are no results, then the first page will contain an empty array of items.\n"
             },
-            "type": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
-        },
-        "next": {
-          "title": "optional_link",
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "href": {
-              "title": "url",
-              "type": "string",
-              "format": "url",
-              "minLength": 1
+            "last": {
+              "allOf": [
+                {
+                  "title": "link",
+                  "type": "object",
+                  "description": "A link to a related resource",
+                  "additionalProperties": false,
+                  "required": [
+                    "href"
+                  ],
+                  "allOf": [
+                    {
+                      "title": "optional_link",
+                      "type": "object",
+                      "description": "A link to a related resource, or an empty object if there is no resource to link to",
+                      "additionalProperties": false,
+                      "properties": {
+                        "href": {
+                          "allOf": [
+                            {
+                              "title": "url",
+                              "type": "string",
+                              "format": "url",
+                              "minLength": 1,
+                              "description": "A URL"
+                            }
+                          ],
+                          "description": "The URL of the linked resource, if any"
+                        },
+                        "type": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "The type of resource, or the type of relationship to the parent resource"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ],
+              "description": "The link to the final page of results.  This object will _always_ have an `href` field. If there are no results, then the final page will contain an empty array of items.\n"
             },
-            "type": {
-              "type": "string",
-              "minLength": 1
+            "prev": {
+              "allOf": [
+                {
+                  "title": "optional_link",
+                  "type": "object",
+                  "description": "A link to a related resource, or an empty object if there is no resource to link to",
+                  "additionalProperties": false,
+                  "properties": {
+                    "href": {
+                      "allOf": [
+                        {
+                          "title": "url",
+                          "type": "string",
+                          "format": "url",
+                          "minLength": 1,
+                          "description": "A URL"
+                        }
+                      ],
+                      "description": "The URL of the linked resource, if any"
+                    },
+                    "type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "The type of resource, or the type of relationship to the parent resource"
+                    }
+                  }
+                }
+              ],
+              "description": "The link to the previous page of results.  The `href` field will only be set when the `page` is 2 or greater.\n"
+            },
+            "next": {
+              "allOf": [
+                {
+                  "title": "optional_link",
+                  "type": "object",
+                  "description": "A link to a related resource, or an empty object if there is no resource to link to",
+                  "additionalProperties": false,
+                  "properties": {
+                    "href": {
+                      "allOf": [
+                        {
+                          "title": "url",
+                          "type": "string",
+                          "format": "url",
+                          "minLength": 1,
+                          "description": "A URL"
+                        }
+                      ],
+                      "description": "The URL of the linked resource, if any"
+                    },
+                    "type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "The type of resource, or the type of relationship to the parent resource"
+                    }
+                  }
+                }
+              ],
+              "description": "The link to the next page of results.  The `href` field will only be set when the `page` is less than `pages`.\n"
             }
           }
         }
-      }
+      ],
+      "description": "Helpful links to other pages of results"
     }
   }
 }

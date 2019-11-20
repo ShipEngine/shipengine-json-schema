@@ -5,99 +5,139 @@
     {
       "title": "update_dhl_express_settings_request_body",
       "type": "object",
+      "description": "An update dhl express settings request body",
       "additionalProperties": false,
-      "properties": {
-        "nickname": {
-          "type": "string"
-        },
-        "should_hide_account_number_on_archive_doc": {
-          "type": "boolean"
-        },
-        "is_primary_account": {
-          "type": "boolean"
+      "allOf": [
+        {
+          "title": "dhl_express_account_settings",
+          "type": "object",
+          "description": "A DHL Express account settings",
+          "additionalProperties": false,
+          "properties": {
+            "nickname": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Account nickname"
+            },
+            "should_hide_account_number_on_archive_doc": {
+              "type": "boolean",
+              "description": "Indicates if the account number should be hidden on the archive documentation"
+            },
+            "is_primary_account": {
+              "type": "boolean",
+              "description": "Indicates if this is primary account"
+            }
+          }
         }
-      }
+      ]
     },
     {
       "title": "update_fedex_settings_request_body",
       "type": "object",
+      "description": "An update Fedex settings request body",
       "additionalProperties": false,
-      "properties": {
-        "nickname": {
-          "type": "string"
-        },
-        "pickup_type": {
-          "title": "fedex_pickup_type",
-          "type": "string",
-          "enum": [
-            "none",
-            "regular_pickup",
-            "request_courier",
-            "drop_box",
-            "business_service_center",
-            "station"
-          ]
-        },
-        "smart_post_hub": {
-          "title": "smart_post_hub",
-          "type": "string",
-          "enum": [
-            "none",
-            "allentown_pa",
-            "atlanta_ga",
-            "baltimore_md",
-            "charlotte_nc",
-            "chino_ca",
-            "dallas_tx",
-            "denver_co",
-            "detroit_mi",
-            "edison_nj",
-            "grove_city_oh",
-            "groveport_oh",
-            "houston_tx",
-            "indianapolis_in",
-            "kansas_city_ks",
-            "los_angeles_ca",
-            "martinsburg_wv",
-            "memphis_tn",
-            "minneapolis_mn",
-            "new_berlin_wi",
-            "northborough_ma",
-            "orlando_fl",
-            "phoneix_az",
-            "pittsburgh_pa",
-            "reno_nv",
-            "sacramento_ca",
-            "salt_lake_city_ut",
-            "seattle_wa",
-            "st_louis_mo",
-            "windsor_ct",
-            "newark_ny",
-            "south_brunswick_nj",
-            "scranton_pa",
-            "wheeling_il"
-          ]
-        },
-        "smart_post_endorsement": {
-          "title": "smart_post_endorsement",
-          "type": "string",
-          "enum": [
-            "none",
-            "return_service_requested",
-            "forwarding_service_requested",
-            "address_service_requested",
-            "change_service_requested",
-            "leave_if_no_response"
-          ]
-        },
-        "is_primary_account": {
-          "type": "boolean"
+      "allOf": [
+        {
+          "title": "fedex_account_settings",
+          "type": "object",
+          "description": "A Fedex account settings request body",
+          "additionalProperties": false,
+          "properties": {
+            "nickname": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Account nickname"
+            },
+            "pickup_type": {
+              "allOf": [
+                {
+                  "title": "fedex_pickup_type",
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "regular_pickup",
+                    "request_courier",
+                    "drop_box",
+                    "business_service_center",
+                    "station"
+                  ],
+                  "description": "The possible fedex pickup type values"
+                }
+              ]
+            },
+            "smart_post_hub": {
+              "allOf": [
+                {
+                  "title": "smart_post_hub",
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "allentown_pa",
+                    "atlanta_ga",
+                    "baltimore_md",
+                    "charlotte_nc",
+                    "chino_ca",
+                    "dallas_tx",
+                    "denver_co",
+                    "detroit_mi",
+                    "edison_nj",
+                    "grove_city_oh",
+                    "groveport_oh",
+                    "houston_tx",
+                    "indianapolis_in",
+                    "kansas_city_ks",
+                    "los_angeles_ca",
+                    "martinsburg_wv",
+                    "memphis_tn",
+                    "minneapolis_mn",
+                    "new_berlin_wi",
+                    "northborough_ma",
+                    "orlando_fl",
+                    "phoneix_az",
+                    "pittsburgh_pa",
+                    "reno_nv",
+                    "sacramento_ca",
+                    "salt_lake_city_ut",
+                    "seattle_wa",
+                    "st_louis_mo",
+                    "windsor_ct",
+                    "newark_ny",
+                    "south_brunswick_nj",
+                    "scranton_pa",
+                    "wheeling_il"
+                  ],
+                  "description": "The possible smart post hub values"
+                }
+              ]
+            },
+            "smart_post_endorsement": {
+              "allOf": [
+                {
+                  "title": "ancillary_service_endorsement",
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "return_service_requested",
+                    "forwarding_service_requested",
+                    "address_service_requested",
+                    "change_service_requested",
+                    "leave_if_no_response"
+                  ],
+                  "description": "[Ancillary service endorsements](https://pe.usps.com/text/qsg300/Q507.htm) are used by mailers to request an addressee's new address and to provide the carrier with instructions on how to handle packages that are undeliverable as addressed.\n\n| Ancillary Service Endorsement  | Description\n|--------------------------------|-----------------------------------------------------\n| `none`                         | No ancillary service is requested. Depending on the carrier servive, the package may be forwarded, returned, or discarded.\n| `return_service_requested`     | The package is returned to the sender. If possible, notification of the new address is is included with the returned package.\n| `forwarding_service_requested` | Forward the package to the new address, if possible; otherwise, return it to the sender.\n| `address_service_requested`    | Forward the package to the new address, if possible; otherwise, return it to the sender. This is similar to `forwarding_service_requested`, but different restrictions and charges may apply.\n| `change_service_requested`     | The package is discarded. If possible, notification of the new address is sent to the sender.\n| `leave_if_no_response`         |\n"
+                }
+              ]
+            },
+            "is_primary_account": {
+              "type": "boolean"
+            }
+          }
         }
-      }
+      ]
     },
     {
       "title": "update_newgistics_settings_request_body",
       "type": "object",
+      "description": "A newgistics account settings request body",
       "additionalProperties": false,
       "properties": {
         "include_barcode_with_order_number": {
@@ -111,80 +151,141 @@
     {
       "title": "update_ups_settings_request_body",
       "type": "object",
+      "description": "An update UPS settings request body",
       "additionalProperties": false,
-      "properties": {
-        "nickname": {
-          "type": "string"
-        },
-        "is_primary_account": {
-          "type": "boolean"
-        },
-        "pickup_type": {
-          "title": "ups_pickup_type",
-          "type": "string",
-          "enum": [
-            "daily_pickup",
-            "occasional_pickup",
-            "customer_counter"
-          ]
-        },
-        "use_carbon_neutral_shipping_program": {
-          "type": "boolean"
-        },
-        "use_ground_freight_pricing": {
-          "type": "boolean"
-        },
-        "use_consolidation_services": {
-          "type": "boolean"
-        },
-        "use_order_number_on_mail_innovations_labels": {
-          "type": "boolean"
-        },
-        "mail_innovations_endorsement": {
-          "title": "mail_innovations_endorsement",
-          "type": "string",
-          "enum": [
-            "none",
-            "return_service_requested",
-            "forwarding_service_requested",
-            "address_service_requested",
-            "change_service_requested",
-            "leave_if_no_response"
-          ]
-        },
-        "mail_innovations_cost_center": {
-          "type": "string"
-        },
-        "use_negotiated_rates": {
-          "type": "boolean"
-        },
-        "account_postal_code": {
-          "type": "string"
-        },
-        "invoice": {
-          "title": "ups_invoice",
+      "allOf": [
+        {
+          "title": "ups_account_settings",
           "type": "object",
+          "description": "UPS account settings",
           "additionalProperties": false,
           "properties": {
-            "invoice_date": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "invoice_number": {
-              "type": "string"
-            },
-            "control_id": {
-              "title": "se_id",
+            "nickname": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 25,
-              "pattern": "^se(-[a-z0-9]+)+$"
+              "description": "nickname"
             },
-            "invoice_amount": {
-              "type": "number",
-              "format": "double"
+            "is_primary_account": {
+              "type": "boolean",
+              "description": "Indicates if this is the primary UPS account"
+            },
+            "pickup_type": {
+              "allOf": [
+                {
+                  "title": "ups_pickup_type",
+                  "type": "string",
+                  "enum": [
+                    "daily_pickup",
+                    "occasional_pickup",
+                    "customer_counter"
+                  ],
+                  "description": "The possible ups pickup type values"
+                }
+              ]
+            },
+            "use_carbon_neutral_shipping_program": {
+              "type": "boolean",
+              "description": "The use carbon neutral shipping program"
+            },
+            "use_ground_freight_pricing": {
+              "type": "boolean",
+              "description": "The use ground freight pricing"
+            },
+            "use_consolidation_services": {
+              "type": "boolean",
+              "description": "The use consolidation services"
+            },
+            "use_order_number_on_mail_innovations_labels": {
+              "type": "boolean",
+              "description": "The use order number on mail innovations labels"
+            },
+            "mail_innovations_endorsement": {
+              "allOf": [
+                {
+                  "title": "ancillary_service_endorsement",
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "return_service_requested",
+                    "forwarding_service_requested",
+                    "address_service_requested",
+                    "change_service_requested",
+                    "leave_if_no_response"
+                  ],
+                  "description": "[Ancillary service endorsements](https://pe.usps.com/text/qsg300/Q507.htm) are used by mailers to request an addressee's new address and to provide the carrier with instructions on how to handle packages that are undeliverable as addressed.\n\n| Ancillary Service Endorsement  | Description\n|--------------------------------|-----------------------------------------------------\n| `none`                         | No ancillary service is requested. Depending on the carrier servive, the package may be forwarded, returned, or discarded.\n| `return_service_requested`     | The package is returned to the sender. If possible, notification of the new address is is included with the returned package.\n| `forwarding_service_requested` | Forward the package to the new address, if possible; otherwise, return it to the sender.\n| `address_service_requested`    | Forward the package to the new address, if possible; otherwise, return it to the sender. This is similar to `forwarding_service_requested`, but different restrictions and charges may apply.\n| `change_service_requested`     | The package is discarded. If possible, notification of the new address is sent to the sender.\n| `leave_if_no_response`         |\n"
+                }
+              ]
+            },
+            "mail_innovations_cost_center": {
+              "type": "string",
+              "minLength": 0,
+              "description": "mail innovations cost center"
+            },
+            "use_negotiated_rates": {
+              "type": "boolean",
+              "description": "The use negotiated rates"
+            },
+            "account_postal_code": {
+              "type": "string",
+              "minLength": 5,
+              "description": "account postal code"
+            },
+            "invoice": {
+              "allOf": [
+                {
+                  "title": "ups_invoice",
+                  "type": "object",
+                  "description": "UPS invoice",
+                  "additionalProperties": false,
+                  "properties": {
+                    "invoice_date": {
+                      "type": "string",
+                      "format": "date-time",
+                      "minLength": 1,
+                      "description": "invoice date"
+                    },
+                    "invoice_number": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "invoice number"
+                    },
+                    "control_id": {
+                      "allOf": [
+                        {
+                          "title": "se_id",
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 25,
+                          "pattern": "^se(-[a-z0-9]+)+$",
+                          "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                        }
+                      ],
+                      "description": "A string that uniquely identifies the control"
+                    },
+                    "invoice_amount": {
+                      "type": "number",
+                      "format": "double",
+                      "minimum": 0
+                    }
+                  }
+                }
+              ],
+              "description": "The invoice"
             }
           }
+        }
+      ]
+    },
+    {
+      "title": "update_amazon_buy_shipping_request_body",
+      "type": "object",
+      "description": "An amazon buy shipping account settings request body",
+      "additionalProperties": false,
+      "properties": {
+        "email": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Email"
         }
       }
     }

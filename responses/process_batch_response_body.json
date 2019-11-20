@@ -1,0 +1,6 @@
+{
+  "$id": "process_batch_response_body",
+  "title": "empty_response_body",
+  "type": "string",
+  "maxLength": 0
+}

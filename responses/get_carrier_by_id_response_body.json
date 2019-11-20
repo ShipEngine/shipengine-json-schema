@@ -1,0 +1,279 @@
+{
+  "$id": "get_carrier_by_id_response_body",
+  "title": "get_carrier_by_id_response_body",
+  "type": "object",
+  "description": "A get carrier by id response body",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "title": "carrier",
+      "type": "object",
+      "description": "A carrier object that represents a provider such as UPS, USPS, DHL, etc\nthat has been tied to the current account.\n",
+      "additionalProperties": false,
+      "properties": {
+        "carrier_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the carrier."
+        },
+        "carrier_code": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the carrier."
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The account number that the carrier is connected to."
+        },
+        "requires_funded_amount": {
+          "type": "boolean",
+          "description": "Indicates whether the carrier requires funding to use its services"
+        },
+        "balance": {
+          "type": "number",
+          "format": "double",
+          "minimum": 0,
+          "description": "Current available balance"
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname given to the account when initially setting up the carrier."
+        },
+        "friendly_name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Screen readable name"
+        },
+        "primary": {
+          "type": "boolean",
+          "description": "Is this the primary carrier that is used by default when no carrier is specified in label/shipment creation"
+        },
+        "has_multi_package_supporting_services": {
+          "type": "boolean",
+          "description": "Carrier supports multiple packages per shipment"
+        },
+        "supports_label_messages": {
+          "type": "boolean",
+          "description": "The carrier supports adding custom label messages to an order."
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "title": "service",
+                "type": "object",
+                "description": "A service offered by the carrier",
+                "additionalProperties": false,
+                "properties": {
+                  "carrier_id": {
+                    "allOf": [
+                      {
+                        "title": "se_id",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 25,
+                        "pattern": "^se(-[a-z0-9]+)+$",
+                        "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                      }
+                    ],
+                    "description": "A string that uniquely identifies the carrier"
+                  },
+                  "carrier_code": {
+                    "allOf": [
+                      {
+                        "title": "se_id",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 25,
+                        "pattern": "^se(-[a-z0-9]+)+$",
+                        "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                      }
+                    ]
+                  },
+                  "service_code": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "service code"
+                  },
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "User friendly service name"
+                  },
+                  "domestic": {
+                    "type": "boolean",
+                    "description": "Supports domestic shipping"
+                  },
+                  "international": {
+                    "type": "boolean",
+                    "description": "Supports international shipping."
+                  },
+                  "is_multi_package_supported": {
+                    "type": "boolean",
+                    "description": "Carrier supports multiple packages per shipment"
+                  }
+                }
+              }
+            ]
+          },
+          "description": "A list of services that are offered by the carrier"
+        },
+        "packages": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "title": "package_type",
+                "type": "object",
+                "description": "A package type that a carrier supports for shipment.",
+                "required": [
+                  "name",
+                  "package_code"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "package_id": {
+                    "allOf": [
+                      {
+                        "title": "se_id",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 25,
+                        "pattern": "^se(-[a-z0-9]+)+$",
+                        "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                      }
+                    ],
+                    "description": "A string that uniquely identifies the package."
+                  },
+                  "package_code": {
+                    "allOf": [
+                      {
+                        "title": "package_code",
+                        "type": "string",
+                        "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
+                        "description": "A [package type](https://www.shipengine.com/docs/reference/list-carrier-packages/), such as `thick_envelope`, `small_flat_rate_box`, `large_package`, etc.  Use the code `package` for custom or unknown package types.\n"
+                      }
+                    ]
+                  },
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "dimensions": {
+                    "allOf": [
+                      {
+                        "title": "dimensions",
+                        "type": "object",
+                        "description": "The dimensions of a package",
+                        "required": [
+                          "unit",
+                          "length",
+                          "width",
+                          "height"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "unit": {
+                            "default": "inch",
+                            "allOf": [
+                              {
+                                "title": "dimension_unit",
+                                "type": "string",
+                                "enum": [
+                                  "inch",
+                                  "centimeter"
+                                ],
+                                "description": "The dimension units that are supported by ShipEngine."
+                              }
+                            ]
+                          },
+                          "length": {
+                            "type": "number",
+                            "format": "double",
+                            "minimum": 0,
+                            "default": 0,
+                            "description": "The length of the package, in the specified unit"
+                          },
+                          "width": {
+                            "type": "number",
+                            "format": "double",
+                            "minimum": 0,
+                            "default": 0,
+                            "description": "The width of the package, in the specified unit"
+                          },
+                          "height": {
+                            "type": "number",
+                            "format": "double",
+                            "minimum": 0,
+                            "default": 0,
+                            "description": "The length of the package, in the specified unit"
+                          }
+                        }
+                      }
+                    ],
+                    "description": "The custom dimensions for the package."
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Provides a helpful description for the custom package."
+                  }
+                }
+              }
+            ]
+          },
+          "description": "A list of package types that are supported by the carrier"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "title": "carrier_advanced_option",
+                "type": "object",
+                "description": "Advanced options that are specific to the carrier",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Name of advanced option"
+                  },
+                  "default_value": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Default value of option"
+                  },
+                  "description": {
+                    "type": "string",
+                    "minLength": 0,
+                    "description": "Description of option"
+                  }
+                }
+              }
+            ]
+          },
+          "description": "A list of options that are available to that carrier"
+        }
+      }
+    }
+  ]
+}

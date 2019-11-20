@@ -1,0 +1,44 @@
+{
+  "$id": "add_funds_to_insurance_response_body",
+  "title": "add_funds_to_insurance_response_body",
+  "type": "object",
+  "description": "Add funds to insurance response body",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "title": "monetary_value",
+      "type": "object",
+      "description": "A monetary value, such as the price of a shipping label, the insured value of a package, or an account balance.\n",
+      "required": [
+        "currency",
+        "amount"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "allOf": [
+            {
+              "title": "currency",
+              "type": "string",
+              "enum": [
+                "usd",
+                "cad",
+                "aud",
+                "gbp",
+                "eur",
+                "nzd"
+              ],
+              "description": "The currencies that are supported by ShipEngine.\n\n|Currency Code  | Description\n|---------------|-----------------------\n|`usd`          | United States Dollar\n|`cad`          | Canadian Dollar\n|`aud`          | Australian Dollar\n|`gbp`          | Great British Pound\n|`eur`          | Euro\n|`nzd`          | New Zealand Dollar\n"
+            }
+          ]
+        },
+        "amount": {
+          "type": "number",
+          "format": "double",
+          "minimum": 0,
+          "description": "The monetary amount, in the specified currency."
+        }
+      }
+    }
+  ]
+}

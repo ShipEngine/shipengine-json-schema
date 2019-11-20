@@ -3,6 +3,28 @@
 
 This repo contains the official [JSON Schemas](https://json-schema.org/) for the [ShipEngine API](https://shipengine.com).  You can use these schemas with any of countless [JSON Schema tools](https://json-schema.org/implementations.html) to perform validation, generate models, etc.
 
+Usage in Node.js
+-----------------------------------
+To use in Node.js, just `require()` or `import` this repo's directory.  The imported object has the same structure as [`index.json`](index.json), except that the `requestSchema` and `responseSchemas` are actual JSON Schema objecs, rather than just file paths.  You can use these schemas with a JSON Schema validator, such as [AJV](https://www.npmjs.com/package/ajv).
+
+```javascript
+const shipengine = require("shipengine-json-schema");
+const AJV = require("ajv");
+
+// Initialize AJV, ignoring our custom formats
+let ajv = new AJV({ unknownFormats: "ignore" });
+
+// Get the JSON Schema for a specific API endpoint
+let schema = shipengine["/v1/labels/shipment/{shipment_id}"].post.requestSchema;
+
+// Validate an API request body against the schema
+let isValid = ajv.validate(schema, {
+  validate_address: "validate_and_clean",
+  label_layout: "4x6",
+  label_format: "pdf",
+});
+```
+
 
 File Structure
 -----------------------------------

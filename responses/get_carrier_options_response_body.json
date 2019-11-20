@@ -1,0 +1,41 @@
+{
+  "$id": "get_carrier_options_response_body",
+  "title": "get_carrier_options_response_body",
+  "type": "object",
+  "description": "A carrier list options response body",
+  "additionalProperties": false,
+  "properties": {
+    "options": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "title": "carrier_advanced_option",
+            "type": "object",
+            "description": "Advanced options that are specific to the carrier",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Name of advanced option"
+              },
+              "default_value": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Default value of option"
+              },
+              "description": {
+                "type": "string",
+                "minLength": 0,
+                "description": "Description of option"
+              }
+            }
+          }
+        ],
+        "description": "Carrer options"
+      },
+      "description": "AN array of carrier options"
+    }
+  }
+}

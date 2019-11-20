@@ -5,591 +5,1146 @@
     {
       "title": "connect_access_worldwide_request_body",
       "type": "object",
+      "description": "An Access Worldwide account information request body",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The nickname associated with the carrier connection"
         },
         "username": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Access Worldwide Username"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Access Worldwide Password"
+        }
+      }
+    },
+    {
+      "title": "connect_amazon_buy_shipping_request_body",
+      "type": "object",
+      "description": "An Amazon account information request body",
+      "required": [
+        "nickname",
+        "merchant_seller_id",
+        "email",
+        "mws_auth_token"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname to be associated with the account connection"
+        },
+        "merchant_seller_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mws_auth_token": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1,
+              "description": "An email address."
+            }
+          ]
         }
       }
     },
     {
       "title": "connect_apc_request_body",
       "type": "object",
+      "description": "An APC account information request body",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The nickname for the APC account"
         },
         "username": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The username for the APC account"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The password for the APC account"
         }
       }
     },
     {
       "title": "connect_asendia_request_body",
       "type": "object",
+      "description": "An Asendia account information request body",
+      "required": [
+        "nickname",
+        "account_number",
+        "ftp_username",
+        "ftp_password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The nickname of the Asendia account"
         },
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Asendia account number"
         },
         "ftp_username": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "FTP username"
         },
         "ftp_password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "FTP password"
         }
       }
     },
     {
       "title": "connect_australia_post_request_body",
       "type": "object",
+      "description": "An Australia Post account information request body",
+      "required": [
+        "account_number",
+        "api_key",
+        "api_secret",
+        "nickname"
+      ],
       "additionalProperties": false,
       "properties": {
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "api_key": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "API key"
         },
         "api_secret": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "API secret"
         },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         }
       }
     },
     {
       "title": "connect_dhl_ecommerce_request_body",
       "type": "object",
+      "description": "A DHL Ecommerce account information request body",
+      "required": [
+        "nickname",
+        "client_id",
+        "username",
+        "password",
+        "pickup_number",
+        "distribution_center"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "A nickname to help you identify this account"
         },
-        "account_number": {
-          "type": "string"
+        "client_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The client id"
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The account username"
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The account password"
         },
         "pickup_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The pickup number"
+        },
+        "distribution_center": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The distribution center"
+        },
+        "api_key": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The DHL E-Commerce API key. This field is optional, but if not set you will not be able to get rates for this account.\n"
+        },
+        "api_secret": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The DHL E-Commerce API secret. This field is optional, but if not set you will not be able to get rates for this account.\n"
+        },
+        "ancillary_endorsement": {
+          "allOf": [
+            {
+              "title": "ancillary_service_endorsement",
+              "type": "string",
+              "enum": [
+                "none",
+                "return_service_requested",
+                "forwarding_service_requested",
+                "address_service_requested",
+                "change_service_requested",
+                "leave_if_no_response"
+              ],
+              "description": "[Ancillary service endorsements](https://pe.usps.com/text/qsg300/Q507.htm) are used by mailers to request an addressee's new address and to provide the carrier with instructions on how to handle packages that are undeliverable as addressed.\n\n| Ancillary Service Endorsement  | Description\n|--------------------------------|-----------------------------------------------------\n| `none`                         | No ancillary service is requested. Depending on the carrier servive, the package may be forwarded, returned, or discarded.\n| `return_service_requested`     | The package is returned to the sender. If possible, notification of the new address is is included with the returned package.\n| `forwarding_service_requested` | Forward the package to the new address, if possible; otherwise, return it to the sender.\n| `address_service_requested`    | Forward the package to the new address, if possible; otherwise, return it to the sender. This is similar to `forwarding_service_requested`, but different restrictions and charges may apply.\n| `change_service_requested`     | The package is discarded. If possible, notification of the new address is sent to the sender.\n| `leave_if_no_response`         |\n"
+            }
+          ]
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "ftp_username": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "FTP username"
         },
         "ftp_password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "FTP password"
         }
       }
     },
     {
       "title": "connect_dhl_express_request_body",
       "type": "object",
+      "description": "A DHL express account information request body",
+      "required": [
+        "nickname",
+        "account_number"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         }
       }
     },
     {
       "title": "connect_dhl_express_au_request_body",
       "type": "object",
+      "description": "A DHL Express AU account information request body",
+      "required": [
+        "nickname",
+        "account_number"
+      ],
       "additionalProperties": false,
       "properties": {
-        "account_number": {
-          "type": "string"
-        },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         }
       }
     },
     {
       "title": "connect_dhl_express_ca_request_body",
       "type": "object",
+      "description": "A DHL Express CA account information request body",
+      "required": [
+        "nickname",
+        "account_number"
+      ],
       "additionalProperties": false,
       "properties": {
-        "account_number": {
-          "type": "string"
-        },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         }
       }
     },
     {
       "title": "connect_dhl_express_uk_request_body",
       "type": "object",
+      "description": "A DHL Express UK account information request body",
+      "required": [
+        "account_number",
+        "site_id",
+        "password",
+        "nickname"
+      ],
       "additionalProperties": false,
       "properties": {
         "account_number": {
-          "type": "string"
-        },
-        "site_id": {
-          "title": "se_id",
           "type": "string",
           "minLength": 1,
-          "maxLength": 25,
-          "pattern": "^se(-[a-z0-9]+)+$"
+          "description": "Account number"
+        },
+        "site_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the site"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Password"
         },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         }
       }
     },
     {
       "title": "connect_dpd_request_body",
       "type": "object",
+      "description": "A DPD account information request body",
+      "required": [
+        "account_number",
+        "password",
+        "nickname"
+      ],
       "additionalProperties": false,
       "properties": {
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Password"
         },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         }
       }
     },
     {
       "title": "connect_endicia_request_body",
       "type": "object",
+      "description": "An Endicia account information request body",
+      "required": [
+        "nickname",
+        "account",
+        "passphrase"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "account": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account"
         },
         "passphrase": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Passphrase"
         }
       }
     },
     {
       "title": "connect_fedex_request_body",
       "type": "object",
+      "description": "A Fedex account information request body",
+      "required": [
+        "account_number",
+        "address1",
+        "city",
+        "country_code",
+        "email",
+        "first_name",
+        "last_name",
+        "phone",
+        "postal_code",
+        "state",
+        "nickname",
+        "agree_to_eula"
+      ],
       "additionalProperties": false,
       "properties": {
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "address1": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Address"
         },
         "address2": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Address"
         },
         "city": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The city"
         },
         "company": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The company"
         },
         "country_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Country code"
         },
         "email": {
-          "title": "email",
-          "type": "string",
-          "format": "email",
-          "minLength": 1
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1,
+              "description": "An email address."
+            }
+          ],
+          "description": "The email address"
         },
         "first_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "First name"
         },
         "last_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Last name"
         },
         "phone": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Phone number"
         },
         "postal_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Postal Code"
         },
         "state": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "State"
         },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "agree_to_eula": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Boolean signaling agreement to the Fedex End User License Agreement"
         },
         "meter_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Meter number"
         }
       }
     },
     {
       "title": "connect_fedex_uk_request_body",
       "type": "object",
+      "description": "A Fedex UK account information request body",
+      "required": [
+        "account_number",
+        "address1",
+        "city",
+        "country_code",
+        "email",
+        "first_name",
+        "last_name",
+        "phone",
+        "postal_code",
+        "state",
+        "nickname",
+        "agree_to_eula"
+      ],
       "additionalProperties": false,
       "properties": {
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "address1": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Address"
         },
         "address2": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Address"
         },
         "city": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The city"
         },
         "company": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "The company"
         },
         "country_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Country code"
         },
         "email": {
-          "title": "email",
-          "type": "string",
-          "format": "email",
-          "minLength": 1
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1,
+              "description": "An email address."
+            }
+          ],
+          "description": "The email address"
         },
         "first_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "First name"
         },
         "last_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Last name"
         },
         "phone": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Phone number"
         },
         "postal_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Postal Code"
         },
-        "state_province": {
-          "type": "string"
+        "state": {
+          "type": "string",
+          "minLength": 1,
+          "description": "State"
         },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "agree_to_eula": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Boolean signaling agreement to the Fedex End User License Agreement"
         },
         "meter_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Meter number"
         }
       }
     },
     {
       "title": "connect_firstmile_request_body",
       "type": "object",
+      "description": "A First Mile account information request body",
+      "required": [
+        "nickname",
+        "mailer_id",
+        "password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
-        },
-        "mailer_id": {
-          "title": "se_id",
           "type": "string",
           "minLength": 1,
-          "maxLength": 25,
-          "pattern": "^se(-[a-z0-9]+)+$"
+          "description": "Nickname"
+        },
+        "mailer_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the mailer"
         },
         "profile_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Profile name"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Password"
         }
       }
     },
     {
       "title": "connect_globegistics_request_body",
       "type": "object",
+      "description": "A Globegistics account information request body",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "username": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Username"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Password"
         }
       }
     },
     {
       "title": "connect_imex_request_body",
       "type": "object",
+      "description": "An Imex account information request body",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "username": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Username"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Password"
         }
       }
     },
     {
       "title": "connect_newgistics_request_body",
       "type": "object",
+      "description": "A Newgistics account information request body",
+      "required": [
+        "induction_site",
+        "nickname"
+      ],
       "additionalProperties": false,
       "properties": {
         "merchant_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "minimum": 0,
+          "description": "Merchant id"
         },
         "mailer_id": {
           "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "minimum": 0,
+          "description": "Mailer id"
         },
         "induction_site": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Induction site"
         },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         }
       }
     },
     {
       "title": "connect_ontrac_request_body",
       "type": "object",
+      "description": "An Ontrac account information request body",
+      "required": [
+        "nickname",
+        "account_number",
+        "password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Password"
         }
       }
     },
     {
       "title": "connect_purolator_request_body",
       "type": "object",
+      "description": "A Purolator account information request body",
+      "required": [
+        "account_number",
+        "activation_key",
+        "nickname"
+      ],
       "additionalProperties": false,
       "properties": {
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "activation_key": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Activation key"
         },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         }
       }
     },
     {
       "title": "connect_royal_mail_request_body",
       "type": "object",
+      "description": "A Royal Mail account information request body",
+      "required": [
+        "account_number",
+        "contact_name",
+        "city",
+        "postal_code",
+        "nickname"
+      ],
       "additionalProperties": false,
       "properties": {
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "oba_email": {
-          "title": "email",
-          "type": "string",
-          "format": "email",
-          "minLength": 1
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1,
+              "description": "An email address."
+            }
+          ],
+          "description": "The oba email address"
         },
         "contact_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Contact name"
         },
         "email": {
-          "title": "email",
-          "type": "string",
-          "format": "email",
-          "minLength": 1
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1,
+              "description": "An email address."
+            }
+          ],
+          "description": "The email address"
         },
         "company_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Company name"
         },
         "street_line1": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Street line1"
         },
         "street_line2": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Street line2"
         },
         "street_line3": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Street line3"
         },
         "city": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "City"
         },
         "postal_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Postal code"
         },
         "phone": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Phone"
         },
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         }
       }
     },
     {
       "title": "connect_rr_donnelley_request_body",
       "type": "object",
+      "description": "A RR Donnelley account information request body",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "username": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Username"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Password"
         }
       }
     },
     {
       "title": "connect_sendle_request_body",
       "type": "object",
+      "description": "A Sendle account information request body",
+      "required": [
+        "nickname",
+        "sendle_id",
+        "api_key"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
-        },
-        "sendle_id": {
-          "title": "se_id",
           "type": "string",
           "minLength": 1,
-          "maxLength": 25,
-          "pattern": "^se(-[a-z0-9]+)+$"
+          "description": "Nickname"
+        },
+        "sendle_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the sendle"
         },
         "api_key": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "API key"
         }
       }
     },
     {
       "title": "connect_stamps_request_body",
       "type": "object",
+      "description": "A Stamps account information request body",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "username": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Username"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Password"
         }
       }
     },
     {
       "title": "connect_ups_request_body",
       "type": "object",
+      "description": "A UPS account information request body",
+      "required": [
+        "nickname",
+        "account_number",
+        "account_country_code",
+        "account_postal_code",
+        "first_name",
+        "last_name",
+        "company",
+        "address1",
+        "city",
+        "state",
+        "postal_code",
+        "country_code",
+        "email",
+        "phone",
+        "agree_to_technology_agreement"
+      ],
       "additionalProperties": false,
       "properties": {
         "nickname": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Nickname"
         },
         "account_number": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account number"
         },
         "account_country_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account country code"
         },
         "account_postal_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Account postal code"
         },
         "title": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Title"
         },
         "first_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "First name"
         },
         "last_name": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Last name"
         },
         "company": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Company"
         },
         "address1": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Address Line 1"
         },
         "address2": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Address Line 2"
         },
         "city": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "City"
         },
         "state": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "State"
         },
         "postal_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Postal code"
         },
         "country_code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Country code"
         },
         "email": {
-          "title": "email",
-          "type": "string",
-          "format": "email",
-          "minLength": 1
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1,
+              "description": "An email address."
+            }
+          ],
+          "description": "The email address"
         },
         "phone": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "description": "Phone"
         },
         "invoice": {
-          "title": "ups_invoice",
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "invoice_date": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "invoice_number": {
-              "type": "string"
-            },
-            "control_id": {
-              "title": "se_id",
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 25,
-              "pattern": "^se(-[a-z0-9]+)+$"
-            },
-            "invoice_amount": {
-              "type": "number",
-              "format": "double"
+          "allOf": [
+            {
+              "title": "ups_invoice",
+              "type": "object",
+              "description": "UPS invoice",
+              "additionalProperties": false,
+              "properties": {
+                "invoice_date": {
+                  "type": "string",
+                  "format": "date-time",
+                  "minLength": 1,
+                  "description": "invoice date"
+                },
+                "invoice_number": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "invoice number"
+                },
+                "control_id": {
+                  "allOf": [
+                    {
+                      "title": "se_id",
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 25,
+                      "pattern": "^se(-[a-z0-9]+)+$",
+                      "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                    }
+                  ],
+                  "description": "A string that uniquely identifies the control"
+                },
+                "invoice_amount": {
+                  "type": "number",
+                  "format": "double",
+                  "minimum": 0
+                }
+              }
             }
-          }
+          ],
+          "description": "The UPS invoice"
         },
         "agree_to_technology_agreement": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "The Agreement to the [UPS Technology Agreement](https://www.ups.com/assets/resources/media/UTA_with_EUR.pdf)"
         }
       }
     }

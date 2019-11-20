@@ -1,0 +1,115 @@
+{
+  "$id": "list_package_types_response_body",
+  "title": "list_package_types_response_body",
+  "type": "object",
+  "description": "A list package types response body",
+  "additionalProperties": false,
+  "properties": {
+    "packages": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "title": "package_type",
+            "type": "object",
+            "description": "A package type that a carrier supports for shipment.",
+            "required": [
+              "name",
+              "package_code"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "package_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$",
+                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                  }
+                ],
+                "description": "A string that uniquely identifies the package."
+              },
+              "package_code": {
+                "allOf": [
+                  {
+                    "title": "package_code",
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
+                    "description": "A [package type](https://www.shipengine.com/docs/reference/list-carrier-packages/), such as `thick_envelope`, `small_flat_rate_box`, `large_package`, etc.  Use the code `package` for custom or unknown package types.\n"
+                  }
+                ]
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dimensions": {
+                "allOf": [
+                  {
+                    "title": "dimensions",
+                    "type": "object",
+                    "description": "The dimensions of a package",
+                    "required": [
+                      "unit",
+                      "length",
+                      "width",
+                      "height"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "unit": {
+                        "default": "inch",
+                        "allOf": [
+                          {
+                            "title": "dimension_unit",
+                            "type": "string",
+                            "enum": [
+                              "inch",
+                              "centimeter"
+                            ],
+                            "description": "The dimension units that are supported by ShipEngine."
+                          }
+                        ]
+                      },
+                      "length": {
+                        "type": "number",
+                        "format": "double",
+                        "minimum": 0,
+                        "default": 0,
+                        "description": "The length of the package, in the specified unit"
+                      },
+                      "width": {
+                        "type": "number",
+                        "format": "double",
+                        "minimum": 0,
+                        "default": 0,
+                        "description": "The width of the package, in the specified unit"
+                      },
+                      "height": {
+                        "type": "number",
+                        "format": "double",
+                        "minimum": 0,
+                        "default": 0,
+                        "description": "The length of the package, in the specified unit"
+                      }
+                    }
+                  }
+                ],
+                "description": "The custom dimensions for the package."
+              },
+              "description": {
+                "type": "string",
+                "description": "Provides a helpful description for the custom package."
+              }
+            }
+          }
+        ],
+        "description": "Custom Package Types items"
+      },
+      "description": "An array of custom package types"
+    }
+  }
+}
