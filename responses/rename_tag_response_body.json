@@ -1,0 +1,6 @@
+{
+  "title": "rename_tag_response_body",
+  "type": "string",
+  "maxLength": 0,
+  "$id": "rename_tag_response_body"
+}

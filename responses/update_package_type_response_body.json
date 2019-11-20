@@ -1,0 +1,6 @@
+{
+  "title": "update_package_type_response_body",
+  "type": "string",
+  "maxLength": 0,
+  "$id": "update_package_type_response_body"
+}

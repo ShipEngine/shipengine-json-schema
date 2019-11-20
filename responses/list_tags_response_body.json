@@ -1,0 +1,33 @@
+{
+  "title": "list_tags_response_body",
+  "type": "object",
+  "description": "Response body from a successful GET /tags API call",
+  "additionalProperties": false,
+  "properties": {
+    "tags": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "title": "tag",
+            "type": "object",
+            "description": "Tags are arbitrary strings that you can use to categorize shipments.  For example, you may want to use tags to distinguish between domestic and international shipments, or between insured and uninsured shipments.  Or maybe you want to create a tag for each of your customers so you can easily retrieve every shipment for a customer.\n",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The tag name."
+              }
+            }
+          }
+        ]
+      },
+      "description": "The array of tags returned by the API call"
+    }
+  },
+  "$id": "list_tags_response_body"
+}

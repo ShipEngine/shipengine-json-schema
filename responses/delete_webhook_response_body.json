@@ -1,0 +1,6 @@
+{
+  "title": "delete_webhook_response_body",
+  "type": "string",
+  "maxLength": 0,
+  "$id": "delete_webhook_response_body"
+}

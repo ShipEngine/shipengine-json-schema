@@ -1,0 +1,383 @@
+{
+  "title": "validate_address_response_body",
+  "type": "array",
+  "description": "An address validation response body",
+  "items": {
+    "allOf": [
+      {
+        "title": "address_validation_result",
+        "type": "object",
+        "description": "An address validation result",
+        "required": [
+          "status",
+          "original_address",
+          "matched_address",
+          "messages"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "allOf": [
+              {
+                "title": "address_validation_status",
+                "type": "string",
+                "enum": [
+                  "unverified",
+                  "verified",
+                  "warning",
+                  "error"
+                ],
+                "description": "The possible address validation status values"
+              }
+            ]
+          },
+          "original_address": {
+            "allOf": [
+              {
+                "title": "address",
+                "type": "object",
+                "description": "Any residential or business mailing address, anywhere in the world.\n\n> **Note:** Either `name` or `company_name` must be set. Both may be specified, if relevant.\n",
+                "required": [
+                  "name",
+                  "phone",
+                  "address_line1",
+                  "city_locality",
+                  "state_province",
+                  "postal_code",
+                  "country_code",
+                  "address_residential_indicator"
+                ],
+                "additionalProperties": false,
+                "allOf": [
+                  {
+                    "title": "partial_address",
+                    "type": "object",
+                    "description": "A complete or partial mailing address.",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The name of a contact person at this address.  This field may be set instead of - or in addition to - the `company_name` field.\n"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The phone number of a contact person at this address.  The format of this phone number varies depending on the country.\n"
+                      },
+                      "company_name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "If this is a business address, then the company name should be specified here.\n"
+                      },
+                      "address_line1": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The first line of the street address.  For some addresses, this may be the only line.  Other addresses may require 2 or 3 lines.\n"
+                      },
+                      "address_line2": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The second line of the street address.  For some addresses, this line may not be needed.\n"
+                      },
+                      "address_line3": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The third line of the street address.  For some addresses, this line may not be needed.\n"
+                      },
+                      "city_locality": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The name of the city or locality"
+                      },
+                      "state_province": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The state or province.  For some countries (including the U.S.) only abbreviations are allowed.  Other countries allow the full name or abbreviation.\n"
+                      },
+                      "postal_code": {
+                        "allOf": [
+                          {
+                            "title": "postal_code",
+                            "minLength": 1,
+                            "type": "string",
+                            "description": "postal code"
+                          }
+                        ]
+                      },
+                      "country_code": {
+                        "allOf": [
+                          {
+                            "title": "country_code",
+                            "type": "string",
+                            "minLength": 2,
+                            "maxLength": 2,
+                            "description": "A two-letter [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1)\n"
+                          }
+                        ],
+                        "description": "The two-letter [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1)\n"
+                      },
+                      "address_residential_indicator": {
+                        "default": "unknown",
+                        "description": "Indicates whether this is a residential address.",
+                        "allOf": [
+                          {
+                            "title": "address_residential_indicator",
+                            "type": "string",
+                            "enum": [
+                              "unknown",
+                              "yes",
+                              "no"
+                            ],
+                            "description": "Indicates whether an address is residential."
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "description": "The original address that was sent for validation"
+          },
+          "matched_address": {
+            "allOf": [
+              {
+                "title": "address",
+                "type": "object",
+                "description": "Any residential or business mailing address, anywhere in the world.\n\n> **Note:** Either `name` or `company_name` must be set. Both may be specified, if relevant.\n",
+                "required": [
+                  "name",
+                  "phone",
+                  "address_line1",
+                  "city_locality",
+                  "state_province",
+                  "postal_code",
+                  "country_code",
+                  "address_residential_indicator"
+                ],
+                "additionalProperties": false,
+                "allOf": [
+                  {
+                    "title": "partial_address",
+                    "type": "object",
+                    "description": "A complete or partial mailing address.",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The name of a contact person at this address.  This field may be set instead of - or in addition to - the `company_name` field.\n"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The phone number of a contact person at this address.  The format of this phone number varies depending on the country.\n"
+                      },
+                      "company_name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "If this is a business address, then the company name should be specified here.\n"
+                      },
+                      "address_line1": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The first line of the street address.  For some addresses, this may be the only line.  Other addresses may require 2 or 3 lines.\n"
+                      },
+                      "address_line2": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The second line of the street address.  For some addresses, this line may not be needed.\n"
+                      },
+                      "address_line3": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The third line of the street address.  For some addresses, this line may not be needed.\n"
+                      },
+                      "city_locality": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The name of the city or locality"
+                      },
+                      "state_province": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The state or province.  For some countries (including the U.S.) only abbreviations are allowed.  Other countries allow the full name or abbreviation.\n"
+                      },
+                      "postal_code": {
+                        "allOf": [
+                          {
+                            "title": "postal_code",
+                            "minLength": 1,
+                            "type": "string",
+                            "description": "postal code"
+                          }
+                        ]
+                      },
+                      "country_code": {
+                        "allOf": [
+                          {
+                            "title": "country_code",
+                            "type": "string",
+                            "minLength": 2,
+                            "maxLength": 2,
+                            "description": "A two-letter [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1)\n"
+                          }
+                        ],
+                        "description": "The two-letter [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1)\n"
+                      },
+                      "address_residential_indicator": {
+                        "default": "unknown",
+                        "description": "Indicates whether this is a residential address.",
+                        "allOf": [
+                          {
+                            "title": "address_residential_indicator",
+                            "type": "string",
+                            "enum": [
+                              "unknown",
+                              "yes",
+                              "no"
+                            ],
+                            "description": "Indicates whether an address is residential."
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "description": "The matched address found by the Shipengine API"
+          },
+          "messages": {
+            "type": "array",
+            "default": [],
+            "items": {
+              "title": "response_message",
+              "type": "object",
+              "description": "A response message that displays when additional info is needed for an address validation request.",
+              "additionalProperties": false,
+              "properties": {
+                "code": {
+                  "allOf": [
+                    {
+                      "title": "address_validation_code",
+                      "type": "string",
+                      "enum": [
+                        "a1000",
+                        "a1001",
+                        "a1002",
+                        "a1003",
+                        "a1004",
+                        "a1005",
+                        "a1006",
+                        "a1007",
+                        "a1008",
+                        "r1000",
+                        "r1001",
+                        "r1002",
+                        "r1003"
+                      ],
+                      "description": "The error codes that can be returned by the address validation API"
+                    }
+                  ]
+                },
+                "message": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Message explaining the address validation error"
+                },
+                "type": {
+                  "allOf": [
+                    {
+                      "title": "address_validation_message_type",
+                      "type": "string",
+                      "enum": [
+                        "error",
+                        "warning",
+                        "info"
+                      ],
+                      "description": "The different types of messages that can be returned by the address validation API"
+                    }
+                  ]
+                },
+                "detail_code": {
+                  "allOf": [
+                    {
+                      "title": "address_validation_detail_code",
+                      "type": "string",
+                      "enum": [
+                        "unsupported_country",
+                        "non_supported_country",
+                        "minimum_postal_code_verification_failed",
+                        "street_does_not_match_unique_street_name",
+                        "multiple_directionals",
+                        "multiple_matches",
+                        "suite_not_valid",
+                        "suite_missing",
+                        "incompatible_paired_labels",
+                        "invalid_house_number",
+                        "missing_house_number",
+                        "invalid_box_number",
+                        "invalid_charge_event",
+                        "missing_box_number",
+                        "missing_cmra_or_private_mail_box_number",
+                        "suite_has_no_secondaries",
+                        "postal_code_changed_or_added",
+                        "state_province_changed_or_added",
+                        "city_locality_changed_or_added",
+                        "urbanization_changed",
+                        "street_name_spelling_changed_or_added",
+                        "street_name_type_changed_or_added",
+                        "street_direction_changed_or_added",
+                        "suite_type_changed_or_added",
+                        "suite_unit_number_changed_or_added",
+                        "double_dependent_locality_changed_or_added",
+                        "subadministrative_area_changed_or_added",
+                        "subnational_area_changed_or_added",
+                        "po_box_changed_or_added",
+                        "premise_type_changed_or_added",
+                        "house_number_changed",
+                        "organization_changed_or_added",
+                        "partially_verified_to_state_level",
+                        "partially_verified_to_city_level",
+                        "partially_verified_to_street_level",
+                        "partially_verified_to_premise_level",
+                        "verified_to_state_level",
+                        "verified_to_city_level",
+                        "verified_to_street_level",
+                        "verified_to_premise_level",
+                        "verified_to_suite_level",
+                        "coded_to_street_lavel",
+                        "coded_to_neighborhood_level",
+                        "coded_to_community_level",
+                        "coded_to_state_level",
+                        "coded_to_rooftop_level",
+                        "coded_to_rooftop_interpolation_level",
+                        "name_max_length_exceeded",
+                        "phone_max_length_exceeded",
+                        "company_name_max_length_exceeded",
+                        "line1_min_max_length",
+                        "line2_max_length_exceeded",
+                        "line3_max_length_exceeded",
+                        "city_locality_max_length_exceeded",
+                        "state_province_max_length_exceeded",
+                        "invalid_postal_code",
+                        "country_invalid_length",
+                        "address_not_found"
+                      ],
+                      "description": "The detailed error codes that can be returned by the address validation API"
+                    }
+                  ]
+                }
+              }
+            },
+            "description": "The list of messages that were generated during the address validation request."
+          }
+        }
+      }
+    ],
+    "description": "The address validation response body"
+  },
+  "$id": "validate_address_response_body"
+}

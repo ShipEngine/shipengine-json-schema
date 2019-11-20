@@ -1,0 +1,6 @@
+{
+  "title": "untag_shipment_response_body",
+  "type": "string",
+  "maxLength": 0,
+  "$id": "untag_shipment_response_body"
+}

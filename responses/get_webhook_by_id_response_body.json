@@ -1,0 +1,65 @@
+{
+  "title": "get_webhook_by_id_response_body",
+  "type": "object",
+  "description": "A get webhook id response body",
+  "additionalProperties": false,
+  "required": [
+    "webhook_id",
+    "url",
+    "event"
+  ],
+  "allOf": [
+    {
+      "title": "webhook",
+      "type": "object",
+      "description": "A webhook",
+      "additionalProperties": false,
+      "properties": {
+        "webhook_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$",
+              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            }
+          ],
+          "description": "A string that uniquely identifies the webhook"
+        },
+        "url": {
+          "allOf": [
+            {
+              "title": "url",
+              "type": "string",
+              "format": "url",
+              "minLength": 1,
+              "description": "A URL"
+            }
+          ],
+          "description": "The url that the webhook sends the request to"
+        },
+        "event": {
+          "allOf": [
+            {
+              "title": "webhook_event",
+              "type": "string",
+              "enum": [
+                "batch",
+                "carrier_connected",
+                "order_source_refresh_complete",
+                "rate",
+                "report_complete",
+                "sales_orders_imported",
+                "track"
+              ],
+              "description": "The possible webook event values"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "$id": "get_webhook_by_id_response_body"
+}

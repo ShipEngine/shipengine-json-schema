@@ -1,0 +1,6 @@
+{
+  "title": "remove_from_batch_response_body",
+  "type": "string",
+  "maxLength": 0,
+  "$id": "remove_from_batch_response_body"
+}
