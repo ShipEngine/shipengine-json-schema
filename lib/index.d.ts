@@ -1,3 +1,2 @@
-import { resolveSchemaIndex } from "./resolve-schema-index";
-export { resolveSchemaIndex };
-export default resolveSchemaIndex;
+declare const _default: import("./shipengine-json-schema-index").ShipEngineJsonSchemaIndex;
+export = _default;
