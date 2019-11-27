@@ -1,6 +1,6 @@
 {
+  "$id": "cancel_shipments_response_body",
   "title": "cancel_shipments_response_body",
   "type": "string",
-  "maxLength": 0,
-  "$id": "cancel_shipments_response_body"
+  "maxLength": 0
 }

@@ -1,4 +1,5 @@
 {
+  "$id": "list_shipments_response_body",
   "title": "list_shipments_response_body",
   "type": "object",
   "description": "A list shipment response body",
@@ -1415,6 +1416,5 @@
         }
       ]
     }
-  },
-  "$id": "list_shipments_response_body"
+  }
 }

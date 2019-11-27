@@ -15,29 +15,10 @@
       "description": "A warehouse",
       "additionalProperties": false,
       "properties": {
-        "warehouse_id": {
-          "allOf": [
-            {
-              "title": "se_id",
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 25,
-              "pattern": "^se(-[a-z0-9]+)+$",
-              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
-            }
-          ],
-          "description": "A string that uniquely identifies the warehouse"
-        },
         "name": {
           "type": "string",
           "minLength": 1,
           "description": "Name of the warehouse"
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "minLength": 1,
-          "description": "Timestamp that indicates when the warehouse was created"
         },
         "origin_address": {
           "allOf": [

@@ -1,4 +1,5 @@
 {
+  "$id": "estimate_rates_response_body",
   "title": "estimate_rates_response_body",
   "type": "array",
   "description": "A rate estimate response body",
@@ -345,6 +346,5 @@
         }
       }
     ]
-  },
-  "$id": "estimate_rates_response_body"
+  }
 }

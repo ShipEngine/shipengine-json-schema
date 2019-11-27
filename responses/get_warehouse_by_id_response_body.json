@@ -1,4 +1,5 @@
 {
+  "$id": "get_warehouse_by_id_response_body",
   "title": "get_warehouse_by_id_response_body",
   "type": "object",
   "description": "A get warehouse by id response body",
@@ -261,6 +262,5 @@
         }
       }
     }
-  ],
-  "$id": "get_warehouse_by_id_response_body"
+  ]
 }

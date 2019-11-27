@@ -1,4 +1,5 @@
 {
+  "$id": "get_carrier_options_response_body",
   "title": "get_carrier_options_response_body",
   "type": "object",
   "description": "A carrier list options response body",
@@ -36,6 +37,5 @@
       },
       "description": "AN array of carrier options"
     }
-  },
-  "$id": "get_carrier_options_response_body"
+  }
 }

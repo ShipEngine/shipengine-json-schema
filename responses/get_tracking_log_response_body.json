@@ -1,4 +1,5 @@
 {
+  "$id": "get_tracking_log_response_body",
   "title": "get_tracking_log_response_body",
   "type": "object",
   "description": "A get tracking log response body",
@@ -175,6 +176,5 @@
         }
       }
     }
-  ],
-  "$id": "get_tracking_log_response_body"
+  ]
 }

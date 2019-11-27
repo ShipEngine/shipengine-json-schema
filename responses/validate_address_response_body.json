@@ -1,4 +1,5 @@
 {
+  "$id": "validate_address_response_body",
   "title": "validate_address_response_body",
   "type": "array",
   "description": "An address validation response body",
@@ -378,6 +379,5 @@
       }
     ],
     "description": "The address validation response body"
-  },
-  "$id": "validate_address_response_body"
+  }
 }

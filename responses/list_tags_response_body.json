@@ -1,4 +1,5 @@
 {
+  "$id": "list_tags_response_body",
   "title": "list_tags_response_body",
   "type": "object",
   "description": "Response body from a successful GET /tags API call",
@@ -28,6 +29,5 @@
       },
       "description": "The array of tags returned by the API call"
     }
-  },
-  "$id": "list_tags_response_body"
+  }
 }

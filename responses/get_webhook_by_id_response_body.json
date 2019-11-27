@@ -1,4 +1,5 @@
 {
+  "$id": "get_webhook_by_id_response_body",
   "title": "get_webhook_by_id_response_body",
   "type": "object",
   "description": "A get webhook id response body",
@@ -60,6 +61,5 @@
         }
       }
     }
-  ],
-  "$id": "get_webhook_by_id_response_body"
+  ]
 }

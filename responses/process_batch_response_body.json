@@ -1,6 +1,6 @@
 {
+  "$id": "process_batch_response_body",
   "title": "process_batch_response_body",
   "type": "string",
-  "maxLength": 0,
-  "$id": "process_batch_response_body"
+  "maxLength": 0
 }

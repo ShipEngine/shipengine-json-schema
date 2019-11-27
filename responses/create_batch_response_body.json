@@ -1,4 +1,5 @@
 {
+  "$id": "create_batch_response_body",
   "title": "create_batch_response_body",
   "type": "object",
   "description": "A create batch response body",
@@ -339,6 +340,5 @@
         }
       }
     }
-  ],
-  "$id": "create_batch_response_body"
+  ]
 }

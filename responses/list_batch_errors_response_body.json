@@ -1,4 +1,5 @@
 {
+  "$id": "list_batch_errors_response_body",
   "title": "list_batch_errors_response_body",
   "type": "object",
   "description": "A batch errors response body",
@@ -199,6 +200,5 @@
         }
       ]
     }
-  },
-  "$id": "list_batch_errors_response_body"
+  }
 }

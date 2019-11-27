@@ -1,4 +1,5 @@
 {
+  "$id": "list_labels_response_body",
   "title": "list_labels_response_body",
   "type": "object",
   "description": "A list label response body",
@@ -921,6 +922,5 @@
       },
       "description": "Many ShipEngine endpoints return a paged list of items.  In addition to the returned items, these responses also include information about the total number of items, the number of pages of results, and URLs of other pages of results.\n"
     }
-  ],
-  "$id": "list_labels_response_body"
+  ]
 }

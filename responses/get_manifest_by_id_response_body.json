@@ -1,4 +1,5 @@
 {
+  "$id": "get_manifest_by_id_response_body",
   "title": "get_manifest_by_id_response_body",
   "type": "object",
   "description": "A get manifest by id response body",
@@ -122,6 +123,5 @@
         }
       }
     }
-  ],
-  "$id": "get_manifest_by_id_response_body"
+  ]
 }

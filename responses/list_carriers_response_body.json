@@ -1,4 +1,5 @@
 {
+  "$id": "list_carriers_response_body",
   "title": "list_carriers_response_body",
   "type": "object",
   "description": "A carrier list response body",
@@ -282,6 +283,5 @@
       },
       "description": "The carrier response body"
     }
-  },
-  "$id": "list_carriers_response_body"
+  }
 }

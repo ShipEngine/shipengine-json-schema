@@ -1,4 +1,5 @@
 {
+  "$id": "compare_bulk_rates_response_body",
   "title": "compare_bulk_rates_response_body",
   "type": "array",
   "description": "A bulk rate response body",
@@ -105,6 +106,5 @@
         "description": "An array of errors that were returned while retrieving the bulk rate"
       }
     }
-  },
-  "$id": "compare_bulk_rates_response_body"
+  }
 }

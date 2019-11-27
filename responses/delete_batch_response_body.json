@@ -1,6 +1,6 @@
 {
+  "$id": "delete_batch_response_body",
   "title": "delete_batch_response_body",
   "type": "string",
-  "maxLength": 0,
-  "$id": "delete_batch_response_body"
+  "maxLength": 0
 }

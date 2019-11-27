@@ -1,4 +1,5 @@
 {
+  "$id": "get_package_type_by_id_response_body",
   "title": "get_package_type_by_id_response_body",
   "type": "object",
   "description": "A get package type by id response body",
@@ -101,6 +102,5 @@
         }
       }
     }
-  ],
-  "$id": "get_package_type_by_id_response_body"
+  ]
 }

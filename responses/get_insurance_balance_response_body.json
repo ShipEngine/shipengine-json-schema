@@ -1,4 +1,5 @@
 {
+  "$id": "get_insurance_balance_response_body",
   "title": "get_insurance_balance_response_body",
   "type": "object",
   "description": "A get insurance balance response body",
@@ -39,6 +40,5 @@
         }
       }
     }
-  ],
-  "$id": "get_insurance_balance_response_body"
+  ]
 }

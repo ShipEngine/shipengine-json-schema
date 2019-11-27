@@ -1,4 +1,5 @@
 {
+  "$id": "get_batch_by_external_id_response_body",
   "title": "get_batch_by_external_id_response_body",
   "type": "object",
   "description": "A get batch by external id response body",
@@ -339,6 +340,5 @@
         }
       }
     }
-  ],
-  "$id": "get_batch_by_external_id_response_body"
+  ]
 }

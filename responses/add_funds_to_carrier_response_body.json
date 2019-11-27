@@ -1,4 +1,5 @@
 {
+  "$id": "add_funds_to_carrier_response_body",
   "title": "add_funds_to_carrier_response_body",
   "type": "object",
   "description": "The current balance of the requested carrier account",
@@ -47,6 +48,5 @@
       ],
       "description": "The current balance of the account"
     }
-  },
-  "$id": "add_funds_to_carrier_response_body"
+  }
 }

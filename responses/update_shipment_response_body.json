@@ -1,4 +1,5 @@
 {
+  "$id": "update_shipment_response_body",
   "title": "update_shipment_response_body",
   "type": "object",
   "description": "An update shipment response body",
@@ -1616,6 +1617,5 @@
         }
       ]
     }
-  ],
-  "$id": "update_shipment_response_body"
+  ]
 }

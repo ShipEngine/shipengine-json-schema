@@ -1,4 +1,5 @@
 {
+  "$id": "create_manifest_response_body",
   "title": "create_manifest_response_body",
   "type": "object",
   "description": "A create manifest response body",
@@ -240,6 +241,5 @@
         }
       }
     }
-  ],
-  "$id": "create_manifest_response_body"
+  ]
 }

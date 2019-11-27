@@ -1,4 +1,5 @@
 {
+  "$id": "parse_address_response_body",
   "title": "parse_address_response_body",
   "type": "object",
   "description": "The parsed address, as well as a confidence score and a list of all the entities that were recognized in the text.\n",
@@ -161,6 +162,5 @@
       },
       "description": "All of the entities that were recognized in the text. An \"entity\" is a single piece of data, such as a city, a postal code, or an address line.  Each entity includes the original text and the parsed value.\n"
     }
-  },
-  "$id": "parse_address_response_body"
+  }
 }

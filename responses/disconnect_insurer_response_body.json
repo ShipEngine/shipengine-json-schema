@@ -1,5 +1,5 @@
 {
+  "$id": "disconnect_insurer_response_body",
   "title": "disconnect_insurer_response_body",
-  "type": "object",
-  "$id": "disconnect_insurer_response_body"
+  "type": "object"
 }

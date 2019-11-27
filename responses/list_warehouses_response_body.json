@@ -1,4 +1,5 @@
 {
+  "$id": "list_warehouses_response_body",
   "title": "list_warehouses_response_body",
   "type": "object",
   "description": "A warehouse list response body",
@@ -265,6 +266,5 @@
       },
       "description": "The array of warehouses returned by the API call"
     }
-  },
-  "$id": "list_warehouses_response_body"
+  }
 }

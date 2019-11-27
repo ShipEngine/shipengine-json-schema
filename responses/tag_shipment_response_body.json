@@ -1,4 +1,5 @@
 {
+  "$id": "tag_shipment_response_body",
   "title": "tag_shipment_response_body",
   "type": "object",
   "description": "A shipment add tag response body",
@@ -42,6 +43,5 @@
       ],
       "description": "The tag that is now associated with this shipment"
     }
-  },
-  "$id": "tag_shipment_response_body"
+  }
 }
