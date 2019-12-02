@@ -8,7 +8,7 @@
       "esnext",
     ],
 
-    "outDir": "lib",
+    "outDir": "dist",
     "sourceMap": true,
     "declaration": true,
 
