@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm login
       run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
-    - name: npm build
-      run: npm build
+    - name: npm run build
+      run: npm run build
     - name: npm publish
       run: npm publish
