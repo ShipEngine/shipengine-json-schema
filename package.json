@@ -1,6 +1,6 @@
 {
   "name": "shipengine-json-schema",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "The official JSON Schemas for ShipEngine™",
   "main": "dist/index.js",
   "repository": {
@@ -17,7 +17,7 @@
   "files": [
     "requests",
     "responses",
-    "lib",
+    "dist",
     "index.json"
   ],
   "scripts": {
