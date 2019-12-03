@@ -2,7 +2,6 @@
   "$id": "connect_insurer_request_body",
   "title": "connect_insurer_request_body",
   "type": "object",
-  "description": "A create shipsurance connection request body",
   "required": [
     "email",
     "policy_id"
@@ -15,8 +14,7 @@
           "title": "email",
           "type": "string",
           "format": "email",
-          "minLength": 1,
-          "description": "An email address."
+          "minLength": 1
         }
       ]
     },

@@ -2,7 +2,6 @@
   "$id": "update_warehouse_request_body",
   "title": "update_warehouse_request_body",
   "type": "object",
-  "description": "An update warehouse request body",
   "required": [
     "name",
     "origin_address"
@@ -12,20 +11,17 @@
     {
       "title": "warehouse",
       "type": "object",
-      "description": "A warehouse",
       "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string",
-          "minLength": 1,
-          "description": "Name of the warehouse"
+          "minLength": 1
         },
         "origin_address": {
           "allOf": [
             {
               "title": "address",
               "type": "object",
-              "description": "Any residential or business mailing address, anywhere in the world.\n\n> **Note:** Either `name` or `company_name` must be set. Both may be specified, if relevant.\n",
               "required": [
                 "name",
                 "phone",
@@ -41,56 +37,46 @@
                 {
                   "title": "partial_address",
                   "type": "object",
-                  "description": "A complete or partial mailing address.",
                   "additionalProperties": false,
                   "properties": {
                     "name": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The name of a contact person at this address.  This field may be set instead of - or in addition to - the `company_name` field.\n"
+                      "minLength": 1
                     },
                     "phone": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The phone number of a contact person at this address.  The format of this phone number varies depending on the country.\n"
+                      "minLength": 1
                     },
                     "company_name": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "If this is a business address, then the company name should be specified here.\n"
+                      "minLength": 1
                     },
                     "address_line1": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The first line of the street address.  For some addresses, this may be the only line.  Other addresses may require 2 or 3 lines.\n"
+                      "minLength": 1
                     },
                     "address_line2": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The second line of the street address.  For some addresses, this line may not be needed.\n"
+                      "minLength": 1
                     },
                     "address_line3": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The third line of the street address.  For some addresses, this line may not be needed.\n"
+                      "minLength": 1
                     },
                     "city_locality": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The name of the city or locality"
+                      "minLength": 1
                     },
                     "state_province": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The state or province.  For some countries (including the U.S.) only abbreviations are allowed.  Other countries allow the full name or abbreviation.\n"
+                      "minLength": 1
                     },
                     "postal_code": {
                       "allOf": [
                         {
                           "title": "postal_code",
                           "minLength": 1,
-                          "type": "string",
-                          "description": "postal code"
+                          "type": "string"
                         }
                       ]
                     },
@@ -100,15 +86,12 @@
                           "title": "country_code",
                           "type": "string",
                           "minLength": 2,
-                          "maxLength": 2,
-                          "description": "A two-letter [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1)\n"
+                          "maxLength": 2
                         }
-                      ],
-                      "description": "The two-letter [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1)\n"
+                      ]
                     },
                     "address_residential_indicator": {
                       "default": "unknown",
-                      "description": "Indicates whether this is a residential address.",
                       "allOf": [
                         {
                           "title": "address_residential_indicator",
@@ -117,8 +100,7 @@
                             "unknown",
                             "yes",
                             "no"
-                          ],
-                          "description": "Indicates whether an address is residential."
+                          ]
                         }
                       ]
                     }
@@ -126,15 +108,13 @@
                 }
               ]
             }
-          ],
-          "description": "The origin address of the warehouse"
+          ]
         },
         "return_address": {
           "allOf": [
             {
               "title": "address",
               "type": "object",
-              "description": "Any residential or business mailing address, anywhere in the world.\n\n> **Note:** Either `name` or `company_name` must be set. Both may be specified, if relevant.\n",
               "required": [
                 "name",
                 "phone",
@@ -150,56 +130,46 @@
                 {
                   "title": "partial_address",
                   "type": "object",
-                  "description": "A complete or partial mailing address.",
                   "additionalProperties": false,
                   "properties": {
                     "name": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The name of a contact person at this address.  This field may be set instead of - or in addition to - the `company_name` field.\n"
+                      "minLength": 1
                     },
                     "phone": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The phone number of a contact person at this address.  The format of this phone number varies depending on the country.\n"
+                      "minLength": 1
                     },
                     "company_name": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "If this is a business address, then the company name should be specified here.\n"
+                      "minLength": 1
                     },
                     "address_line1": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The first line of the street address.  For some addresses, this may be the only line.  Other addresses may require 2 or 3 lines.\n"
+                      "minLength": 1
                     },
                     "address_line2": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The second line of the street address.  For some addresses, this line may not be needed.\n"
+                      "minLength": 1
                     },
                     "address_line3": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The third line of the street address.  For some addresses, this line may not be needed.\n"
+                      "minLength": 1
                     },
                     "city_locality": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The name of the city or locality"
+                      "minLength": 1
                     },
                     "state_province": {
                       "type": "string",
-                      "minLength": 1,
-                      "description": "The state or province.  For some countries (including the U.S.) only abbreviations are allowed.  Other countries allow the full name or abbreviation.\n"
+                      "minLength": 1
                     },
                     "postal_code": {
                       "allOf": [
                         {
                           "title": "postal_code",
                           "minLength": 1,
-                          "type": "string",
-                          "description": "postal code"
+                          "type": "string"
                         }
                       ]
                     },
@@ -209,15 +179,12 @@
                           "title": "country_code",
                           "type": "string",
                           "minLength": 2,
-                          "maxLength": 2,
-                          "description": "A two-letter [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1)\n"
+                          "maxLength": 2
                         }
-                      ],
-                      "description": "The two-letter [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1)\n"
+                      ]
                     },
                     "address_residential_indicator": {
                       "default": "unknown",
-                      "description": "Indicates whether this is a residential address.",
                       "allOf": [
                         {
                           "title": "address_residential_indicator",
@@ -226,8 +193,7 @@
                             "unknown",
                             "yes",
                             "no"
-                          ],
-                          "description": "Indicates whether an address is residential."
+                          ]
                         }
                       ]
                     }
@@ -235,8 +201,7 @@
                 }
               ]
             }
-          ],
-          "description": "The return address associated with the warehouse"
+          ]
         }
       }
     }

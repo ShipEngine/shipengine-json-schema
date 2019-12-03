@@ -2,13 +2,11 @@
   "$id": "get_batch_by_external_id_response_body",
   "title": "get_batch_by_external_id_response_body",
   "type": "object",
-  "description": "A get batch by external id response body",
   "additionalProperties": false,
   "allOf": [
     {
       "title": "batch",
       "type": "object",
-      "description": "Batches are an advanced feature of ShipEngine designed for users who need to generate hundreds or\nthousands of labels at a time.\n",
       "required": [
         "label_layout",
         "label_format",
@@ -33,7 +31,6 @@
       "properties": {
         "label_layout": {
           "default": "4x6",
-          "description": "label layout",
           "allOf": [
             {
               "title": "label_layout",
@@ -41,8 +38,7 @@
               "enum": [
                 "4x6",
                 "letter"
-              ],
-              "description": "The available layouts (sizes) in which shipping labels can be downloaded.  The label format determines which sizes are supported.  `4x6` is supported for all label formats, whereas `letter` (8.5\" x 11\") is only supported for `pdf` format.\n"
+              ]
             }
           ]
         },
@@ -56,8 +52,7 @@
                 "pdf",
                 "png",
                 "zpl"
-              ],
-              "description": "The possible file formats in which shipping labels can be downloaded.  We recommend `pdf` format because it is supported by all carriers, whereas some carriers do not support the `png` or `zpl` formats.\n\n|Label Format  | Supported Carriers\n|--------------|-----------------------------------\n|`pdf`         | All carriers\n|`png`         | `fedex` <br> `stamps_com` <br> `ups` <br> `usps`\n|`zpl`         | `access_worldwide` <br> `apc` <br> `asendia` <br> `dhl_global_mail` <br> `dhl_express` <br> `dhl_express_australia` <br> `dhl_express_canada` <br> `dhl_express_worldwide` <br> `dhl_express_uk` <br> `dpd` <br> `endicia` <br> `fedex` <br> `fedex_uk` <br> `firstmile` <br> `globegistics` <br> `imex` <br> `newgistics` <br> `ontrac` <br> `rr_donnelley` <br> `stamps_com` <br> `ups` <br> `usps`\n"
+              ]
             }
           ]
         },
@@ -68,21 +63,17 @@
               "type": "string",
               "minLength": 1,
               "maxLength": 25,
-              "pattern": "^se(-[a-z0-9]+)+$",
-              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+              "pattern": "^se(-[a-z0-9]+)+$"
             }
-          ],
-          "description": "A string that uniquely identifies the batch"
+          ]
         },
         "external_batch_id": {
           "type": "string",
-          "minLength": 0,
-          "description": "A string that uniquely identifies the external batch"
+          "minLength": 0
         },
         "batch_notes": {
           "type": "string",
-          "default": "",
-          "description": "Custom notes you can add for each created batch"
+          "default": ""
         },
         "created_at": {
           "allOf": [
@@ -90,11 +81,9 @@
               "title": "date_time",
               "type": "string",
               "format": "date-time",
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$",
-              "description": "An [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) string that represents a date and time.\n"
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
             }
-          ],
-          "description": "The date and time the batch was created in ShipEngine"
+          ]
         },
         "processed_at": {
           "allOf": [
@@ -102,48 +91,40 @@
               "title": "date_time",
               "type": "string",
               "format": "date-time",
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$",
-              "description": "An [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) string that represents a date and time.\n"
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
             }
-          ],
-          "description": "The date and time the batch was processed in ShipEngine"
+          ]
         },
         "errors": {
           "type": "integer",
           "format": "int32",
-          "minimum": 0,
-          "description": "The number of errors that occurred while generating the batch"
+          "minimum": 0
         },
         "warnings": {
           "type": "integer",
           "format": "int32",
-          "minimum": 0,
-          "description": "The number of warnings that occurred while generating the batch"
+          "minimum": 0
         },
         "completed": {
           "type": "integer",
           "format": "int32",
-          "minimum": 0,
-          "description": "The number of labels generated in the batch"
+          "minimum": 0
         },
         "forms": {
           "type": "integer",
           "format": "int32",
-          "minimum": 0,
-          "description": "The number of forms for customs that are available for download"
+          "minimum": 0
         },
         "count": {
           "type": "integer",
           "format": "int32",
-          "minimum": 0,
-          "description": "The total of errors, warnings, and completed properties"
+          "minimum": 0
         },
         "batch_shipments_url": {
           "allOf": [
             {
               "title": "optional_link",
               "type": "object",
-              "description": "A link to a related resource, or an empty object if there is no resource to link to",
               "additionalProperties": false,
               "properties": {
                 "href": {
@@ -152,28 +133,23 @@
                       "title": "url",
                       "type": "string",
                       "format": "url",
-                      "minLength": 1,
-                      "description": "A URL"
+                      "minLength": 1
                     }
-                  ],
-                  "description": "The URL of the linked resource, if any"
+                  ]
                 },
                 "type": {
                   "type": "string",
-                  "minLength": 1,
-                  "description": "The type of resource, or the type of relationship to the parent resource"
+                  "minLength": 1
                 }
               }
             }
-          ],
-          "description": "The batch shipments endpoint"
+          ]
         },
         "batch_labels_url": {
           "allOf": [
             {
               "title": "optional_link",
               "type": "object",
-              "description": "A link to a related resource, or an empty object if there is no resource to link to",
               "additionalProperties": false,
               "properties": {
                 "href": {
@@ -182,28 +158,23 @@
                       "title": "url",
                       "type": "string",
                       "format": "url",
-                      "minLength": 1,
-                      "description": "A URL"
+                      "minLength": 1
                     }
-                  ],
-                  "description": "The URL of the linked resource, if any"
+                  ]
                 },
                 "type": {
                   "type": "string",
-                  "minLength": 1,
-                  "description": "The type of resource, or the type of relationship to the parent resource"
+                  "minLength": 1
                 }
               }
             }
-          ],
-          "description": "Link to batch labels query"
+          ]
         },
         "batch_errors_url": {
           "allOf": [
             {
               "title": "optional_link",
               "type": "object",
-              "description": "A link to a related resource, or an empty object if there is no resource to link to",
               "additionalProperties": false,
               "properties": {
                 "href": {
@@ -212,28 +183,23 @@
                       "title": "url",
                       "type": "string",
                       "format": "url",
-                      "minLength": 1,
-                      "description": "A URL"
+                      "minLength": 1
                     }
-                  ],
-                  "description": "The URL of the linked resource, if any"
+                  ]
                 },
                 "type": {
                   "type": "string",
-                  "minLength": 1,
-                  "description": "The type of resource, or the type of relationship to the parent resource"
+                  "minLength": 1
                 }
               }
             }
-          ],
-          "description": "Link to batch errors endpoint"
+          ]
         },
         "label_download": {
           "allOf": [
             {
               "title": "label_download",
               "type": "object",
-              "description": "Reference to the various downloadable file formats for the generated label\n",
               "additionalProperties": false,
               "properties": {
                 "href": {
@@ -242,11 +208,9 @@
                       "title": "url",
                       "type": "string",
                       "format": "url",
-                      "minLength": 1,
-                      "description": "A URL"
+                      "minLength": 1
                     }
-                  ],
-                  "description": "The URL of the linked resource, if any"
+                  ]
                 },
                 "pdf": {
                   "allOf": [
@@ -254,11 +218,9 @@
                       "title": "url",
                       "type": "string",
                       "format": "url",
-                      "minLength": 1,
-                      "description": "A URL"
+                      "minLength": 1
                     }
-                  ],
-                  "description": "The URL for the pdf generated label"
+                  ]
                 },
                 "png": {
                   "allOf": [
@@ -266,11 +228,9 @@
                       "title": "url",
                       "type": "string",
                       "format": "url",
-                      "minLength": 1,
-                      "description": "A URL"
+                      "minLength": 1
                     }
-                  ],
-                  "description": "The URL for the png generated label"
+                  ]
                 },
                 "zpl": {
                   "allOf": [
@@ -278,23 +238,19 @@
                       "title": "url",
                       "type": "string",
                       "format": "url",
-                      "minLength": 1,
-                      "description": "A URL"
+                      "minLength": 1
                     }
-                  ],
-                  "description": "The URL for the zpl generated label"
+                  ]
                 }
               }
             }
-          ],
-          "description": "The label download for the batch"
+          ]
         },
         "form_download": {
           "allOf": [
             {
               "title": "optional_link",
               "type": "object",
-              "description": "A link to a related resource, or an empty object if there is no resource to link to",
               "additionalProperties": false,
               "properties": {
                 "href": {
@@ -303,21 +259,17 @@
                       "title": "url",
                       "type": "string",
                       "format": "url",
-                      "minLength": 1,
-                      "description": "A URL"
+                      "minLength": 1
                     }
-                  ],
-                  "description": "The URL of the linked resource, if any"
+                  ]
                 },
                 "type": {
                   "type": "string",
-                  "minLength": 1,
-                  "description": "The type of resource, or the type of relationship to the parent resource"
+                  "minLength": 1
                 }
               }
             }
-          ],
-          "description": "The form download for any customs that are needed"
+          ]
         },
         "status": {
           "allOf": [
@@ -333,8 +285,7 @@
                 "archived",
                 "notifying",
                 "invalid"
-              ],
-              "description": "The possible batch status values"
+              ]
             }
           ]
         }

@@ -2,13 +2,11 @@
   "$id": "remove_from_batch_request_body",
   "title": "remove_from_batch_request_body",
   "type": "object",
-  "description": "A modify batch request body",
   "additionalProperties": false,
   "allOf": [
     {
       "title": "modify_batch",
       "type": "object",
-      "description": "A modify batch object",
       "additionalProperties": false,
       "properties": {
         "shipment_ids": {
@@ -20,13 +18,10 @@
                 "type": "string",
                 "minLength": 1,
                 "maxLength": 25,
-                "pattern": "^se(-[a-z0-9]+)+$",
-                "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                "pattern": "^se(-[a-z0-9]+)+$"
               }
-            ],
-            "description": "The Shipment ID to be modified on the batch"
-          },
-          "description": "The Shipment Ids to be modified on the batch"
+            ]
+          }
         },
         "rate_ids": {
           "type": "array",
@@ -37,13 +32,10 @@
                 "type": "string",
                 "minLength": 1,
                 "maxLength": 25,
-                "pattern": "^se(-[a-z0-9]+)+$",
-                "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                "pattern": "^se(-[a-z0-9]+)+$"
               }
-            ],
-            "description": "The Rate ID to be modified on the batch"
-          },
-          "description": "Array of Rate IDs to be modifed on the batch"
+            ]
+          }
         }
       }
     }

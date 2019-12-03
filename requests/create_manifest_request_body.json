@@ -5,7 +5,6 @@
     {
       "title": "create_manifest_by_object_request_body",
       "type": "object",
-      "description": "A create manifest request body",
       "required": [
         "carrier_id",
         "warehouse_id",
@@ -20,11 +19,9 @@
               "type": "string",
               "minLength": 1,
               "maxLength": 25,
-              "pattern": "^se(-[a-z0-9]+)+$",
-              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+              "pattern": "^se(-[a-z0-9]+)+$"
             }
-          ],
-          "description": "A string that uniquely identifies the carrier"
+          ]
         },
         "excluded_label_ids": {
           "type": "array",
@@ -35,13 +32,10 @@
                 "type": "string",
                 "minLength": 1,
                 "maxLength": 25,
-                "pattern": "^se(-[a-z0-9]+)+$",
-                "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                "pattern": "^se(-[a-z0-9]+)+$"
               }
-            ],
-            "description": "Label Id that will be excluded from the manifest"
-          },
-          "description": "The list of label ids to exclude from the manifest"
+            ]
+          }
         },
         "label_ids": {
           "type": "array",
@@ -52,13 +46,10 @@
                 "type": "string",
                 "minLength": 1,
                 "maxLength": 25,
-                "pattern": "^se(-[a-z0-9]+)+$",
-                "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                "pattern": "^se(-[a-z0-9]+)+$"
               }
-            ],
-            "description": "Label Id that will be included for the manifest"
-          },
-          "description": "The list of label ids to include for the manifest"
+            ]
+          }
         },
         "warehouse_id": {
           "allOf": [
@@ -67,24 +58,20 @@
               "type": "string",
               "minLength": 1,
               "maxLength": 25,
-              "pattern": "^se(-[a-z0-9]+)+$",
-              "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+              "pattern": "^se(-[a-z0-9]+)+$"
             }
-          ],
-          "description": "A string that uniquely identifies the warehouse"
+          ]
         },
         "ship_date": {
           "type": "string",
           "format": "date-time",
-          "minLength": 1,
-          "description": "The ship date that the shipment will be sent out on"
+          "minLength": 1
         }
       }
     },
     {
       "title": "create_manifest_label_ids_request_body",
       "type": "object",
-      "description": "A create manifest request body",
       "required": [
         "label_ids"
       ],
@@ -99,13 +86,10 @@
                 "type": "string",
                 "minLength": 1,
                 "maxLength": 25,
-                "pattern": "^se(-[a-z0-9]+)+$",
-                "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                "pattern": "^se(-[a-z0-9]+)+$"
               }
-            ],
-            "description": "Label Id that will be included in the manifest"
-          },
-          "description": "The list of label ids to include in the manifest"
+            ]
+          }
         }
       }
     }

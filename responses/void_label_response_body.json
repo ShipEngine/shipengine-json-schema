@@ -2,7 +2,6 @@
   "$id": "void_label_response_body",
   "title": "void_label_response_body",
   "type": "object",
-  "description": "A void label response body",
   "required": [
     "approved",
     "message"
@@ -10,8 +9,7 @@
   "additionalProperties": false,
   "properties": {
     "approved": {
-      "type": "boolean",
-      "description": "Indicates whether the attempt to void the label was successful"
+      "type": "boolean"
     },
     "message": {
       "type": "string",

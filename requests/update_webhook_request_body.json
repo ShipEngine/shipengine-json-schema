@@ -2,7 +2,6 @@
   "$id": "update_webhook_request_body",
   "title": "update_webhook_request_body",
   "type": "object",
-  "description": "An update webhook request body",
   "additionalProperties": false,
   "properties": {
     "url": {
@@ -11,11 +10,9 @@
           "title": "url",
           "type": "string",
           "format": "url",
-          "minLength": 1,
-          "description": "A URL"
+          "minLength": 1
         }
-      ],
-      "description": "The url that the wehbook sends the request"
+      ]
     }
   }
 }

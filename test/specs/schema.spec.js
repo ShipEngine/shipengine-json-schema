@@ -16,9 +16,9 @@ describe("Json Schema Requests/Responses:", () => {
       expect(isJsonSchema(fileJson)).to.not.throw;
     });
 
-    it(`${requestFile} should not contain any non-compatible JSON schema properties`, () => {
+    it(`${requestFile} should not contain any non-compatible JSON schema properties or description attributes`, () => {
       const triggers = ["example", "readOnly", "writeOnly", "nullable", "discriminator",
-      "xml", "externalDocs", "deprecated"];
+      "xml", "externalDocs", "deprecated", "description"];
       
       const allSchemaKeys = findAllKeys(fileJson);
 

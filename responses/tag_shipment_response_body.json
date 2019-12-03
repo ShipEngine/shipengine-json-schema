@@ -2,7 +2,6 @@
   "$id": "tag_shipment_response_body",
   "title": "tag_shipment_response_body",
   "type": "object",
-  "description": "A shipment add tag response body",
   "required": [
     "shipment_id",
     "tag"
@@ -16,18 +15,15 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 25,
-          "pattern": "^se(-[a-z0-9]+)+$",
-          "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+          "pattern": "^se(-[a-z0-9]+)+$"
         }
-      ],
-      "description": "A string that uniquely identifies the shipment"
+      ]
     },
     "tag": {
       "allOf": [
         {
           "title": "tag",
           "type": "object",
-          "description": "Tags are arbitrary strings that you can use to categorize shipments.  For example, you may want to use tags to distinguish between domestic and international shipments, or between insured and uninsured shipments.  Or maybe you want to create a tag for each of your customers so you can easily retrieve every shipment for a customer.\n",
           "required": [
             "name"
           ],
@@ -35,13 +31,11 @@
           "properties": {
             "name": {
               "type": "string",
-              "minLength": 1,
-              "description": "The tag name."
+              "minLength": 1
             }
           }
         }
-      ],
-      "description": "The tag that is now associated with this shipment"
+      ]
     }
   }
 }

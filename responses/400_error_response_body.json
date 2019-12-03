@@ -1,7 +1,6 @@
 {
   "title": "400_error_response_body",
   "type": "object",
-  "description": "An error response body",
   "required": [
     "request_id",
     "errors"
@@ -16,11 +15,9 @@
           "format": "uuid",
           "minLength": 36,
           "maxLength": 36,
-          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
-          "description": "A UUID (a.k.a. GUID) that uniquely identifies a resource"
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
         }
-      ],
-      "description": "A UUID that uniquely identifies the request id.\nThis can be given to the support team to help debug non-trivial issues that may occur\n"
+      ]
     },
     "errors": {
       "type": "array",
@@ -29,7 +26,6 @@
           {
             "title": "error",
             "type": "object",
-            "description": "The error structure that gets returned with almost all failed API calls\n",
             "required": [
               "error_source",
               "error_type",
@@ -47,8 +43,7 @@
                       "carrier",
                       "order_source",
                       "shipengine"
-                    ],
-                    "description": "The source of the error, as indicated by the name this informs us if the API call failed because of the\ncarrier, the order source, or the ShipEngine API itself.\n"
+                    ]
                   }
                 ]
               },
@@ -63,8 +58,7 @@
                       "validation",
                       "security",
                       "system"
-                    ],
-                    "description": "The type of error\n"
+                    ]
                   }
                 ]
               },
@@ -110,21 +104,18 @@
                       "verification_failure",
                       "warehouse_conflict",
                       "webhook_event_type_conflict"
-                    ],
-                    "description": "The error code specified for the failed API Call"
+                    ]
                   }
                 ]
               },
               "message": {
                 "type": "string",
-                "minLength": 1,
-                "description": "An error message associated with the failed API call"
+                "minLength": 1
               }
             }
           }
         ]
-      },
-      "description": "The errors associated with the failed API call"
+      }
     }
   },
   "$id": "400_error_response_body"

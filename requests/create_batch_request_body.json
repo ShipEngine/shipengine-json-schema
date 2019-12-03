@@ -2,7 +2,6 @@
   "$id": "create_batch_request_body",
   "title": "create_batch_request_body",
   "type": "object",
-  "description": "A create batch request body",
   "additionalProperties": false,
   "properties": {
     "external_batch_id": {
@@ -12,16 +11,13 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 25,
-          "pattern": "^se(-[a-z0-9]+)+$",
-          "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+          "pattern": "^se(-[a-z0-9]+)+$"
         }
-      ],
-      "description": "A string that uniquely identifies the external batch"
+      ]
     },
     "batch_notes": {
       "type": "string",
-      "minLength": 1,
-      "description": "Add custom messages for a particular batch"
+      "minLength": 1
     },
     "shipment_ids": {
       "type": "array",
@@ -32,12 +28,10 @@
             "type": "string",
             "minLength": 1,
             "maxLength": 25,
-            "pattern": "^se(-[a-z0-9]+)+$",
-            "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            "pattern": "^se(-[a-z0-9]+)+$"
           }
         ]
-      },
-      "description": "Array of shipment IDs used in the batch"
+      }
     },
     "rate_ids": {
       "type": "array",
@@ -50,12 +44,10 @@
             "type": "string",
             "minLength": 1,
             "maxLength": 25,
-            "pattern": "^se(-[a-z0-9]+)+$",
-            "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+            "pattern": "^se(-[a-z0-9]+)+$"
           }
         ]
-      },
-      "description": "Array of rate IDs used in the batch"
+      }
     }
   }
 }

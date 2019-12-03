@@ -2,7 +2,6 @@
   "$id": "list_carrier_services_response_body",
   "title": "list_carrier_services_response_body",
   "type": "object",
-  "description": "A carrier list services response body",
   "additionalProperties": false,
   "properties": {
     "services": {
@@ -12,7 +11,6 @@
           {
             "title": "service",
             "type": "object",
-            "description": "A service offered by the carrier",
             "additionalProperties": false,
             "properties": {
               "carrier_id": {
@@ -22,11 +20,9 @@
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 25,
-                    "pattern": "^se(-[a-z0-9]+)+$",
-                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                    "pattern": "^se(-[a-z0-9]+)+$"
                   }
-                ],
-                "description": "A string that uniquely identifies the carrier"
+                ]
               },
               "carrier_code": {
                 "allOf": [
@@ -35,39 +31,31 @@
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 25,
-                    "pattern": "^se(-[a-z0-9]+)+$",
-                    "description": "A string that uniquely identifies a ShipEngine resource, such as a carrier, label, shipment, etc."
+                    "pattern": "^se(-[a-z0-9]+)+$"
                   }
                 ]
               },
               "service_code": {
                 "type": "string",
-                "minLength": 1,
-                "description": "service code"
+                "minLength": 1
               },
               "name": {
                 "type": "string",
-                "minLength": 1,
-                "description": "User friendly service name"
+                "minLength": 1
               },
               "domestic": {
-                "type": "boolean",
-                "description": "Supports domestic shipping"
+                "type": "boolean"
               },
               "international": {
-                "type": "boolean",
-                "description": "Supports international shipping."
+                "type": "boolean"
               },
               "is_multi_package_supported": {
-                "type": "boolean",
-                "description": "Carrier supports multiple packages per shipment"
+                "type": "boolean"
               }
             }
           }
-        ],
-        "description": "A carrier service"
-      },
-      "description": "An array of services associated with the carrier"
+        ]
+      }
     }
   }
 }
