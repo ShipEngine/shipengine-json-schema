@@ -672,7 +672,7 @@
       }
     }
   },
-  "/v1/shipments/{shipment_id}/tags/{tag}": {
+  "/v1/shipments/{shipment_id}/tags/{tag_name}": {
     "post": {
       "name": "tag_shipment",
       "requestSchema": null,
@@ -728,7 +728,7 @@
       }
     }
   },
-  "/v1/tags/{tag_name}/{new_name}": {
+  "/v1/tags/{tag_name}/{new_tag_name}": {
     "put": {
       "name": "rename_tag",
       "requestSchema": null,
