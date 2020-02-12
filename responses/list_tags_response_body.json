@@ -1,0 +1,29 @@
+{
+  "$id": "list_tags_response_body",
+  "title": "list_tags_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "tags": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "title": "tag",
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

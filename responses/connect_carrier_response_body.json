@@ -1,0 +1,22 @@
+{
+  "$id": "connect_carrier_response_body",
+  "title": "connect_carrier_response_body",
+  "type": "object",
+  "required": [
+    "carrier_id"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "carrier_id": {
+      "allOf": [
+        {
+          "title": "se_id",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 25,
+          "pattern": "^se(-[a-z0-9]+)+$"
+        }
+      ]
+    }
+  }
+}

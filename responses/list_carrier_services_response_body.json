@@ -1,0 +1,61 @@
+{
+  "$id": "list_carrier_services_response_body",
+  "title": "list_carrier_services_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "services": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "title": "service",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "carrier_id": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$"
+                  }
+                ]
+              },
+              "carrier_code": {
+                "allOf": [
+                  {
+                    "title": "se_id",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 25,
+                    "pattern": "^se(-[a-z0-9]+)+$"
+                  }
+                ]
+              },
+              "service_code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "domestic": {
+                "type": "boolean"
+              },
+              "international": {
+                "type": "boolean"
+              },
+              "is_multi_package_supported": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

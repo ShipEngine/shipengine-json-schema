@@ -1,0 +1,141 @@
+{
+  "$id": "parse_address_response_body",
+  "title": "parse_address_response_body",
+  "type": "object",
+  "required": [
+    "score",
+    "address",
+    "entities"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "score": {
+      "type": "number",
+      "format": "double",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "address": {
+      "allOf": [
+        {
+          "title": "partial_address",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "phone": {
+              "type": "string",
+              "minLength": 1
+            },
+            "company_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "address_line1": {
+              "type": "string",
+              "minLength": 1
+            },
+            "address_line2": {
+              "type": "string",
+              "minLength": 1
+            },
+            "address_line3": {
+              "type": "string",
+              "minLength": 1
+            },
+            "city_locality": {
+              "type": "string",
+              "minLength": 1
+            },
+            "state_province": {
+              "type": "string",
+              "minLength": 1
+            },
+            "postal_code": {
+              "allOf": [
+                {
+                  "title": "postal_code",
+                  "minLength": 1,
+                  "type": "string"
+                }
+              ]
+            },
+            "country_code": {
+              "allOf": [
+                {
+                  "title": "country_code",
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 2
+                }
+              ]
+            },
+            "address_residential_indicator": {
+              "default": "unknown",
+              "allOf": [
+                {
+                  "title": "address_residential_indicator",
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "entities": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "title": "recognized_entity",
+        "type": "object",
+        "required": [
+          "type",
+          "score",
+          "text",
+          "start_index",
+          "end_index"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "score": {
+            "format": "double",
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "result": {
+            "title": "normalized_entity",
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {}
+          }
+        }
+      }
+    }
+  }
+}

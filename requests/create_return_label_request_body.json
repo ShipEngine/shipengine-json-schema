@@ -1,0 +1,70 @@
+{
+  "$id": "create_return_label_request_body",
+  "title": "create_return_label_request_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "charge_event": {
+      "allOf": [
+        {
+          "title": "label_charge_event",
+          "type": "string",
+          "enum": [
+            "carrier_default",
+            "on_creation",
+            "on_carrier_acceptance"
+          ]
+        }
+      ]
+    },
+    "label_layout": {
+      "default": "4x6",
+      "allOf": [
+        {
+          "title": "label_layout",
+          "type": "string",
+          "enum": [
+            "4x6",
+            "letter"
+          ]
+        }
+      ]
+    },
+    "label_format": {
+      "default": "pdf",
+      "allOf": [
+        {
+          "title": "label_format",
+          "type": "string",
+          "enum": [
+            "pdf",
+            "png",
+            "zpl"
+          ]
+        }
+      ]
+    },
+    "label_download_type": {
+      "default": "url",
+      "allOf": [
+        {
+          "title": "label_download_type",
+          "type": "string",
+          "enum": [
+            "url",
+            "inline"
+          ]
+        }
+      ]
+    },
+    "label_image_id": {
+      "allOf": [
+        {
+          "title": "image_id",
+          "type": "string",
+          "minLength": 4
+        }
+      ]
+    }
+  }
+}

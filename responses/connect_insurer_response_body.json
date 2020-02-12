@@ -1,0 +1,5 @@
+{
+  "$id": "connect_insurer_response_body",
+  "title": "connect_insurer_response_body",
+  "type": "object"
+}

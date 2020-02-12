@@ -1,0 +1,228 @@
+{
+  "$id": "get_warehouse_by_id_response_body",
+  "title": "get_warehouse_by_id_response_body",
+  "type": "object",
+  "required": [
+    "warehouse_id",
+    "name",
+    "created_at",
+    "origin_address",
+    "return_address"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "title": "warehouse",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "warehouse_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "minLength": 1
+        },
+        "origin_address": {
+          "allOf": [
+            {
+              "title": "address",
+              "type": "object",
+              "required": [
+                "name",
+                "phone",
+                "address_line1",
+                "city_locality",
+                "state_province",
+                "postal_code",
+                "country_code",
+                "address_residential_indicator"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "title": "partial_address",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "phone": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "company_name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "address_line1": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "address_line2": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "address_line3": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "city_locality": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "state_province": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "postal_code": {
+                      "allOf": [
+                        {
+                          "title": "postal_code",
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "country_code": {
+                      "allOf": [
+                        {
+                          "title": "country_code",
+                          "type": "string",
+                          "minLength": 2,
+                          "maxLength": 2
+                        }
+                      ]
+                    },
+                    "address_residential_indicator": {
+                      "default": "unknown",
+                      "allOf": [
+                        {
+                          "title": "address_residential_indicator",
+                          "type": "string",
+                          "enum": [
+                            "unknown",
+                            "yes",
+                            "no"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "return_address": {
+          "allOf": [
+            {
+              "title": "address",
+              "type": "object",
+              "required": [
+                "name",
+                "phone",
+                "address_line1",
+                "city_locality",
+                "state_province",
+                "postal_code",
+                "country_code",
+                "address_residential_indicator"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "title": "partial_address",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "phone": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "company_name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "address_line1": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "address_line2": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "address_line3": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "city_locality": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "state_province": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "postal_code": {
+                      "allOf": [
+                        {
+                          "title": "postal_code",
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "country_code": {
+                      "allOf": [
+                        {
+                          "title": "country_code",
+                          "type": "string",
+                          "minLength": 2,
+                          "maxLength": 2
+                        }
+                      ]
+                    },
+                    "address_residential_indicator": {
+                      "default": "unknown",
+                      "allOf": [
+                        {
+                          "title": "address_residential_indicator",
+                          "type": "string",
+                          "enum": [
+                            "unknown",
+                            "yes",
+                            "no"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

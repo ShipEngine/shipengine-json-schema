@@ -1,0 +1,151 @@
+{
+  "$id": "get_tracking_log_from_label_response_body",
+  "title": "get_tracking_log_from_label_response_body",
+  "type": "object",
+  "required": [
+    "tracking_number",
+    "status_code",
+    "carrier_status_code",
+    "estimated_delivery_date",
+    "events"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "title": "tracking_information",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tracking_number": {
+          "allOf": [
+            {
+              "title": "tracking_number",
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "status_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status_description": {
+          "type": "string",
+          "minLength": 0
+        },
+        "carrier_status_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "carrier_status_description": {
+          "type": "string",
+          "minLength": 0
+        },
+        "ship_date": {
+          "allOf": [
+            {
+              "title": "date_time",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+            }
+          ]
+        },
+        "estimated_delivery_date": {
+          "allOf": [
+            {
+              "title": "date_time",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+            }
+          ]
+        },
+        "actual_delivery_date": {
+          "allOf": [
+            {
+              "title": "date_time",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+            }
+          ]
+        },
+        "exception_description": {
+          "type": "string",
+          "minLength": 0
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "title": "track_event",
+            "type": "object",
+            "required": [
+              "occurred_at",
+              "city_locality",
+              "state_province",
+              "postal_code"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "occurred_at": {
+                "allOf": [
+                  {
+                    "title": "date_time",
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+                  }
+                ]
+              },
+              "carrier_occurred_at": {
+                "allOf": [
+                  {
+                    "title": "date_time",
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+                  }
+                ]
+              },
+              "city_locality": {
+                "type": "string",
+                "minLength": 0
+              },
+              "state_province": {
+                "type": "string",
+                "minLength": 2
+              },
+              "postal_code": {
+                "type": "string",
+                "minLength": 5
+              },
+              "country_code": {
+                "allOf": [
+                  {
+                    "title": "country_code",
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                  }
+                ]
+              },
+              "company_name": {
+                "type": "string",
+                "minLength": 0
+              },
+              "signer": {
+                "type": "string",
+                "minLength": 0
+              },
+              "event_code": {
+                "type": "string",
+                "minLength": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

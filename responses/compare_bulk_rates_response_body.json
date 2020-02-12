@@ -1,0 +1,96 @@
+{
+  "$id": "compare_bulk_rates_response_body",
+  "title": "compare_bulk_rates_response_body",
+  "type": "array",
+  "items": {
+    "title": "bulk_rate",
+    "type": "object",
+    "required": [
+      "rate_request_id",
+      "shipment_id",
+      "created_at",
+      "status",
+      "errors"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "rate_request_id": {
+        "allOf": [
+          {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          }
+        ]
+      },
+      "shipment_id": {
+        "allOf": [
+          {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          }
+        ]
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "allOf": [
+          {
+            "title": "date_time",
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+          }
+        ]
+      },
+      "status": {
+        "allOf": [
+          {
+            "title": "rate_response_status",
+            "type": "string",
+            "enum": [
+              "working",
+              "completed",
+              "partial",
+              "error"
+            ]
+          }
+        ]
+      },
+      "errors": {
+        "type": "array",
+        "items": {
+          "allOf": [
+            {
+              "title": "provider_error",
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "carrier_id": {
+                  "allOf": [
+                    {
+                      "title": "se_id",
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 25,
+                      "pattern": "^se(-[a-z0-9]+)+$"
+                    }
+                  ]
+                },
+                "message": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

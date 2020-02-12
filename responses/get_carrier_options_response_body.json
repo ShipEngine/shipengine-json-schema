@@ -1,0 +1,30 @@
+{
+  "$id": "get_carrier_options_response_body",
+  "title": "get_carrier_options_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "options": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "title": "carrier_advanced_option",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "default_value": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

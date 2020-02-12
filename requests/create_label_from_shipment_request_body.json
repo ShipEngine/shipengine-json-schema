@@ -1,0 +1,60 @@
+{
+  "$id": "create_label_from_shipment_request_body",
+  "title": "create_label_from_shipment_request_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "validate_address": {
+      "allOf": [
+        {
+          "title": "validate_address",
+          "type": "string",
+          "enum": [
+            "no_validation",
+            "validate_only",
+            "validate_and_clean"
+          ]
+        }
+      ]
+    },
+    "label_layout": {
+      "default": "4x6",
+      "allOf": [
+        {
+          "title": "label_layout",
+          "type": "string",
+          "enum": [
+            "4x6",
+            "letter"
+          ]
+        }
+      ]
+    },
+    "label_format": {
+      "default": "pdf",
+      "allOf": [
+        {
+          "title": "label_format",
+          "type": "string",
+          "enum": [
+            "pdf",
+            "png",
+            "zpl"
+          ]
+        }
+      ]
+    },
+    "label_download_type": {
+      "allOf": [
+        {
+          "title": "label_download_type",
+          "type": "string",
+          "enum": [
+            "url",
+            "inline"
+          ]
+        }
+      ]
+    }
+  }
+}

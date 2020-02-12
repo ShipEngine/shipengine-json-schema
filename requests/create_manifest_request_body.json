@@ -1,0 +1,97 @@
+{
+  "$id": "create_manifest_request_body",
+  "title": "create_manifest_request_body",
+  "oneOf": [
+    {
+      "title": "create_manifest_by_object_request_body",
+      "type": "object",
+      "required": [
+        "carrier_id",
+        "warehouse_id",
+        "ship_date"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "carrier_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "excluded_label_ids": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "title": "se_id",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 25,
+                "pattern": "^se(-[a-z0-9]+)+$"
+              }
+            ]
+          }
+        },
+        "label_ids": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "title": "se_id",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 25,
+                "pattern": "^se(-[a-z0-9]+)+$"
+              }
+            ]
+          }
+        },
+        "warehouse_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "ship_date": {
+          "type": "string",
+          "format": "date-time",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "create_manifest_label_ids_request_body",
+      "type": "object",
+      "required": [
+        "label_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label_ids": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "title": "se_id",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 25,
+                "pattern": "^se(-[a-z0-9]+)+$"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

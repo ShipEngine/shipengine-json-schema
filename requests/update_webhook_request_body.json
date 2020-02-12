@@ -1,0 +1,18 @@
+{
+  "$id": "update_webhook_request_body",
+  "title": "update_webhook_request_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "url": {
+      "allOf": [
+        {
+          "title": "url",
+          "type": "string",
+          "format": "url",
+          "minLength": 1
+        }
+      ]
+    }
+  }
+}

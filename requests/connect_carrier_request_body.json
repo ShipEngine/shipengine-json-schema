@@ -1,0 +1,981 @@
+{
+  "$id": "connect_carrier_request_body",
+  "title": "connect_carrier_request_body",
+  "oneOf": [
+    {
+      "title": "connect_access_worldwide_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_amazon_buy_shipping_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "merchant_seller_id",
+        "email",
+        "mws_auth_token"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "merchant_seller_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mws_auth_token": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "connect_apc_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_asendia_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "account_number",
+        "ftp_username",
+        "ftp_password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ftp_username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ftp_password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_australia_post_request_body",
+      "type": "object",
+      "required": [
+        "account_number",
+        "api_key",
+        "api_secret",
+        "nickname"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "api_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "api_secret": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_ecommerce_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "client_id",
+        "username",
+        "password",
+        "pickup_number",
+        "distribution_center"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "client_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pickup_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "distribution_center": {
+          "type": "string",
+          "minLength": 1
+        },
+        "api_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "api_secret": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ancillary_endorsement": {
+          "allOf": [
+            {
+              "title": "ancillary_service_endorsement",
+              "type": "string",
+              "enum": [
+                "none",
+                "return_service_requested",
+                "forwarding_service_requested",
+                "address_service_requested",
+                "change_service_requested",
+                "leave_if_no_response"
+              ]
+            }
+          ]
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ftp_username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ftp_password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_express_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "account_number"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_express_au_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "account_number"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_express_ca_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "account_number"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_dhl_express_uk_request_body",
+      "type": "object",
+      "required": [
+        "account_number",
+        "site_id",
+        "password",
+        "nickname"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "site_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_dpd_request_body",
+      "type": "object",
+      "required": [
+        "account_number",
+        "password",
+        "nickname"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_endicia_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "account",
+        "passphrase"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account": {
+          "type": "string",
+          "minLength": 1
+        },
+        "passphrase": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_fedex_request_body",
+      "type": "object",
+      "required": [
+        "account_number",
+        "address1",
+        "city",
+        "country_code",
+        "email",
+        "first_name",
+        "last_name",
+        "phone",
+        "postal_code",
+        "state",
+        "nickname",
+        "agree_to_eula"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address1": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address2": {
+          "type": "string",
+          "minLength": 1
+        },
+        "city": {
+          "type": "string",
+          "minLength": 1
+        },
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1
+            }
+          ]
+        },
+        "first_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "postal_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agree_to_eula": {
+          "type": "boolean"
+        },
+        "meter_number": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_fedex_uk_request_body",
+      "type": "object",
+      "required": [
+        "account_number",
+        "address1",
+        "city",
+        "country_code",
+        "email",
+        "first_name",
+        "last_name",
+        "phone",
+        "postal_code",
+        "state",
+        "nickname",
+        "agree_to_eula"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address1": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address2": {
+          "type": "string",
+          "minLength": 1
+        },
+        "city": {
+          "type": "string",
+          "minLength": 1
+        },
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1
+            }
+          ]
+        },
+        "first_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "postal_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agree_to_eula": {
+          "type": "boolean"
+        },
+        "meter_number": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_firstmile_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "mailer_id",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mailer_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "profile_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_globegistics_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_imex_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_newgistics_request_body",
+      "type": "object",
+      "required": [
+        "induction_site",
+        "nickname"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "merchant_id": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0
+        },
+        "mailer_id": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0
+        },
+        "induction_site": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_ontrac_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "account_number",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_purolator_request_body",
+      "type": "object",
+      "required": [
+        "account_number",
+        "activation_key",
+        "nickname"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "activation_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_royal_mail_request_body",
+      "type": "object",
+      "required": [
+        "account_number",
+        "contact_name",
+        "city",
+        "postal_code",
+        "nickname"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "oba_email": {
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1
+            }
+          ]
+        },
+        "contact_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1
+            }
+          ]
+        },
+        "company_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street_line1": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street_line2": {
+          "type": "string",
+          "minLength": 1
+        },
+        "street_line3": {
+          "type": "string",
+          "minLength": 1
+        },
+        "city": {
+          "type": "string",
+          "minLength": 1
+        },
+        "postal_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_rr_donnelley_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_sendle_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "sendle_id",
+        "api_key"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sendle_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "api_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_stamps_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_ups_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "account_number",
+        "account_country_code",
+        "account_postal_code",
+        "first_name",
+        "last_name",
+        "company",
+        "address1",
+        "city",
+        "state",
+        "postal_code",
+        "country_code",
+        "email",
+        "phone",
+        "agree_to_technology_agreement"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_country_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_postal_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "first_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address1": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address2": {
+          "type": "string",
+          "minLength": 1
+        },
+        "city": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "postal_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "allOf": [
+            {
+              "title": "email",
+              "type": "string",
+              "format": "email",
+              "minLength": 1
+            }
+          ]
+        },
+        "phone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "invoice": {
+          "allOf": [
+            {
+              "title": "ups_invoice",
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "invoice_date": {
+                  "type": "string",
+                  "format": "date-time",
+                  "minLength": 1
+                },
+                "invoice_number": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "control_id": {
+                  "allOf": [
+                    {
+                      "title": "se_id",
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 25,
+                      "pattern": "^se(-[a-z0-9]+)+$"
+                    }
+                  ]
+                },
+                "invoice_amount": {
+                  "type": "number",
+                  "format": "double",
+                  "minimum": 0
+                }
+              }
+            }
+          ]
+        },
+        "agree_to_technology_agreement": {
+          "type": "boolean"
+        }
+      }
+    }
+  ]
+}

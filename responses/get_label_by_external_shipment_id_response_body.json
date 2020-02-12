@@ -1,0 +1,632 @@
+{
+  "$id": "get_label_by_external_shipment_id_response_body",
+  "title": "get_label_by_external_shipment_id_response_body",
+  "type": "object",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "title": "label",
+      "type": "object",
+      "required": [
+        "label_id",
+        "status",
+        "shipment_id",
+        "ship_date",
+        "created_at",
+        "shipment_cost",
+        "insurance_cost",
+        "tracking_number",
+        "is_return_label",
+        "rma_number",
+        "is_international",
+        "batch_id",
+        "carrier_id",
+        "service_code",
+        "package_code",
+        "voided",
+        "voided_at",
+        "label_image_id",
+        "label_format",
+        "label_layout",
+        "trackable",
+        "carrier_code",
+        "tracking_status",
+        "label_download",
+        "form_download",
+        "insurance_claim",
+        "packages"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "status": {
+          "allOf": [
+            {
+              "title": "label_status",
+              "type": "string",
+              "enum": [
+                "processing",
+                "completed",
+                "error",
+                "voided"
+              ]
+            }
+          ]
+        },
+        "shipment_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "ship_date": {
+          "allOf": [
+            {
+              "title": "date",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}(T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2}))?$"
+            }
+          ]
+        },
+        "created_at": {
+          "allOf": [
+            {
+              "title": "date_time",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+            }
+          ]
+        },
+        "shipment_cost": {
+          "allOf": [
+            {
+              "title": "monetary_value",
+              "type": "object",
+              "required": [
+                "currency",
+                "amount"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "currency": {
+                  "allOf": [
+                    {
+                      "title": "currency",
+                      "type": "string",
+                      "enum": [
+                        "usd",
+                        "cad",
+                        "aud",
+                        "gbp",
+                        "eur",
+                        "nzd"
+                      ]
+                    }
+                  ]
+                },
+                "amount": {
+                  "type": "number",
+                  "format": "double",
+                  "minimum": 0
+                }
+              }
+            }
+          ]
+        },
+        "insurance_cost": {
+          "allOf": [
+            {
+              "title": "monetary_value",
+              "type": "object",
+              "required": [
+                "currency",
+                "amount"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "currency": {
+                  "allOf": [
+                    {
+                      "title": "currency",
+                      "type": "string",
+                      "enum": [
+                        "usd",
+                        "cad",
+                        "aud",
+                        "gbp",
+                        "eur",
+                        "nzd"
+                      ]
+                    }
+                  ]
+                },
+                "amount": {
+                  "type": "number",
+                  "format": "double",
+                  "minimum": 0
+                }
+              }
+            }
+          ]
+        },
+        "tracking_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "is_return_label": {
+          "type": "boolean"
+        },
+        "rma_number": {
+          "type": "string"
+        },
+        "is_international": {
+          "type": "boolean"
+        },
+        "batch_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "carrier_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "charge_event": {
+          "allOf": [
+            {
+              "title": "label_charge_event",
+              "type": "string",
+              "enum": [
+                "carrier_default",
+                "on_creation",
+                "on_carrier_acceptance"
+              ]
+            }
+          ]
+        },
+        "outbound_label_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
+        },
+        "service_code": {
+          "allOf": [
+            {
+              "title": "service_code",
+              "type": "string",
+              "pattern": "^[a-z0-9]+(_[a-z0-9-]+)* ?$"
+            }
+          ]
+        },
+        "package_code": {
+          "allOf": [
+            {
+              "title": "package_code",
+              "type": "string",
+              "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+            }
+          ]
+        },
+        "voided": {
+          "type": "boolean"
+        },
+        "voided_at": {
+          "allOf": [
+            {
+              "title": "date_time",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+            }
+          ]
+        },
+        "label_format": {
+          "default": "pdf",
+          "allOf": [
+            {
+              "title": "label_format",
+              "type": "string",
+              "enum": [
+                "pdf",
+                "png",
+                "zpl"
+              ]
+            }
+          ]
+        },
+        "label_layout": {
+          "default": "4x6",
+          "allOf": [
+            {
+              "title": "label_layout",
+              "type": "string",
+              "enum": [
+                "4x6",
+                "letter"
+              ]
+            }
+          ]
+        },
+        "trackable": {
+          "type": "boolean"
+        },
+        "label_image_id": {
+          "allOf": [
+            {
+              "title": "image_id",
+              "type": "string",
+              "minLength": 4
+            }
+          ]
+        },
+        "carrier_code": {
+          "allOf": [
+            {
+              "title": "carrier_code",
+              "type": "string",
+              "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+            }
+          ]
+        },
+        "tracking_status": {
+          "allOf": [
+            {
+              "title": "tracking_status",
+              "type": "string",
+              "enum": [
+                "unknown",
+                "in_transit",
+                "error",
+                "delivered"
+              ]
+            }
+          ]
+        },
+        "label_download": {
+          "allOf": [
+            {
+              "title": "label_download",
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "href": {
+                  "allOf": [
+                    {
+                      "title": "url",
+                      "type": "string",
+                      "format": "url",
+                      "minLength": 1
+                    }
+                  ]
+                },
+                "pdf": {
+                  "allOf": [
+                    {
+                      "title": "url",
+                      "type": "string",
+                      "format": "url",
+                      "minLength": 1
+                    }
+                  ]
+                },
+                "png": {
+                  "allOf": [
+                    {
+                      "title": "url",
+                      "type": "string",
+                      "format": "url",
+                      "minLength": 1
+                    }
+                  ]
+                },
+                "zpl": {
+                  "allOf": [
+                    {
+                      "title": "url",
+                      "type": "string",
+                      "format": "url",
+                      "minLength": 1
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "form_download": {
+          "allOf": [
+            {
+              "title": "link",
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "href"
+              ],
+              "allOf": [
+                {
+                  "title": "optional_link",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "href": {
+                      "allOf": [
+                        {
+                          "title": "url",
+                          "type": "string",
+                          "format": "url",
+                          "minLength": 1
+                        }
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "insurance_claim": {
+          "allOf": [
+            {
+              "title": "link",
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "href"
+              ],
+              "allOf": [
+                {
+                  "title": "optional_link",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "href": {
+                      "allOf": [
+                        {
+                          "title": "url",
+                          "type": "string",
+                          "format": "url",
+                          "minLength": 1
+                        }
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "packages": {
+          "type": "array",
+          "items": {
+            "title": "package",
+            "type": "object",
+            "required": [
+              "weight"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "package_code": {
+                "allOf": [
+                  {
+                    "title": "package_code",
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+                  }
+                ]
+              },
+              "weight": {
+                "allOf": [
+                  {
+                    "title": "weight",
+                    "type": "object",
+                    "required": [
+                      "value",
+                      "unit"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "value": {
+                        "type": "number",
+                        "format": "double",
+                        "exclusiveMinimum": 0
+                      },
+                      "unit": {
+                        "allOf": [
+                          {
+                            "title": "weight_unit",
+                            "type": "string",
+                            "enum": [
+                              "pound",
+                              "ounce",
+                              "gram",
+                              "kilogram"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "dimensions": {
+                "allOf": [
+                  {
+                    "title": "dimensions",
+                    "type": "object",
+                    "required": [
+                      "unit",
+                      "length",
+                      "width",
+                      "height"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "unit": {
+                        "default": "inch",
+                        "allOf": [
+                          {
+                            "title": "dimension_unit",
+                            "type": "string",
+                            "enum": [
+                              "inch",
+                              "centimeter"
+                            ]
+                          }
+                        ]
+                      },
+                      "length": {
+                        "type": "number",
+                        "format": "double",
+                        "minimum": 0,
+                        "default": 0
+                      },
+                      "width": {
+                        "type": "number",
+                        "format": "double",
+                        "minimum": 0,
+                        "default": 0
+                      },
+                      "height": {
+                        "type": "number",
+                        "format": "double",
+                        "minimum": 0,
+                        "default": 0
+                      }
+                    }
+                  }
+                ]
+              },
+              "insured_value": {
+                "allOf": [
+                  {
+                    "title": "monetary_value",
+                    "type": "object",
+                    "required": [
+                      "currency",
+                      "amount"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "currency": {
+                        "allOf": [
+                          {
+                            "title": "currency",
+                            "type": "string",
+                            "enum": [
+                              "usd",
+                              "cad",
+                              "aud",
+                              "gbp",
+                              "eur",
+                              "nzd"
+                            ]
+                          }
+                        ]
+                      },
+                      "amount": {
+                        "type": "number",
+                        "format": "double",
+                        "minimum": 0
+                      }
+                    }
+                  }
+                ],
+                "default": [
+                  {
+                    "currency": "usd",
+                    "amount": 0
+                  }
+                ]
+              },
+              "tracking_number": {
+                "allOf": [
+                  {
+                    "title": "tracking_number",
+                    "type": "string",
+                    "minLength": 1
+                  }
+                ]
+              },
+              "label_messages": {
+                "allOf": [
+                  {
+                    "title": "label_messages",
+                    "type": "object",
+                    "required": [
+                      "reference1",
+                      "reference2",
+                      "reference3"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "reference1": {
+                        "type": "string",
+                        "default": null
+                      },
+                      "reference2": {
+                        "type": "string",
+                        "default": null
+                      },
+                      "reference3": {
+                        "type": "string",
+                        "default": null
+                      }
+                    }
+                  }
+                ]
+              },
+              "external_package_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

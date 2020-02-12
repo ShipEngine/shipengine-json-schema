@@ -1,0 +1,46 @@
+{
+  "$id": "process_batch_request_body",
+  "title": "process_batch_request_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ship_date": {
+      "allOf": [
+        {
+          "title": "date_time",
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[-+]\\d{2}:\\d{2})$"
+        }
+      ]
+    },
+    "label_layout": {
+      "type": "string",
+      "default": "4x6",
+      "allOf": [
+        {
+          "title": "label_layout",
+          "type": "string",
+          "enum": [
+            "4x6",
+            "letter"
+          ]
+        }
+      ]
+    },
+    "label_format": {
+      "default": "pdf",
+      "allOf": [
+        {
+          "title": "label_format",
+          "type": "string",
+          "enum": [
+            "pdf",
+            "png",
+            "zpl"
+          ]
+        }
+      ]
+    }
+  }
+}

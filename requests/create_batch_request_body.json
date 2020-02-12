@@ -1,0 +1,53 @@
+{
+  "$id": "create_batch_request_body",
+  "title": "create_batch_request_body",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "external_batch_id": {
+      "allOf": [
+        {
+          "title": "se_id",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 25,
+          "pattern": "^se(-[a-z0-9]+)+$"
+        }
+      ]
+    },
+    "batch_notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "shipment_ids": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          }
+        ]
+      }
+    },
+    "rate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "allOf": [
+          {
+            "title": "se_id",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25,
+            "pattern": "^se(-[a-z0-9]+)+$"
+          }
+        ]
+      }
+    }
+  }
+}
