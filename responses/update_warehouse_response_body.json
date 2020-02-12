@@ -1,6 +1,0 @@
-{
-  "$id": "update_warehouse_response_body",
-  "title": "update_warehouse_response_body",
-  "type": "string",
-  "maxLength": 0
-}

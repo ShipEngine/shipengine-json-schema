@@ -1,6 +1,0 @@
-{
-  "$id": "disconnect_carrier_response_body",
-  "title": "disconnect_carrier_response_body",
-  "type": "string",
-  "maxLength": 0
-}

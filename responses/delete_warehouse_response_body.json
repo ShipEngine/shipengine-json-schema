@@ -1,6 +1,0 @@
-{
-  "$id": "delete_warehouse_response_body",
-  "title": "delete_warehouse_response_body",
-  "type": "string",
-  "maxLength": 0
-}

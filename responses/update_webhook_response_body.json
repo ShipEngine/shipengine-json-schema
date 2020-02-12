@@ -1,6 +1,0 @@
-{
-  "$id": "update_webhook_response_body",
-  "title": "update_webhook_response_body",
-  "type": "string",
-  "maxLength": 0
-}

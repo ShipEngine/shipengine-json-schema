@@ -1,6 +1,0 @@
-{
-  "$id": "update_carrier_settings_response_body",
-  "title": "update_carrier_settings_response_body",
-  "type": "string",
-  "maxLength": 0
-}
