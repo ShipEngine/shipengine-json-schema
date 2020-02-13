@@ -87,7 +87,6 @@
                       "invalid_status",
                       "invalid_string_length",
                       "label_images_not_supported",
-                      "label_cannot_be_manifested",
                       "meter_failure",
                       "order_source_not_active",
                       "rate_limit_exceeded",
