@@ -1,4 +1,4 @@
-name: Node/NPM CI
+name: Node/NPM CI-CD
 
 on: 
   push:
