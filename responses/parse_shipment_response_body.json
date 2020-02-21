@@ -481,7 +481,8 @@
                     "delivery",
                     "signature",
                     "adult_signature",
-                    "direct_signature"
+                    "direct_signature",
+                    "delivery_mailed"
                   ]
                 }
               ]
