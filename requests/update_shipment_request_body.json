@@ -473,6 +473,25 @@
                     }
                   ]
                 },
+                "calculate_tax_amount": {
+                  "type": "boolean"
+                },
+                "preferred_currency": {
+                  "allOf": [
+                    {
+                      "title": "currency",
+                      "type": "string",
+                      "enum": [
+                        "usd",
+                        "cad",
+                        "aud",
+                        "gbp",
+                        "eur",
+                        "nzd"
+                      ]
+                    }
+                  ]
+                },
                 "customs_items": {
                   "type": "array",
                   "default": [],
@@ -509,6 +528,15 @@
                             "maxLength": 2
                           }
                         ]
+                      },
+                      "unit_of_measure": {
+                        "type": "string"
+                      },
+                      "sku": {
+                        "type": "string"
+                      },
+                      "sku_description": {
+                        "type": "string"
                       }
                     }
                   }

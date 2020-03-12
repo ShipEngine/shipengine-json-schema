@@ -100,7 +100,8 @@
                         "business_rules",
                         "validation",
                         "security",
-                        "system"
+                        "system",
+                        "integrations"
                       ]
                     }
                   ]
@@ -114,6 +115,7 @@
                         "auto_fund_not_supported",
                         "batch_cannot_be_modified",
                         "carrier_conflict",
+                        "carrier_disconnected",
                         "carrier_not_connected",
                         "carrier_not_supported",
                         "confirmation_not_supported",
@@ -142,6 +144,7 @@
                         "tracking_not_supported",
                         "trial_expired",
                         "unauthorized",
+                        "unknown",
                         "unspecified",
                         "verification_failure",
                         "warehouse_conflict",

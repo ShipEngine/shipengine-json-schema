@@ -531,6 +531,25 @@
                     }
                   ]
                 },
+                "calculate_tax_amount": {
+                  "type": "boolean"
+                },
+                "preferred_currency": {
+                  "allOf": [
+                    {
+                      "title": "currency",
+                      "type": "string",
+                      "enum": [
+                        "usd",
+                        "cad",
+                        "aud",
+                        "gbp",
+                        "eur",
+                        "nzd"
+                      ]
+                    }
+                  ]
+                },
                 "customs_items": {
                   "type": "array",
                   "default": [],
@@ -580,6 +599,15 @@
                             "maxLength": 2
                           }
                         ]
+                      },
+                      "unit_of_measure": {
+                        "type": "string"
+                      },
+                      "sku": {
+                        "type": "string"
+                      },
+                      "sku_description": {
+                        "type": "string"
                       }
                     }
                   }
@@ -1272,6 +1300,42 @@
                               }
                             ]
                           },
+                          "tax_amount": {
+                            "allOf": [
+                              {
+                                "title": "monetary_value",
+                                "type": "object",
+                                "required": [
+                                  "currency",
+                                  "amount"
+                                ],
+                                "additionalProperties": false,
+                                "properties": {
+                                  "currency": {
+                                    "allOf": [
+                                      {
+                                        "title": "currency",
+                                        "type": "string",
+                                        "enum": [
+                                          "usd",
+                                          "cad",
+                                          "aud",
+                                          "gbp",
+                                          "eur",
+                                          "nzd"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  "amount": {
+                                    "type": "number",
+                                    "format": "double",
+                                    "minimum": 0
+                                  }
+                                }
+                              }
+                            ]
+                          },
                           "zone": {
                             "type": "integer",
                             "format": "int32",
@@ -1579,6 +1643,42 @@
                               }
                             ]
                           },
+                          "tax_amount": {
+                            "allOf": [
+                              {
+                                "title": "monetary_value",
+                                "type": "object",
+                                "required": [
+                                  "currency",
+                                  "amount"
+                                ],
+                                "additionalProperties": false,
+                                "properties": {
+                                  "currency": {
+                                    "allOf": [
+                                      {
+                                        "title": "currency",
+                                        "type": "string",
+                                        "enum": [
+                                          "usd",
+                                          "cad",
+                                          "aud",
+                                          "gbp",
+                                          "eur",
+                                          "nzd"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  "amount": {
+                                    "type": "number",
+                                    "format": "double",
+                                    "minimum": 0
+                                  }
+                                }
+                              }
+                            ]
+                          },
                           "zone": {
                             "type": "integer",
                             "format": "int32",
@@ -1763,7 +1863,8 @@
                                   "business_rules",
                                   "validation",
                                   "security",
-                                  "system"
+                                  "system",
+                                  "integrations"
                                 ]
                               }
                             ]
@@ -1777,6 +1878,7 @@
                                   "auto_fund_not_supported",
                                   "batch_cannot_be_modified",
                                   "carrier_conflict",
+                                  "carrier_disconnected",
                                   "carrier_not_connected",
                                   "carrier_not_supported",
                                   "confirmation_not_supported",
@@ -1805,6 +1907,7 @@
                                   "tracking_not_supported",
                                   "trial_expired",
                                   "unauthorized",
+                                  "unknown",
                                   "unspecified",
                                   "verification_failure",
                                   "warehouse_conflict",
