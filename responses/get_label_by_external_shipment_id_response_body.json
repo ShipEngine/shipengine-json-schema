@@ -7,35 +7,6 @@
     {
       "title": "label",
       "type": "object",
-      "required": [
-        "label_id",
-        "status",
-        "shipment_id",
-        "ship_date",
-        "created_at",
-        "shipment_cost",
-        "insurance_cost",
-        "tracking_number",
-        "is_return_label",
-        "rma_number",
-        "is_international",
-        "batch_id",
-        "carrier_id",
-        "service_code",
-        "package_code",
-        "voided",
-        "voided_at",
-        "label_image_id",
-        "label_format",
-        "label_layout",
-        "trackable",
-        "carrier_code",
-        "tracking_status",
-        "label_download",
-        "form_download",
-        "insurance_claim",
-        "packages"
-      ],
       "additionalProperties": false,
       "properties": {
         "label_id": {
@@ -211,17 +182,6 @@
                 "on_creation",
                 "on_carrier_acceptance"
               ]
-            }
-          ]
-        },
-        "outbound_label_id": {
-          "allOf": [
-            {
-              "title": "se_id",
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 25,
-              "pattern": "^se(-[a-z0-9]+)+$"
             }
           ]
         },
