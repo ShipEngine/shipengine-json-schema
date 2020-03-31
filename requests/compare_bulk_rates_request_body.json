@@ -49,6 +49,25 @@
                     "type": "string",
                     "minLength": 1
                   }
+                },
+                "calculate_tax_amount": {
+                  "type": "boolean"
+                },
+                "preferred_currency": {
+                  "allOf": [
+                    {
+                      "title": "currency",
+                      "type": "string",
+                      "enum": [
+                        "usd",
+                        "cad",
+                        "aud",
+                        "gbp",
+                        "eur",
+                        "nzd"
+                      ]
+                    }
+                  ]
                 }
               }
             }
@@ -585,25 +604,6 @@
                                     "enum": [
                                       "return_to_sender",
                                       "treat_as_abandoned"
-                                    ]
-                                  }
-                                ]
-                              },
-                              "calculate_tax_amount": {
-                                "type": "boolean"
-                              },
-                              "preferred_currency": {
-                                "allOf": [
-                                  {
-                                    "title": "currency",
-                                    "type": "string",
-                                    "enum": [
-                                      "usd",
-                                      "cad",
-                                      "aud",
-                                      "gbp",
-                                      "eur",
-                                      "nzd"
                                     ]
                                   }
                                 ]

@@ -141,6 +141,18 @@
               "event_code": {
                 "type": "string",
                 "minLength": 0
+              },
+              "latitude": {
+                "type": "number",
+                "format": "double",
+                "minimum": 0,
+                "maximum": 90
+              },
+              "longitude": {
+                "type": "number",
+                "format": "double",
+                "minimum": 0,
+                "maximum": 180
               }
             }
           }
