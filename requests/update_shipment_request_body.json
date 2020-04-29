@@ -490,10 +490,40 @@
                         "default": 0
                       },
                       "value": {
-                        "type": "number",
-                        "format": "double",
-                        "default": 0,
-                        "minimum": 0
+                        "allOf": [
+                          {
+                            "title": "monetary_value",
+                            "type": "object",
+                            "required": [
+                              "currency",
+                              "amount"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "currency": {
+                                "allOf": [
+                                  {
+                                    "title": "currency",
+                                    "type": "string",
+                                    "enum": [
+                                      "usd",
+                                      "cad",
+                                      "aud",
+                                      "gbp",
+                                      "eur",
+                                      "nzd"
+                                    ]
+                                  }
+                                ]
+                              },
+                              "amount": {
+                                "type": "number",
+                                "format": "double",
+                                "minimum": 0
+                              }
+                            }
+                          }
+                        ]
                       },
                       "harmonized_tariff_code": {
                         "type": "string",

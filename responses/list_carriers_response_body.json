@@ -1,238 +1,369 @@
 {
   "$id": "list_carriers_response_body",
   "title": "list_carriers_response_body",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "carriers": {
-      "type": "array",
-      "items": {
-        "allOf": [
-          {
-            "title": "carrier",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "carrier_id": {
-                "allOf": [
-                  {
-                    "title": "se_id",
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 25,
-                    "pattern": "^se(-[a-z0-9]+)+$"
-                  }
-                ]
-              },
-              "carrier_code": {
-                "allOf": [
-                  {
-                    "title": "se_id",
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 25,
-                    "pattern": "^se(-[a-z0-9]+)+$"
-                  }
-                ]
-              },
-              "account_number": {
-                "type": "string",
-                "minLength": 1
-              },
-              "requires_funded_amount": {
-                "type": "boolean"
-              },
-              "balance": {
-                "type": "number",
-                "format": "double",
-                "minimum": 0
-              },
-              "nickname": {
-                "type": "string",
-                "minLength": 1
-              },
-              "friendly_name": {
-                "type": "string",
-                "minLength": 1
-              },
-              "primary": {
-                "type": "boolean"
-              },
-              "has_multi_package_supporting_services": {
-                "type": "boolean"
-              },
-              "supports_label_messages": {
-                "type": "boolean"
-              },
-              "services": {
-                "type": "array",
-                "items": {
-                  "allOf": [
-                    {
-                      "title": "service",
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "carrier_id": {
-                          "allOf": [
-                            {
-                              "title": "se_id",
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 25,
-                              "pattern": "^se(-[a-z0-9]+)+$"
-                            }
-                          ]
-                        },
-                        "carrier_code": {
-                          "allOf": [
-                            {
-                              "title": "se_id",
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 25,
-                              "pattern": "^se(-[a-z0-9]+)+$"
-                            }
-                          ]
-                        },
-                        "service_code": {
-                          "type": "string",
-                          "minLength": 1
-                        },
-                        "name": {
-                          "type": "string",
-                          "minLength": 1
-                        },
-                        "domestic": {
-                          "type": "boolean"
-                        },
-                        "international": {
-                          "type": "boolean"
-                        },
-                        "is_multi_package_supported": {
-                          "type": "boolean"
-                        }
+  "allOf": [
+    {
+      "title": "list_carriers_response_body",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "carriers"
+      ],
+      "properties": {
+        "carriers": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "title": "carrier",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "carrier_id": {
+                    "allOf": [
+                      {
+                        "title": "se_id",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 25,
+                        "pattern": "^se(-[a-z0-9]+)+$"
                       }
-                    }
-                  ]
-                }
-              },
-              "packages": {
-                "type": "array",
-                "items": {
-                  "allOf": [
-                    {
-                      "title": "package_type",
-                      "type": "object",
-                      "required": [
-                        "name",
-                        "package_code"
-                      ],
-                      "additionalProperties": false,
-                      "properties": {
-                        "package_id": {
-                          "allOf": [
-                            {
-                              "title": "se_id",
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 25,
-                              "pattern": "^se(-[a-z0-9]+)+$"
-                            }
-                          ]
-                        },
-                        "package_code": {
-                          "allOf": [
-                            {
-                              "title": "package_code",
-                              "type": "string",
-                              "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
-                            }
-                          ]
-                        },
-                        "name": {
-                          "type": "string",
-                          "minLength": 1
-                        },
-                        "dimensions": {
-                          "allOf": [
-                            {
-                              "title": "dimensions",
-                              "type": "object",
-                              "required": [
-                                "unit",
-                                "length",
-                                "width",
-                                "height"
-                              ],
-                              "additionalProperties": false,
-                              "properties": {
-                                "unit": {
-                                  "default": "inch",
-                                  "allOf": [
-                                    {
-                                      "title": "dimension_unit",
-                                      "type": "string",
-                                      "enum": [
-                                        "inch",
-                                        "centimeter"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                "length": {
-                                  "type": "number",
-                                  "format": "double",
-                                  "minimum": 0,
-                                  "default": 0
-                                },
-                                "width": {
-                                  "type": "number",
-                                  "format": "double",
-                                  "minimum": 0,
-                                  "default": 0
-                                },
-                                "height": {
-                                  "type": "number",
-                                  "format": "double",
-                                  "minimum": 0,
-                                  "default": 0
+                    ]
+                  },
+                  "carrier_code": {
+                    "allOf": [
+                      {
+                        "title": "se_id",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 25,
+                        "pattern": "^se(-[a-z0-9]+)+$"
+                      }
+                    ]
+                  },
+                  "account_number": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "requires_funded_amount": {
+                    "type": "boolean"
+                  },
+                  "balance": {
+                    "type": "number",
+                    "format": "double",
+                    "minimum": 0
+                  },
+                  "nickname": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "friendly_name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "primary": {
+                    "type": "boolean"
+                  },
+                  "has_multi_package_supporting_services": {
+                    "type": "boolean"
+                  },
+                  "supports_label_messages": {
+                    "type": "boolean"
+                  },
+                  "services": {
+                    "type": "array",
+                    "items": {
+                      "allOf": [
+                        {
+                          "title": "service",
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "carrier_id": {
+                              "allOf": [
+                                {
+                                  "title": "se_id",
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 25,
+                                  "pattern": "^se(-[a-z0-9]+)+$"
                                 }
-                              }
+                              ]
+                            },
+                            "carrier_code": {
+                              "allOf": [
+                                {
+                                  "title": "se_id",
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 25,
+                                  "pattern": "^se(-[a-z0-9]+)+$"
+                                }
+                              ]
+                            },
+                            "service_code": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "name": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "domestic": {
+                              "type": "boolean"
+                            },
+                            "international": {
+                              "type": "boolean"
+                            },
+                            "is_multi_package_supported": {
+                              "type": "boolean"
                             }
-                          ]
+                          }
                         }
-                      }
+                      ]
                     }
-                  ]
-                }
-              },
-              "options": {
-                "type": "array",
-                "items": {
-                  "allOf": [
-                    {
-                      "title": "carrier_advanced_option",
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "name": {
-                          "type": "string",
-                          "minLength": 1
-                        },
-                        "default_value": {
-                          "type": "string",
-                          "minLength": 1
+                  },
+                  "packages": {
+                    "type": "array",
+                    "items": {
+                      "allOf": [
+                        {
+                          "title": "package_type",
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "package_code"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "package_id": {
+                              "allOf": [
+                                {
+                                  "title": "se_id",
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 25,
+                                  "pattern": "^se(-[a-z0-9]+)+$"
+                                }
+                              ]
+                            },
+                            "package_code": {
+                              "allOf": [
+                                {
+                                  "title": "package_code",
+                                  "type": "string",
+                                  "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+                                }
+                              ]
+                            },
+                            "name": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "dimensions": {
+                              "allOf": [
+                                {
+                                  "title": "dimensions",
+                                  "type": "object",
+                                  "required": [
+                                    "unit",
+                                    "length",
+                                    "width",
+                                    "height"
+                                  ],
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "unit": {
+                                      "default": "inch",
+                                      "allOf": [
+                                        {
+                                          "title": "dimension_unit",
+                                          "type": "string",
+                                          "enum": [
+                                            "inch",
+                                            "centimeter"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "length": {
+                                      "type": "number",
+                                      "format": "double",
+                                      "minimum": 0,
+                                      "default": 0
+                                    },
+                                    "width": {
+                                      "type": "number",
+                                      "format": "double",
+                                      "minimum": 0,
+                                      "default": 0
+                                    },
+                                    "height": {
+                                      "type": "number",
+                                      "format": "double",
+                                      "minimum": 0,
+                                      "default": 0
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
                         }
-                      }
+                      ]
                     }
-                  ]
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": {
+                      "allOf": [
+                        {
+                          "title": "carrier_advanced_option",
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "default_value": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
                 }
               }
-            }
+            ]
           }
-        ]
+        }
+      }
+    },
+    {
+      "title": "error_response_body",
+      "type": "object",
+      "required": [
+        "request_id",
+        "errors"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "request_id": {
+          "allOf": [
+            {
+              "title": "uuid",
+              "type": "string",
+              "format": "uuid",
+              "minLength": 36,
+              "maxLength": 36,
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+            }
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "title": "error",
+                "type": "object",
+                "required": [
+                  "error_source",
+                  "error_type",
+                  "error_code",
+                  "message"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "error_source": {
+                    "allOf": [
+                      {
+                        "title": "error_source",
+                        "type": "string",
+                        "enum": [
+                          "carrier",
+                          "order_source",
+                          "shipengine"
+                        ]
+                      }
+                    ]
+                  },
+                  "error_type": {
+                    "allOf": [
+                      {
+                        "title": "error_type",
+                        "type": "string",
+                        "enum": [
+                          "account_status",
+                          "business_rules",
+                          "validation",
+                          "security",
+                          "system",
+                          "integrations"
+                        ]
+                      }
+                    ]
+                  },
+                  "error_code": {
+                    "allOf": [
+                      {
+                        "title": "error_code",
+                        "type": "string",
+                        "enum": [
+                          "auto_fund_not_supported",
+                          "batch_cannot_be_modified",
+                          "carrier_conflict",
+                          "carrier_disconnected",
+                          "carrier_not_connected",
+                          "carrier_not_supported",
+                          "confirmation_not_supported",
+                          "default_warehouse_cannot_be_deleted",
+                          "field_conflict",
+                          "field_value_required",
+                          "forbidden",
+                          "identifier_conflict",
+                          "identifiers_must_match",
+                          "invalid_address",
+                          "invalid_billing_plan",
+                          "invalid_field_value",
+                          "invalid_identifier",
+                          "invalid_status",
+                          "invalid_string_length",
+                          "label_images_not_supported",
+                          "meter_failure",
+                          "order_source_not_active",
+                          "rate_limit_exceeded",
+                          "refresh_not_supported",
+                          "request_body_required",
+                          "return_label_not_supported",
+                          "settings_not_supported",
+                          "subscription_inactive",
+                          "terms_not_accepted",
+                          "tracking_not_supported",
+                          "trial_expired",
+                          "unauthorized",
+                          "unknown",
+                          "unspecified",
+                          "verification_failure",
+                          "warehouse_conflict",
+                          "webhook_event_type_conflict"
+                        ]
+                      }
+                    ]
+                  },
+                  "message": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            ]
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -144,6 +144,40 @@
       }
     },
     {
+      "title": "connect_canada_post_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "api_key",
+        "api_secret",
+        "account_number",
+        "contract_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "api_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "api_secret": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
       "title": "connect_dhl_ecommerce_request_body",
       "type": "object",
       "required": [
@@ -784,6 +818,25 @@
           "minLength": 1
         },
         "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "title": "connect_seko_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "access_key"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "access_key": {
           "type": "string",
           "minLength": 1
         }
