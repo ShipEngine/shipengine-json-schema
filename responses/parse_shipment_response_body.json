@@ -654,7 +654,8 @@
                           "type": "string",
                           "enum": [
                             "recipient",
-                            "third_party"
+                            "third_party",
+                            "collect"
                           ]
                         }
                       ]
