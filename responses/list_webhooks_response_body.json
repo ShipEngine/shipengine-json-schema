@@ -1,0 +1,54 @@
+{
+  "$id": "list_webhooks_response_body",
+  "title": "list_webhooks_response_body",
+  "type": "array",
+  "items": {
+    "allOf": [
+      {
+        "title": "webhook",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "webhook_id": {
+            "allOf": [
+              {
+                "title": "se_id",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 25,
+                "pattern": "^se(-[a-z0-9]+)+$"
+              }
+            ]
+          },
+          "url": {
+            "allOf": [
+              {
+                "title": "url",
+                "type": "string",
+                "format": "url",
+                "minLength": 1
+              }
+            ]
+          },
+          "event": {
+            "allOf": [
+              {
+                "title": "webhook_event",
+                "type": "string",
+                "enum": [
+                  "batch",
+                  "carrier_connected",
+                  "order_source_refresh_complete",
+                  "rate",
+                  "report_complete",
+                  "sales_orders_imported",
+                  "track"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

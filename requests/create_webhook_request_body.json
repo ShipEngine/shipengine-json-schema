@@ -1,0 +1,39 @@
+{
+  "$id": "create_webhook_request_body",
+  "title": "create_webhook_request_body",
+  "type": "object",
+  "required": [
+    "event",
+    "url"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event": {
+      "allOf": [
+        {
+          "title": "webhook_event",
+          "type": "string",
+          "enum": [
+            "batch",
+            "carrier_connected",
+            "order_source_refresh_complete",
+            "rate",
+            "report_complete",
+            "sales_orders_imported",
+            "track"
+          ]
+        }
+      ]
+    },
+    "url": {
+      "allOf": [
+        {
+          "title": "url",
+          "type": "string",
+          "format": "url",
+          "minLength": 1
+        }
+      ]
+    }
+  }
+}

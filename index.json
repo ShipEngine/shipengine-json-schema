@@ -280,6 +280,27 @@
       }
     }
   },
+  "/v1/environment/webhooks": {
+    "get": {
+      "name": "list_webhooks",
+      "requestSchema": null,
+      "responseSchemas": {
+        "200": "responses/list_webhooks_response_body.json",
+        "400": "responses/400_error_response_body.json",
+        "500": "responses/500_error_response_body.json"
+      }
+    },
+    "post": {
+      "name": "create_webhook",
+      "requestSchema": "requests/create_webhook_request_body.json",
+      "responseSchemas": {
+        "200": "responses/create_webhook_response_body.json",
+        "400": "responses/400_error_response_body.json",
+        "409": "responses/409_error_response_body.json",
+        "500": "responses/500_error_response_body.json"
+      }
+    }
+  },
   "/v1/environment/webhooks/{webhook_id}": {
     "get": {
       "name": "get_webhook_by_id",
