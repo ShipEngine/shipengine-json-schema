@@ -5,10 +5,9 @@
   "items": {
     "allOf": [
       {
-        "title": "rate",
+        "title": "rate estimate",
         "type": "object",
         "required": [
-          "rate_id",
           "rate_type",
           "carrier_id",
           "shipping_amount",
@@ -31,17 +30,6 @@
         ],
         "additionalProperties": false,
         "properties": {
-          "rate_id": {
-            "allOf": [
-              {
-                "title": "se_id",
-                "type": "string",
-                "minLength": 1,
-                "maxLength": 25,
-                "pattern": "^se(-[a-z0-9]+)+$"
-              }
-            ]
-          },
           "rate_type": {
             "allOf": [
               {
