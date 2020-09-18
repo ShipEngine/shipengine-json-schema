@@ -118,7 +118,7 @@
               },
               "postal_code": {
                 "type": "string",
-                "minLength": 5
+                "minLength": 0
               },
               "country_code": {
                 "allOf": [
@@ -145,13 +145,13 @@
               "latitude": {
                 "type": "number",
                 "format": "double",
-                "minimum": 0,
+                "minimum": -90,
                 "maximum": 90
               },
               "longitude": {
                 "type": "number",
                 "format": "double",
-                "minimum": 0,
+                "minimum": -180,
                 "maximum": 180
               }
             }
