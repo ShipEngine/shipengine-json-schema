@@ -25,7 +25,7 @@ describe("Package exports", () => {
 
           for(let [statusCode, statusContent] of Object.entries(verbContents.responseSchemas)) {
 
-            expect(statusCode).to.contain.oneOf(["200", "204", "400", "404", "409", "500"]);
+            expect(statusCode).to.contain.oneOf(["200", "204", "207", "400", "404", "409", "500"]);
             expect(statusContent).to.be.a("object");
           }
         });

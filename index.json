@@ -138,7 +138,7 @@
       "name": "list_carriers",
       "requestSchema": null,
       "responseSchemas": {
-        "200": "responses/list_carriers_response_body.json",
+        "207": "responses/list_carriers_response_body.json",
         "400": "responses/400_error_response_body.json",
         "404": "responses/404_error_response_body.json",
         "500": "responses/500_error_response_body.json"
