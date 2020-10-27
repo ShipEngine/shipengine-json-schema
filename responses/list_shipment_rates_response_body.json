@@ -815,6 +815,7 @@
                           "forbidden",
                           "identifier_conflict",
                           "identifiers_must_match",
+                          "insufficient_funds",
                           "invalid_address",
                           "invalid_billing_plan",
                           "invalid_field_value",

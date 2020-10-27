@@ -230,6 +230,19 @@
             }
           ]
         },
+        "display_scheme": {
+          "default": "label",
+          "allOf": [
+            {
+              "title": "display_scheme",
+              "type": "string",
+              "enum": [
+                "label",
+                "qr_code"
+              ]
+            }
+          ]
+        },
         "label_layout": {
           "default": "4x6",
           "allOf": [

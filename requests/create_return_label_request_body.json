@@ -57,6 +57,19 @@
         }
       ]
     },
+    "display_scheme": {
+      "default": "label",
+      "allOf": [
+        {
+          "title": "display_scheme",
+          "type": "string",
+          "enum": [
+            "label",
+            "qr_code"
+          ]
+        }
+      ]
+    },
     "label_image_id": {
       "allOf": [
         {

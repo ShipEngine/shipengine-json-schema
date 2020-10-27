@@ -30,6 +30,9 @@
                 "pattern": "^se(-[a-z0-9]+)+$"
               }
             ]
+          },
+          "external_shipment_id": {
+            "type": "string"
           }
         }
       }

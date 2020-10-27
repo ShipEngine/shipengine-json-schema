@@ -23,6 +23,7 @@
               "label_layout",
               "label_format",
               "batch_id",
+              "batch_number",
               "external_batch_id",
               "batch_notes",
               "created_at",
@@ -78,6 +79,10 @@
                     "pattern": "^se(-[a-z0-9]+)+$"
                   }
                 ]
+              },
+              "batch_number": {
+                "type": "string",
+                "minLength": 0
               },
               "external_batch_id": {
                 "type": "string",
