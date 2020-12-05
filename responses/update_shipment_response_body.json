@@ -753,6 +753,19 @@
                       "default": null,
                       "maxLength": 100
                     },
+                    "origin_type": {
+                      "default": null,
+                      "allOf": [
+                        {
+                          "title": "origin_type",
+                          "type": "string",
+                          "enum": [
+                            "pickup",
+                            "drop_off"
+                          ]
+                        }
+                      ]
+                    },
                     "collect_on_delivery": {
                       "title": "collect_on_delivery",
                       "type": "object",
@@ -801,6 +814,18 @@
                       }
                     }
                   }
+                }
+              ]
+            },
+            "origin_type": {
+              "allOf": [
+                {
+                  "title": "origin_type",
+                  "type": "string",
+                  "enum": [
+                    "pickup",
+                    "drop_off"
+                  ]
                 }
               ]
             },
