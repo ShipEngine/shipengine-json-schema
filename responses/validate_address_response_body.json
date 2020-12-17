@@ -222,6 +222,12 @@
               "title": "response_message",
               "type": "object",
               "additionalProperties": false,
+              "required": [
+                "code",
+                "message",
+                "type",
+                "detail_code"
+              ],
               "properties": {
                 "code": {
                   "allOf": [
