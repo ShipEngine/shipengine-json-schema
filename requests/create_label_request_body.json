@@ -111,6 +111,62 @@
                         ]
                       }
                     },
+                    "tax_identifiers": {
+                      "type": "array",
+                      "items": {
+                        "allOf": [
+                          {
+                            "title": "tax_identifier",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "taxable_entity_type",
+                              "identifier_type",
+                              "issuing_authority",
+                              "value"
+                            ],
+                            "properties": {
+                              "taxable_entity_type": {
+                                "allOf": [
+                                  {
+                                    "title": "taxable_entity_type",
+                                    "type": "string",
+                                    "enum": [
+                                      "shipper",
+                                      "recipient"
+                                    ]
+                                  }
+                                ]
+                              },
+                              "identifier_type": {
+                                "allOf": [
+                                  {
+                                    "title": "identifier_type",
+                                    "type": "string",
+                                    "enum": [
+                                      "vat",
+                                      "eori",
+                                      "ssn",
+                                      "ein",
+                                      "tin",
+                                      "ioss",
+                                      "pan",
+                                      "voec"
+                                    ]
+                                  }
+                                ]
+                              },
+                              "issuing_authority": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
                     "external_shipment_id": {
                       "type": "string",
                       "maxLength": 50
@@ -675,6 +731,10 @@
                                   ]
                                 }
                               ]
+                            },
+                            "shipper_release": {
+                              "type": "boolean",
+                              "default": null
                             },
                             "collect_on_delivery": {
                               "title": "collect_on_delivery",
