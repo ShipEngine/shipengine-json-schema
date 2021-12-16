@@ -538,7 +538,8 @@
                     "signature",
                     "adult_signature",
                     "direct_signature",
-                    "delivery_mailed"
+                    "delivery_mailed",
+                    "verbal_confirmation"
                   ]
                 }
               ]
@@ -773,6 +774,17 @@
                       "type": "boolean",
                       "default": false
                     },
+                    "fedex_freight": {
+                      "type": "object",
+                      "properties": {
+                        "shipper_load_and_count": {
+                          "type": "string"
+                        },
+                        "booking_confirmation": {
+                          "type": "string"
+                        }
+                      }
+                    },
                     "use_ups_ground_freight_pricing": {
                       "type": "boolean",
                       "default": null
@@ -957,6 +969,10 @@
                     ],
                     "additionalProperties": false,
                     "properties": {
+                      "package_id": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
                       "package_code": {
                         "allOf": [
                           {
@@ -1130,6 +1146,86 @@
                       "external_package_id": {
                         "type": "string",
                         "minLength": 1
+                      },
+                      "label_download": {
+                        "allOf": [
+                          {
+                            "title": "label_download",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "href": {
+                                "allOf": [
+                                  {
+                                    "title": "url",
+                                    "type": "string",
+                                    "format": "url",
+                                    "minLength": 1
+                                  }
+                                ]
+                              },
+                              "pdf": {
+                                "allOf": [
+                                  {
+                                    "title": "url",
+                                    "type": "string",
+                                    "format": "url",
+                                    "minLength": 1
+                                  }
+                                ]
+                              },
+                              "png": {
+                                "allOf": [
+                                  {
+                                    "title": "url",
+                                    "type": "string",
+                                    "format": "url",
+                                    "minLength": 1
+                                  }
+                                ]
+                              },
+                              "zpl": {
+                                "allOf": [
+                                  {
+                                    "title": "url",
+                                    "type": "string",
+                                    "format": "url",
+                                    "minLength": 1
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "form_download": {
+                        "allOf": [
+                          {
+                            "title": "optional_link",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "href": {
+                                "allOf": [
+                                  {
+                                    "title": "url",
+                                    "type": "string",
+                                    "format": "url",
+                                    "minLength": 1
+                                  }
+                                ]
+                              },
+                              "type": {
+                                "type": "string",
+                                "minLength": 1
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "sequence": {
+                        "format": "int32",
+                        "type": "integer"
                       }
                     }
                   }

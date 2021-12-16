@@ -68,6 +68,9 @@
                       ]
                     }
                   ]
+                },
+                "is_return": {
+                  "type": "boolean"
                 }
               }
             }
@@ -618,7 +621,8 @@
                               "signature",
                               "adult_signature",
                               "direct_signature",
-                              "delivery_mailed"
+                              "delivery_mailed",
+                              "verbal_confirmation"
                             ]
                           }
                         ]
@@ -839,6 +843,17 @@
                               "saturday_delivery": {
                                 "type": "boolean",
                                 "default": false
+                              },
+                              "fedex_freight": {
+                                "type": "object",
+                                "properties": {
+                                  "shipper_load_and_count": {
+                                    "type": "string"
+                                  },
+                                  "booking_confirmation": {
+                                    "type": "string"
+                                  }
+                                }
                               },
                               "use_ups_ground_freight_pricing": {
                                 "type": "boolean",

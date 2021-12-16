@@ -25,15 +25,55 @@
             }
           ]
         },
+        "tracking_url": {
+          "type": "string"
+        },
         "status_code": {
-          "type": "string",
-          "minLength": 1
+          "allOf": [
+            {
+              "title": "status_code",
+              "enum": [
+                "u_n",
+                "a_c",
+                "i_t",
+                "d_e",
+                "e_x",
+                "a_t",
+                "n_y"
+              ],
+              "type": "string"
+            }
+          ]
+        },
+        "carrier_code": {
+          "allOf": [
+            {
+              "title": "carrier_code",
+              "type": "string",
+              "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+            }
+          ]
+        },
+        "carrier_id": {
+          "allOf": [
+            {
+              "title": "se_id",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 25,
+              "pattern": "^se(-[a-z0-9]+)+$"
+            }
+          ]
         },
         "status_description": {
           "type": "string",
           "minLength": 0
         },
         "carrier_status_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "carrier_detail_code": {
           "type": "string",
           "minLength": 1
         },
@@ -84,7 +124,12 @@
               "occurred_at",
               "city_locality",
               "state_province",
-              "postal_code"
+              "postal_code",
+              "carrier_detail_code",
+              "status_code",
+              "status_description",
+              "carrier_status_code",
+              "carrier_status_description"
             ],
             "additionalProperties": false,
             "properties": {
@@ -139,6 +184,39 @@
                 "minLength": 0
               },
               "event_code": {
+                "type": "string",
+                "minLength": 0
+              },
+              "carrier_detail_code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status_code": {
+                "allOf": [
+                  {
+                    "title": "status_code",
+                    "enum": [
+                      "u_n",
+                      "a_c",
+                      "i_t",
+                      "d_e",
+                      "e_x",
+                      "a_t",
+                      "n_y"
+                    ],
+                    "type": "string"
+                  }
+                ]
+              },
+              "status_description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "carrier_status_code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "carrier_status_description": {
                 "type": "string",
                 "minLength": 0
               },

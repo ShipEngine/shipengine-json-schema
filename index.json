@@ -669,18 +669,6 @@
       }
     }
   },
-  "/v1/shipments/{shipment_id}/errors": {
-    "get": {
-      "name": "list_shipment_errors",
-      "requestSchema": null,
-      "responseSchemas": {
-        "200": "responses/list_shipment_errors_response_body.json",
-        "400": "responses/400_error_response_body.json",
-        "404": "responses/404_error_response_body.json",
-        "500": "responses/500_error_response_body.json"
-      }
-    }
-  },
   "/v1/shipments/{shipment_id}/rates": {
     "get": {
       "name": "list_shipment_rates",

@@ -208,7 +208,8 @@
                 "signature",
                 "adult_signature",
                 "direct_signature",
-                "delivery_mailed"
+                "delivery_mailed",
+                "verbal_confirmation"
               ]
             }
           ]

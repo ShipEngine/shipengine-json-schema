@@ -118,6 +118,12 @@
             },
             "is_primary_account": {
               "type": "boolean"
+            },
+            "signature_image": {
+              "type": "string"
+            },
+            "letterhead_image": {
+              "type": "string"
             }
           }
         }
@@ -236,6 +242,9 @@
                       "type": "number",
                       "format": "double",
                       "minimum": 0
+                    },
+                    "invoice_currency_code": {
+                      "type": "string"
                     }
                   }
                 }

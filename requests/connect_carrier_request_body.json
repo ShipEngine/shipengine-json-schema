@@ -271,6 +271,12 @@
         },
         "sold_to": {
           "type": "string"
+        },
+        "registration_id": {
+          "type": "string"
+        },
+        "software_name": {
+          "type": "string"
         }
       }
     },
@@ -1042,6 +1048,9 @@
                   "type": "number",
                   "format": "double",
                   "minimum": 0
+                },
+                "invoice_currency_code": {
+                  "type": "string"
                 }
               }
             }
