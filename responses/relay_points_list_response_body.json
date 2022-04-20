@@ -1,0 +1,73 @@
+{
+  "$id": "relay_points_list_response_body",
+  "title": "relay_points_list_response_body",
+  "type": "object",
+  "properties": {
+    "relay_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string"
+          },
+          "long": {
+            "format": "double",
+            "type": "number"
+          },
+          "lat": {
+            "format": "double",
+            "type": "number"
+          },
+          "opening_times": {
+            "type": "object",
+            "properties": {
+              "monday": {
+                "type": "string"
+              },
+              "tuesday": {
+                "type": "string"
+              },
+              "wednesday": {
+                "type": "string"
+              },
+              "thursday": {
+                "type": "string"
+              },
+              "friday": {
+                "type": "string"
+              },
+              "saturday": {
+                "type": "string"
+              },
+              "sunday": {
+                "type": "string"
+              }
+            }
+          },
+          "relay_point_id": {
+            "type": "string"
+          },
+          "company_name": {
+            "type": "string"
+          },
+          "address_line1": {
+            "type": "string"
+          },
+          "city_locality": {
+            "type": "string"
+          },
+          "state_province": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

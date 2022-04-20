@@ -296,6 +296,24 @@
         "account_number": {
           "type": "string",
           "minLength": 1
+        },
+        "site_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country_code": {
+          "allOf": [
+            {
+              "title": "country_code",
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 2
+            }
+          ]
         }
       }
     },

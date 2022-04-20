@@ -682,6 +682,67 @@
               }
             }
           }
+        },
+        "relay_points": {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ship_to": {
+                  "type": "object",
+                  "properties": {
+                    "relay_point_id": {
+                      "type": "string"
+                    },
+                    "company_name": {
+                      "type": "string"
+                    },
+                    "address_line1": {
+                      "type": "string"
+                    },
+                    "city_locality": {
+                      "type": "string"
+                    },
+                    "state_province": {
+                      "type": "string"
+                    },
+                    "postal_code": {
+                      "type": "string"
+                    },
+                    "country_code": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "ship_from": {
+                  "type": "object",
+                  "properties": {
+                    "relay_point_id": {
+                      "type": "string"
+                    },
+                    "company_name": {
+                      "type": "string"
+                    },
+                    "address_line1": {
+                      "type": "string"
+                    },
+                    "city_locality": {
+                      "type": "string"
+                    },
+                    "state_province": {
+                      "type": "string"
+                    },
+                    "postal_code": {
+                      "type": "string"
+                    },
+                    "country_code": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          ]
         }
       }
     }

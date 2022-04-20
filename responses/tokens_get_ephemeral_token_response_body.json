@@ -1,0 +1,13 @@
+{
+  "$id": "tokens_get_ephemeral_token_response_body",
+  "title": "tokens_get_ephemeral_token_response_body",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string"
+    },
+    "redirect_url": {
+      "type": "string"
+    }
+  }
+}

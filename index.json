@@ -591,6 +591,18 @@
       }
     }
   },
+  "/v1/relay_points": {
+    "get": {
+      "name": "relay_points_list",
+      "requestSchema": null,
+      "responseSchemas": {
+        "200": "responses/relay_points_list_response_body.json",
+        "400": "responses/400_error_response_body.json",
+        "404": "responses/404_error_response_body.json",
+        "500": "responses/500_error_response_body.json"
+      }
+    }
+  },
   "/v1/shipments": {
     "get": {
       "name": "list_shipments",
@@ -746,6 +758,15 @@
         "400": "responses/400_error_response_body.json",
         "404": "responses/404_error_response_body.json",
         "500": "responses/500_error_response_body.json"
+      }
+    }
+  },
+  "/v1/tokens/ephemeral": {
+    "post": {
+      "name": "tokens_get_ephemeral_token",
+      "requestSchema": null,
+      "responseSchemas": {
+        "200": "responses/tokens_get_ephemeral_token_response_body.json"
       }
     }
   },

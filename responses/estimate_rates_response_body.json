@@ -5,7 +5,7 @@
   "items": {
     "allOf": [
       {
-        "title": "rate estimate",
+        "title": "rate_estimate",
         "type": "object",
         "required": [
           "rate_type",
