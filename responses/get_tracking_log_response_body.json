@@ -37,13 +37,13 @@
             {
               "title": "status_code",
               "enum": [
-                "u_n",
-                "a_c",
-                "i_t",
-                "d_e",
-                "e_x",
-                "a_t",
-                "n_y"
+                "un",
+                "ac",
+                "it",
+                "de",
+                "ex",
+                "at",
+                "ny"
               ],
               "type": "string"
             }
@@ -200,13 +200,13 @@
                   {
                     "title": "status_code",
                     "enum": [
-                      "u_n",
-                      "a_c",
-                      "i_t",
-                      "d_e",
-                      "e_x",
-                      "a_t",
-                      "n_y"
+                      "un",
+                      "ac",
+                      "it",
+                      "de",
+                      "ex",
+                      "at",
+                      "ny"
                     ],
                     "type": "string"
                   }

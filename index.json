@@ -493,6 +493,18 @@
       }
     }
   },
+  "/v1/manifests/requests/{manifest_request_id}": {
+    "get": {
+      "name": "get_manifest_request_by_id",
+      "requestSchema": null,
+      "responseSchemas": {
+        "200": "responses/get_manifest_request_by_id_response_body.json",
+        "400": "responses/400_error_response_body.json",
+        "404": "responses/404_error_response_body.json",
+        "500": "responses/500_error_response_body.json"
+      }
+    }
+  },
   "/v1/packages": {
     "get": {
       "name": "list_package_types",

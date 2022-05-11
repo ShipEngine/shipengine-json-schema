@@ -1,6 +1,6 @@
 {
-  "$id": "create_manifest_response_body",
-  "title": "create_manifest_response_body",
+  "$id": "get_manifest_request_by_id_response_body",
+  "title": "get_manifest_request_by_id_response_body",
   "type": "object",
   "required": [
     "manifest_id",
