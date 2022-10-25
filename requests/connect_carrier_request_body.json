@@ -647,6 +647,30 @@
       }
     },
     {
+      "title": "connect_globegistics_request_body",
+      "type": "object",
+      "required": [
+        "nickname",
+        "username",
+        "password"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nickname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
       "title": "connect_imex_request_body",
       "type": "object",
       "required": [
