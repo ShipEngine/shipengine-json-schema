@@ -2,10 +2,7 @@
   "$id": "create_warehouse_request_body",
   "title": "create_warehouse_request_body",
   "type": "object",
-  "required": [
-    "name",
-    "origin_address"
-  ],
+  "required": ["name", "origin_address"],
   "additionalProperties": false,
   "allOf": [
     {
@@ -16,6 +13,10 @@
         "name": {
           "type": "string",
           "minLength": 1
+        },
+        "is_default": {
+          "type": "boolean",
+          "default": false
         },
         "origin_address": {
           "allOf": [
@@ -96,11 +97,7 @@
                         {
                           "title": "address_residential_indicator",
                           "type": "string",
-                          "enum": [
-                            "unknown",
-                            "yes",
-                            "no"
-                          ]
+                          "enum": ["unknown", "yes", "no"]
                         }
                       ]
                     }
@@ -189,11 +186,7 @@
                         {
                           "title": "address_residential_indicator",
                           "type": "string",
-                          "enum": [
-                            "unknown",
-                            "yes",
-                            "no"
-                          ]
+                          "enum": ["unknown", "yes", "no"]
                         }
                       ]
                     }
