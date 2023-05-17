@@ -31,6 +31,10 @@
           "type": "string",
           "minLength": 1
         },
+        "is_default": {
+          "type": "boolean",
+          "default": false
+        },
         "created_at": {
           "type": "string",
           "format": "date-time",
@@ -115,11 +119,7 @@
                         {
                           "title": "address_residential_indicator",
                           "type": "string",
-                          "enum": [
-                            "unknown",
-                            "yes",
-                            "no"
-                          ]
+                          "enum": ["unknown", "yes", "no"]
                         }
                       ]
                     }
@@ -208,11 +208,7 @@
                         {
                           "title": "address_residential_indicator",
                           "type": "string",
-                          "enum": [
-                            "unknown",
-                            "yes",
-                            "no"
-                          ]
+                          "enum": ["unknown", "yes", "no"]
                         }
                       ]
                     }
