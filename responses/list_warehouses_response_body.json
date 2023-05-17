@@ -2,9 +2,7 @@
   "$id": "list_warehouses_response_body",
   "title": "list_warehouses_response_body",
   "type": "object",
-  "required": [
-    "warehouses"
-  ],
+  "required": ["warehouses"],
   "additionalProperties": false,
   "properties": {
     "warehouses": {
@@ -30,6 +28,10 @@
               "name": {
                 "type": "string",
                 "minLength": 1
+              },
+              "is_default": {
+                "type": "boolean",
+                "default": false
               },
               "created_at": {
                 "type": "string",
@@ -115,11 +117,7 @@
                               {
                                 "title": "address_residential_indicator",
                                 "type": "string",
-                                "enum": [
-                                  "unknown",
-                                  "yes",
-                                  "no"
-                                ]
+                                "enum": ["unknown", "yes", "no"]
                               }
                             ]
                           }
@@ -208,11 +206,7 @@
                               {
                                 "title": "address_residential_indicator",
                                 "type": "string",
-                                "enum": [
-                                  "unknown",
-                                  "yes",
-                                  "no"
-                                ]
+                                "enum": ["unknown", "yes", "no"]
                               }
                             ]
                           }
